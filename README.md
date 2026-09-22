@@ -4,6 +4,19 @@
 
 ![Overview trên Power BI Desktop](powerbi/screenshots/sqlserver/Overview.png)
 
+## Business impact
+
+This project turns marketplace data into a reusable analytics product for four practical decisions:
+
+- Commercial performance: order value, merchandise value, freight cost and average order value support sales and margin conversations.
+- Customer retention: repeat customers, repeat rate and orders per customer help identify retention opportunities.
+- Fulfillment quality: late delivery rate, delivery days and review scores show where operations affect customer experience.
+- Payment behavior: payment value, paying orders, payment records and installments describe payment mix and transaction volume.
+
+The two serving paths make the design useful in different settings: Fabric Direct Lake supports a cloud-first architecture, while SQL Server Import demonstrates a gateway-based path for teams that still operate on-premises. The model separates order, item and payment grains so metrics can be compared without multiplying facts through an unsafe fact-to-fact join.
+
+This is a completed portfolio implementation with documented boundaries. The public release is a sanitized template: connections, tenant IDs and RLS identities must be remapped before deployment. See [public release notes](docs/public-release.md), [portfolio status](docs/portfolio-status.md), [limitations](docs/limitations.md), and the [MIT License](LICENSE).
+
 > Đây là bản public đã thay thông tin môi trường bằng giá trị mẫu. Đọc [hướng dẫn cấu hình lại](docs/public-release.md) trước khi sử dụng.
 
 ## Bài toán kinh doanh
