@@ -9,23 +9,23 @@
     },
     {
       "path": "docs/architecture.md",
-      "bytes": 2928,
-      "sha256": "fb4a1478bf824156029a95b13080c35f23e1e68ec2db0f87af90e604fee3ff2b"
+      "bytes": 1530,
+      "sha256": "4a2c400363f41c3d4a91e5a48f845e72907fc2fdee4de80edef4bde711df8996"
     },
     {
       "path": "docs/data-dictionary.md",
-      "bytes": 4736,
-      "sha256": "a28ad76722d6836bb76f0039e2687f939427545dc104b95a3f1dab3140d7ca39"
+      "bytes": 1402,
+      "sha256": "06feac9350d2f879d7e3c155bec682315bbfc738e1bc5bd26bc8f09ff5f864b9"
     },
     {
       "path": "docs/demo-script.md",
-      "bytes": 2104,
-      "sha256": "525bcbd029ab7ed1160392d1891ee9c6f71e69d9d453b5cec86ac70e83b5cdc3"
+      "bytes": 737,
+      "sha256": "2d87f7eb796c0ebf64e999c66a5357c1b0288e16080f282afe67ba41647d0b22"
     },
     {
       "path": "docs/evidence/phase-9/README.md",
-      "bytes": 808,
-      "sha256": "6f8deb9800244a7b0c06fa2763e088fc42a5cb509e651424758ee541a441417a"
+      "bytes": 635,
+      "sha256": "5c1890518f585bc42bd3339061fa9756537adfb50cee443093c4f8d75cc948d6"
     },
     {
       "path": "docs/evidence/phase-9/service-dax.json",
@@ -39,53 +39,28 @@
     },
     {
       "path": "docs/fabric-export-review.md",
-      "bytes": 4023,
-      "sha256": "41b2a54bd218d8226873b49c775180e0d2bf3d612f8734153cf0f1c6208e6e08"
+      "bytes": 1364,
+      "sha256": "ba86d4011c1d83052a224553ceba9404724fef5aa4e2bc2137d9e071df116ba9"
     },
     {
       "path": "docs/github-release.md",
-      "bytes": 2933,
-      "sha256": "c890473d12d140be95fae169a96553409f347a57b6c127564faff54f122a7b69"
+      "bytes": 563,
+      "sha256": "499afa32c24929d78372dfbd84cecb65dfd770f40fe5202a9bbd9f501282aa25"
     },
     {
       "path": "docs/kpi-definitions.md",
-      "bytes": 6696,
-      "sha256": "8156e4f1a3ad562253c544964b0ec28178b4cbabc7998b31a9d121ae85cc9a63"
+      "bytes": 1733,
+      "sha256": "4f442b168bcbb77cd050bd1e6fc3f2f463f7381347476442dbf1d3b41bb78217"
     },
     {
       "path": "docs/limitations.md",
-      "bytes": 1986,
-      "sha256": "20b7f2f01f164c9e7e0886b07d7c6da7c85d91d5ad4546105f52dcfc252bac8e"
-    },
-    {
-      "path": "docs/notebook-review-2026-09-14.md",
-      "bytes": 4943,
-      "sha256": "8c0cb8d0a6492208dd4c598d3edbadd51d142d61e07310f0580e0746dc2496e0"
+      "bytes": 972,
+      "sha256": "e1bd839ba077a071a2d5a4ccc0c3979acde34b2c4a2a9a345991186da51d06dc"
     },
     {
       "path": "docs/phase-10-completion.md",
-      "bytes": 1490,
-      "sha256": "7da45580ac4b7e926976a939f012af03b7bb0147937aaa01030aefeb96d8d101"
-    },
-    {
-      "path": "docs/phase-5-gold-warehouse.md",
-      "bytes": 9342,
-      "sha256": "2cdbfeecb76c02bf4280f032b7695e37fb31654621555fa9ae37b55e2a8f6e09"
-    },
-    {
-      "path": "docs/phase-5-mcp-evidence-2026-09-15.json",
-      "bytes": 36335,
-      "sha256": "d5dad177a88ea6020101340742d0583fba98822814598aba075d3fa5254ebb9f"
-    },
-    {
-      "path": "docs/phase-5-mcp-review-2026-09-15.md",
-      "bytes": 3180,
-      "sha256": "bdc86423fa896599e03023a5ade1fa9f029ea0afda6fac6dcba18470b32b3876"
-    },
-    {
-      "path": "docs/phase-6-e2e-pipeline.md",
-      "bytes": 7112,
-      "sha256": "b1e828176e243e2c4b895f4018ce702441faa1b89d6ce98c677d8d353539a9f7"
+      "bytes": 489,
+      "sha256": "051e97a51e2a2d70e8fedaa8b76214dac6108d6a4b4de2b76f59622eb2c68849"
     },
     {
       "path": "docs/phase-9-service-verification-20260921.md",
@@ -98,29 +73,29 @@
       "sha256": "6c719477c4460f7a9f71199eceb7c00f6c7f49a092f011bdb8d6f46b84bdc2ea"
     },
     {
-      "path": "docs/phase-9-sqlserver.md",
-      "bytes": 5731,
-      "sha256": "b8578a62a44d9051f72988551b27c36c2be61b2b47e1a7b9d94ad6c5c1bc89a9"
+      "path": "docs/portfolio-status.md",
+      "bytes": 995,
+      "sha256": "a837d0ed7b442f27129775cd34389f5b46e08ba236475aec6f0848ea74116ec6"
     },
     {
       "path": "docs/public-release.md",
-      "bytes": 1726,
-      "sha256": "ed2f9457d3ad50c7a79267b97aeafe5e46ef05c278906a45ec01544df0a4c3e8"
+      "bytes": 874,
+      "sha256": "947de3f0a655a036e456b9880b8b8a2b3619ed645d9321845e278bd30bc20d86"
     },
     {
       "path": "docs/runbook.md",
-      "bytes": 6865,
-      "sha256": "f333a8d9744c5279ad0585767daedd95191aaf2843490a9f1a36e130cddbf1ca"
+      "bytes": 2151,
+      "sha256": "f9e71bcd6fd30ba470c47b5d07b962aa6d726e98dcd96e9526f011c190aa900e"
     },
     {
       "path": "docs/sources.md",
-      "bytes": 1087,
-      "sha256": "3a33a8376a4626e951a36dd45bb824d00257cd4d6528f1fa15a20938bab06c31"
+      "bytes": 640,
+      "sha256": "0aff731887b90289335658bb9bcac0c5f6a04466c7f4ab29015f72a35bea3293"
     },
     {
       "path": "docs/testing.md",
-      "bytes": 3695,
-      "sha256": "d1cf008676e9035575db0743270143e6ca38a6806b1891a7fe807fcdcd16dd68"
+      "bytes": 1351,
+      "sha256": "cbf5e0ba8e3ebe825647323461d38dc8b68faf7b9647673db1f2504bab0c20e2"
     },
     {
       "path": "fabric/dataflows/brz_reviews.pq",
@@ -149,8 +124,8 @@
     },
     {
       "path": "fabric/dataflows/README.md",
-      "bytes": 295,
-      "sha256": "cd1bda40d0b941d34518e5ebec55b8d2a44beba1302090d6f597fb99c9849188"
+      "bytes": 424,
+      "sha256": "7f6d188c6d83b043461f24315f7e1fb7eba048500b272ada92f033ef108ed4df"
     },
     {
       "path": "fabric/dataflows/templates/DF_Olist_Bronze.pqt",
@@ -219,8 +194,8 @@
     },
     {
       "path": "fabric/pipelines/README.md",
-      "bytes": 300,
-      "sha256": "b704c1172bfaf7f5e78221dabf909c4b01d6dbdc108d3e4fb4939d203e93afa7"
+      "bytes": 715,
+      "sha256": "6a3bdb21a486002876e9a06eace95a0e6c6418a4bedf960441d9946859710385"
     },
     {
       "path": "fabric/pipelines/templates/PL_Olist_E2E.zip",
@@ -244,68 +219,68 @@
     },
     {
       "path": "fabric/semantic-models/SM_Olist_Analytics/definition/database.tmdl",
-      "bytes": 144,
-      "sha256": "818c899f4452268183c3a2fa6e0f485b870c7891e83ce00e5ab57308dd53caeb"
+      "bytes": 149,
+      "sha256": "c8a30b98819b2e06662aec8d6a3fdd687bf70c14bce5da2f289c92fa196c8e3a"
     },
     {
       "path": "fabric/semantic-models/SM_Olist_Analytics/definition/expressions.tmdl",
-      "bytes": 1549,
-      "sha256": "68b992195fc35ba40ba691b6cafbc0b436851b7d059105c2f55daebec5503cef"
+      "bytes": 1554,
+      "sha256": "548fcbccd7c0d532adf3bf1e4f8436f22ab51ebedc707642d559d8f36519ed96"
     },
     {
       "path": "fabric/semantic-models/SM_Olist_Analytics/definition/model.tmdl",
-      "bytes": 620,
-      "sha256": "d6fa579fdc8299ccb89562528befad7062a660045f7910a088e1f203515cbce6"
+      "bytes": 625,
+      "sha256": "6325c7174c383ed82e658fda0cddd6817ed15a19ab1b30e45d87780656dc9367"
     },
     {
       "path": "fabric/semantic-models/SM_Olist_Analytics/definition/relationships.tmdl",
-      "bytes": 1163,
-      "sha256": "63af6e81ecaab0c9068a0f4909fd5b8dadb0ad926581e79daeaec167328b2593"
+      "bytes": 1168,
+      "sha256": "150f9520d28ed97473aef994b6f099b71938b3574e7718abe75c735774e9783b"
     },
     {
       "path": "fabric/semantic-models/SM_Olist_Analytics/definition/roles/CustomerStateAccess.tmdl",
-      "bytes": 396,
-      "sha256": "ff04b257da57a39576f7b96916341402c94bbfa2b6ba121bd1f3da9dac225480"
+      "bytes": 401,
+      "sha256": "3d67e592bebed148cfbbc671e7f1f8f32957ef2dc9a898d14ffe065ccdecfacf"
     },
     {
       "path": "fabric/semantic-models/SM_Olist_Analytics/definition/tables/DimCustomer.tmdl",
-      "bytes": 2039,
-      "sha256": "0a26e1cd8e1fb18c706e0e7495486692cc5f9035c5792aca35ebe83a33b8d950"
+      "bytes": 2044,
+      "sha256": "c1da685b2b517c5486f5b9b8a23010098713d6a8a4e14528be0774a2b4a57b71"
     },
     {
       "path": "fabric/semantic-models/SM_Olist_Analytics/definition/tables/DimDate.tmdl",
-      "bytes": 3061,
-      "sha256": "4abd02663d70dea9a153c0dda560afe22de3fda8f931cb6cf15da0b23eb0da72"
+      "bytes": 3066,
+      "sha256": "9e384d4707c2c21f5cf8aa42d10573bb0fca72f2c0ef3ec59dcba96f6f363e46"
     },
     {
       "path": "fabric/semantic-models/SM_Olist_Analytics/definition/tables/DimProduct.tmdl",
-      "bytes": 2126,
-      "sha256": "7555b96d8b60d57dc66aa33607a5089e818bbf5aa6e1f288c561d6cc30970259"
+      "bytes": 2131,
+      "sha256": "ed09151de675f709773fb2a96d2fb2b9349739b490da3186f9407ec6e019c239"
     },
     {
       "path": "fabric/semantic-models/SM_Olist_Analytics/definition/tables/DimSeller.tmdl",
-      "bytes": 1938,
-      "sha256": "ddea9a07c24449d32388c9896c13e444a48f2e9b8ae093d35b883cbd3523447d"
+      "bytes": 1943,
+      "sha256": "2785842f23d990a5010cbb499b151b877740aa11335d95d158c39aabb0341476"
     },
     {
       "path": "fabric/semantic-models/SM_Olist_Analytics/definition/tables/FactOrderItem.tmdl",
-      "bytes": 4116,
-      "sha256": "9cd9f33d7a89c08097283dee1d925c36774371a88d4a504b558dca9bffb9a74f"
+      "bytes": 4103,
+      "sha256": "a957383d30f9c680866fdb492a0ab871d61350ac4115d832ba5f186fc294d6c3"
     },
     {
       "path": "fabric/semantic-models/SM_Olist_Analytics/definition/tables/FactOrders.tmdl",
-      "bytes": 6396,
-      "sha256": "0ab633d4890ccd0e380a441eaf53c8e8d657b57d7ab4ae82a6664b45ae87b159"
+      "bytes": 6362,
+      "sha256": "5abddd8fcaecf885f7e3e36d3229a18e988aaf1e8d01b1b1899e11cf86cd7d46"
     },
     {
       "path": "fabric/semantic-models/SM_Olist_Analytics/definition/tables/FactPayments.tmdl",
-      "bytes": 2621,
-      "sha256": "a639da412152161d9e19f83bcf170309d50348705ef273cd94028af5f530d482"
+      "bytes": 2628,
+      "sha256": "2b2010cfc84d52d3b5fb84ce81e9f1b43b5ac53754599ef966a793d895c0241b"
     },
     {
       "path": "fabric/semantic-models/SM_Olist_Analytics/definition/tables/GoldLoadAudit.tmdl",
-      "bytes": 1717,
-      "sha256": "6b54a58413671648b69206b86df304a552d508961af88c5657cb6ae8daf18580"
+      "bytes": 1722,
+      "sha256": "a634cf64040b1e50fb5f0701264ae9215faa387d7d91e153f7fda77b29eb5c8a"
     },
     {
       "path": "fabric/semantic-models/SM_Olist_Analytics/README.md",
@@ -371,6 +346,11 @@
       "path": "fabric/sql/generate_phase5.py",
       "bytes": 18412,
       "sha256": "c7a9c24e805ba69ec19dfa719f1da0d11f99cdb22a32039135e5f143a8fdf913"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1080,
+      "sha256": "1132b084842d253e858346796c25978f49e87990860484c60c5f97f3d0d5da68"
     },
     {
       "path": "powerbi/_brief/report-spec.md",
@@ -1129,18 +1109,18 @@
     },
     {
       "path": "powerbi/README-sqlserver.md",
-      "bytes": 2740,
-      "sha256": "8b20d8345ffb1072c1c615ac39a0f692d10ce3634dcf6b1249b2e67569274256"
+      "bytes": 817,
+      "sha256": "f13a5b0afe58abf3e8a0056accc2c2847c1a4e7c4b02ffb7726287017ac1deb8"
     },
     {
       "path": "powerbi/README.md",
-      "bytes": 4580,
-      "sha256": "cf36e8e028fc82854d44f6bef438649e84b4f60f9442fddb87003df712ecae15"
+      "bytes": 816,
+      "sha256": "258a8ef37496cd5ac85c036fb7e1b4a75243ab33f844d6c91d8547135df083a8"
     },
     {
       "path": "powerbi/rls-customer-state.md",
-      "bytes": 6531,
-      "sha256": "9f531d28a2364a8f9122ec1eab0763a8fb6439cdf1df14f3528d2a0aa58f1a4a"
+      "bytes": 868,
+      "sha256": "ad81f44e437b3334f633ae85ec8cad9fa1687b067e0ccfb93f821627d03857e5"
     },
     {
       "path": "powerbi/rls-evidence-20260919.json",
@@ -1979,8 +1959,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4948,
-      "sha256": "60dfc2940da4fa7dbac799a75a19869af1d9e7b30b10db8d9fef602c65bf71a0"
+      "bytes": 5027,
+      "sha256": "f0e2f25d4d8736ead22641bd10b3edc628092604ce436696556d10b51801d37e"
     },
     {
       "path": "sql/provision-sqlserver.ps1",

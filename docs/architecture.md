@@ -1,43 +1,19 @@
-# Kiến trúc và quyết định thiết kế
+# Architecture
 
-## Luồng dữ liệu
+The solution follows a Bronze, Silver, and Gold medallion architecture.
 
-9 nguồn: orders, order_items, customers, products, sellers, payments, reviews, geolocation và category translation. Dataflow Gen2 nạp Bronze; notebook đọc Bronze, chuẩn hóa kiểu dữ liệu/khóa/ZIP, xử lý dữ liệu trùng và kiểm tra DQ trước khi ghi Silver.
+1. Dataflow Gen2 loads nine Olist source datasets into Bronze.
+2. A PySpark notebook standardizes types, keys, dates, locations, reviews, and data-quality checks before writing Silver.
+3. Fabric pipelines copy nine Silver tables to Warehouse staging.
+4. T-SQL validation and `dbo.usp_build_gold` build four dimensions, three facts, and GoldLoadAudit.
+5. The Gold layer feeds a Fabric Direct Lake semantic model and a separate SQL Server Import model.
 
-Silver có 10 bảng nghiệp vụ và audit DQ. 9 bảng được copy sang staging; `slv_geolocation_zip` không copy riêng vì tọa độ đã ghép vào customer/seller. Procedure `dbo.usp_build_gold` kiểm tra đúng Silver run_id rồi xây 4 dimension + 3 fact và GoldLoadAudit.
+The semantic model has `DimCustomer`, `DimDate`, `DimProduct`, and `DimSeller` dimensions. `FactOrders` has order grain, `FactOrderItem` has `(order_id, order_item_id)` grain, and `FactPayments` has `(order_id, payment_sequential)` grain. Dimensions filter facts in one direction. There are no fact-to-fact relationships.
 
-Pipeline dự kiến vận hành: DF_Bronze → NB_Silver → LOAD_Staging → SP_Build_Gold, nối On success, chờ pipeline con hoàn tất. Hướng dẫn cấu hình nằm trong [giai đoạn 6](phase-6-e2e-pipeline.md); việc có hướng dẫn không chứng minh các test lỗi/rerun đã chạy.
+The default date role uses `purchase_date_key`. `FactOrders[delivered_date_key]` has an inactive relationship to `DimDate[date_key]` and is activated only by the delivery-date measure with `USERELATIONSHIP`.
 
-## Hai nhánh phục vụ
+The Fabric path includes GoldLoadAudit and the CustomerStateAccess role. The SQL Server path copies seven business tables and intentionally excludes audit from the report model.
 
-| Nhánh | Dữ liệu và model | Report |
-|---|---|---|
-| Fabric | Gold Warehouse → SM_Olist_Analytics, Direct Lake; có thêm GoldLoadAudit | RPT_Olist_Analytics, 6 DEMO_USER |
-| SQL Server | Copy 7 bảng Gold → OlistDW → Import model; gateway refresh | Olist_SQLServer, 5 DEMO_USER |
+## Operational boundary
 
-Gateway được dùng cho truy cập SQL Server tại máy cục bộ. Copy Warehouse → SQL Server là luồng nạp, còn refresh Service đọc SQL Server vào model Import là luồng riêng.
-
-## Mô hình quan hệ
-
-```mermaid
-flowchart LR
-  C[DimCustomer] --> O[FactOrders]
-  C --> I[FactOrderItem]
-  C --> P[FactPayments]
-  D[DimDate: ngày mua] --> O
-  D --> I
-  D --> P
-  R[DimProduct] --> I
-  S[DimSeller] --> I
-  D -. ngày giao: Inactive .-> O
-```
-
-Mỗi dimension lọc fact theo 1:n, một chiều. Không nối trực tiếp fact với fact. `order_id` dùng để đối soát grain nghiệp vụ, không phải quan hệ tự động giữa các fact. Ngày giao được kích hoạt trong measure bằng USERELATIONSHIP; estimated_date_key không có quan hệ model.
-
-## Các giới hạn thiết kế có chủ đích
-
-- Full rebuild phù hợp bộ dữ liệu tĩnh của đồ án. Khóa ROW_NUMBER ổn định trên nguồn không đổi, có thể thay đổi khi nguồn thay đổi; phải nạp đồng bộ toàn bộ bảng liên quan.
-- Customer geography dùng bản ghi hiện tại, không phải lịch sử địa chỉ theo từng đơn (không SCD2).
-- Nạp SQL hiện truncate/insert từng bảng; chưa có staging/promote nguyên batch. Chỉ refresh model sau khi cả 7 copy hoàn tất và đối soát đạt.
-- GoldLoadAudit độc lập với dimension nghiệp vụ. Role Fabric chặn audit bằng FALSE(); SQL report bỏ Data Health vì chưa nạp audit.
-- Không có distributed lock; vận hành một lượt nạp tại một thời điểm.
+The current SQL copy uses truncate and insert per table. Refresh the Import semantic model only after all seven copy activities succeed and reconciliation passes. A production version should stage and promote a complete batch and add scheduling or CDC.

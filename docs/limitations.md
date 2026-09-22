@@ -1,13 +1,11 @@
-# Giới hạn và công việc tiếp theo
+# Limitations and next steps
 
-1. Lịch refresh SQL model đang Off; mới kiểm chứng refresh On demand.
-2. Copy SQL truncate/insert từng bảng; chưa staging + promote cả batch. Khóa ROW_NUMBER có thể đổi khi nguồn đổi; không nạp fact/dimension rời rạc hoặc refresh giữa batch.
-3. Role Fabric là pilot một UPN → SP, chưa triển khai SecurityUserState. XMLA tests đã lưu; web test bị bỏ qua vì SSO, actual Viewer và danh tính thứ hai chưa xác minh. SQL model riêng chưa có RLS.
-4. Chưa lưu đủ bằng chứng E2E normal/rerun/DQ forced-failure/recovery trong bộ đóng gói này. Không suy luận PASS từ sự tồn tại của pipeline TEST hoặc từ dữ liệu cuối có sẵn.
-5. Đã có Dataflow/Pipeline/notebook exports; semantic model Fabric Direct Lake chưa được export. Template còn tham chiếu môi trường cũ và cần chọn lại connection/IDs; chưa kiểm chứng import trên môi trường sạch.
-6. DimCustomer dùng vị trí hiện tại; không hỗ trợ lịch sử địa chỉ theo thời gian. Repeat customer tính trong filter context hiện tại, không phải cohort lifetime.
-7. SQL report bỏ Data Health vì audit chưa được nạp. Fabric audit chỉ ghi load thành công, không thay thế run history/DQ chi tiết.
-8. PBIR validator của bản SQL đã báo 0 errors nhưng 1 warning không tải được schema Microsoft visualContainer 2.12.0. Đã kiểm tra render; không tuyên bố full schema validation cho phần schema chưa tải được.
-9. Bộ dữ liệu tĩnh dùng cho học tập; chưa đánh giá CDC, incremental load, tải lớn, SLA hoặc production concurrency.
+- SQL Server Import scheduled refresh is off; an on-demand gateway refresh was verified.
+- SQL loading uses truncate and insert per table, not an atomic staging and promotion process.
+- The SQL Server model has no separate RLS role. The Fabric CustomerStateAccess pilot has XMLA evidence; web role testing was skipped because the tenant reported an SSO limitation.
+- A fresh DQ failure and complete recovery run still need run-history evidence before being marked passed.
+- The sanitized release has not been deployed to a clean tenant. Replace all sample connections, IDs, endpoints, and RLS identities.
+- Customer geography is current-state only and does not provide historical address tracking.
+- The dataset is static; CDC, incremental loading, production concurrency, and SLA behavior were not evaluated.
 
-Ưu tiên tiếp theo: bổ sung metadata Direct Lake/evidence còn thiếu → staging batch SQL và phụ thuộc refresh → RLS SQL và kiểm tra Viewer → lịch tự động → incremental/CDC nếu phạm vi dự án mở rộng.
+These are documented production-hardening tasks. They do not prevent the repository from being used as a portfolio implementation.

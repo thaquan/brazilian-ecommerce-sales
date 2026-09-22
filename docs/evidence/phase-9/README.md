@@ -1,7 +1,7 @@
-# Bằng chứng giai đoạn 9 — bản công khai
+# Phase 9 evidence — public summary
 
-Ảnh UI Fabric gốc không được đưa lên public vì có thông tin tài khoản/môi trường. Kết quả đã quan sát được ghi lại trong [biên bản đã ẩn thông tin](../../phase-9-service-verification-20260921.md). `service-dax.json` giữ KPI thực tế nhưng ID môi trường đã thay giá trị mẫu.
+Fabric account and environment screenshots are kept private. The observed results are recorded in `docs/phase-9-service-verification-20260921.md`; `service-dax.json` contains the KPI output with sanitized identifiers.
 
-Pipeline 7/7 Copy Succeeded; gateway mapping được kiểm tra; refresh On demand Completed trong 27 giây. Đây là bản ghi kết quả, không thay thế ảnh gốc để kiểm tra độc lập. Chủ đồ án giữ evidence gốc riêng.
+The pipeline had seven successful Copy activities. The gateway mapping was running, and the on-demand semantic model refresh completed in 27 seconds. This summary records the result and does not replace the private UI screenshots for independent verification.
 
-Ảnh giao diện báo cáo Desktop: [Overview](../../../powerbi/screenshots/sqlserver/Overview.png). Ảnh Desktop không phải bằng chứng refresh Service.
+The report-only Desktop screenshot is available at [Overview](../../../powerbi/screenshots/sqlserver/Overview.png).

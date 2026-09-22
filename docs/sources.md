@@ -1,7 +1,7 @@
-# Nguồn và ghi nhận
+# Sources and attribution
 
-- Dữ liệu: Brazilian E-Commerce Public Dataset by Olist. Repository không phân phối lại dữ liệu thô. Người tái lập cần lấy dữ liệu từ nguồn Olist/Kaggle và kiểm tra điều kiện sử dụng tại nguồn trước khi phân phối.
-- Giao diện: tham khảo AdminLTE v4 của ColorlibHQ theo lựa chọn của người làm đồ án. Báo cáo dùng visual Power BI native, không nhúng ứng dụng AdminLTE. Nếu bổ sung mã/asset từ bên ngoài, giữ thông báo bản quyền và giấy phép tương ứng.
-- Tài liệu kỹ thuật Microsoft đã dùng được dẫn trong các tài liệu giai đoạn 5, 6, 9 và hướng dẫn RLS. Các bằng chứng trong repository là kết quả của môi trường đồ án, không phải chứng nhận của Microsoft.
+- Data: Brazilian E-Commerce Public Dataset by Olist. The raw dataset is not redistributed in this repository. Obtain it from the original provider and review its terms before redistribution.
+- Visual reference: AdminLTE v4 by ColorlibHQ. The report uses native Power BI visuals; it does not embed AdminLTE code.
+- Platform documentation: Microsoft Fabric, Power BI, gateway, Dataflow Gen2, and RLS documentation linked from the runbook and report notes.
 
-Chưa chọn giấy phép phát hành cho mã nguồn riêng của đồ án. Chủ sở hữu cần quyết định trước khi gắn LICENSE; không mặc định giấy phép dataset/template áp dụng cho toàn bộ dự án.
+The MIT license in this repository applies to the project code and documentation. It does not override the terms of the Olist dataset or third-party assets.
