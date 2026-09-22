@@ -1,0 +1,174 @@
+﻿table FactOrderItem
+	lineageTag: 55b95f61-e955-5984-a815-27ee484d98e6
+	sourceLineageTag: [dbo].[FactOrderItem]
+
+	measure 'Merchandise Value' =
+
+			SUM ( FactOrderItem[price] )
+		lineageTag: c40ad1b9-ea0c-57c4-aa40-da8b703b2d66
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Freight Value' =
+
+			SUM ( FactOrderItem[freight_value] )
+		lineageTag: af8f8dba-c53a-5a05-b6f2-8ba2636d9723
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Order Value Including Freight' =
+
+			SUM ( FactOrderItem[item_gmv] )
+		lineageTag: fb2f4dc8-8dd2-5fef-beaf-0edcbf922e2e
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Order Items' =
+
+			COUNTROWS ( FactOrderItem )
+		formatString: 0
+		lineageTag: cd8402b8-9728-51a9-a904-a73dace1b852
+
+		changedProperty = Name
+
+	measure 'Orders With Items' =
+
+			DISTINCTCOUNT ( FactOrderItem[order_id] )
+		formatString: 0
+		lineageTag: e4848f43-eb0c-5473-9ba2-73554de4c2ea
+
+		changedProperty = Name
+
+	measure 'Average Order Value' =
+
+			DIVIDE (
+			    [Order Value Including Freight],
+			    [Orders With Items]
+			)
+		lineageTag: d3b23797-ee98-5920-b510-2b0c5a392945
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column sales_key
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 3f9c6102-d573-5df9-9d2a-53097e12e38d
+		sourceLineageTag: sales_key
+		summarizeBy: sum
+		sourceColumn: sales_key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_id
+		dataType: string
+		lineageTag: d0eb941e-8d97-52bf-ab93-cd5d25c6a6bb
+		sourceLineageTag: order_id
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_item_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 7d8f4d45-a8f6-5a2b-a4cb-73d2e60d35d4
+		sourceLineageTag: order_item_id
+		summarizeBy: sum
+		sourceColumn: order_item_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column purchase_date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 1f200303-d4c2-50be-8ebc-7bbf136eb93d
+		sourceLineageTag: purchase_date_key
+		summarizeBy: none
+		sourceColumn: purchase_date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 6e4847f9-d6f0-5bf9-8a1a-77b6a7f03dbc
+		sourceLineageTag: customer_key
+		summarizeBy: none
+		sourceColumn: customer_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 6f6ee687-19c1-533f-a161-9eabb7ff32ca
+		sourceLineageTag: product_key
+		summarizeBy: none
+		sourceColumn: product_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column seller_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 1d4627e0-1814-58cb-bf7f-fa7fd7bcac50
+		sourceLineageTag: seller_key
+		summarizeBy: none
+		sourceColumn: seller_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column price
+		dataType: double
+		formatString: #,0.00
+		lineageTag: c209c269-8c52-5b61-a4f7-76d3732f6908
+		sourceLineageTag: price
+		summarizeBy: sum
+		sourceColumn: price
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	column freight_value
+		dataType: double
+		formatString: #,0.00
+		lineageTag: f4338fbd-2b7e-5551-ac33-a99f53fcad1c
+		sourceLineageTag: freight_value
+		summarizeBy: sum
+		sourceColumn: freight_value
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	column item_gmv
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 505f1551-536e-5088-8970-34b5e40cdd26
+		sourceLineageTag: item_gmv
+		summarizeBy: sum
+		sourceColumn: item_gmv
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactOrderItem = entity
+		mode: directLake
+		source
+			entityName: FactOrderItem
+			schemaName: dbo
+			expressionSource: 'DirectLake - WH_Olist_Gold'
+

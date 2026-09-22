@@ -1,0 +1,36 @@
+relationship AutoDetected_a025624d-4304-4469-954f-26e03d1e8cfa
+	fromColumn: FactOrderItem.customer_key
+	toColumn: DimCustomer.customer_key
+
+relationship AutoDetected_e5ae9ac4-96d9-4a60-92e7-37323d7ed05c
+	fromColumn: FactOrders.customer_key
+	toColumn: DimCustomer.customer_key
+
+relationship AutoDetected_80c3dbfe-a75d-4610-80bb-6a25a88eed29
+	fromColumn: FactPayments.customer_key
+	toColumn: DimCustomer.customer_key
+
+relationship AutoDetected_76f5da92-7ae2-45c9-a414-a41a24266e8b
+	fromColumn: FactOrderItem.product_key
+	toColumn: DimProduct.product_key
+
+relationship AutoDetected_3dca692d-4e36-4c33-94e3-970dcd3dcb59
+	fromColumn: FactOrderItem.seller_key
+	toColumn: DimSeller.seller_key
+
+relationship FactOrders_PurchaseDate
+	fromColumn: FactOrders.purchase_date_key
+	toColumn: DimDate.date_key
+
+relationship FactOrderItem_PurchaseDate
+	fromColumn: FactOrderItem.purchase_date_key
+	toColumn: DimDate.date_key
+
+relationship FactPayments_PurchaseDate
+	fromColumn: FactPayments.purchase_date_key
+	toColumn: DimDate.date_key
+
+relationship FactOrders_DeliveryDate
+	isActive: false
+	fromColumn: FactOrders.delivered_date_key
+	toColumn: DimDate.date_key

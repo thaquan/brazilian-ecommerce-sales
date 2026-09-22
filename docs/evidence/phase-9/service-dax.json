@@ -1,0 +1,13 @@
+{
+  "checkedOn": "2026-09-21",
+  "connection": "Fabric-WS_Olist_Demo-Olist_SQLServer",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"message\":\"DAX query executed successfully, returned 1 rows in 192ms\",\"operation\":\"Execute\",\"data\":{\"rowCount\":1,\"columns\":[{\"name\":\"[Orders]\",\"dataType\":\"Int64\",\"isNullable\":true,\"ordinal\":0},{\"name\":\"[Items]\",\"dataType\":\"Int64\",\"isNullable\":true,\"ordinal\":1},{\"name\":\"[OrderValue]\",\"dataType\":\"Double\",\"isNullable\":true,\"ordinal\":2},{\"name\":\"[Payments]\",\"dataType\":\"Double\",\"isNullable\":true,\"ordinal\":3}],\"rows\":[{\"[Orders]\":99441,\"[Items]\":112650,\"[OrderValue]\":15843553.24,\"[Payments]\":16008872.12}],\"executionTimeMs\":192}}"
+      }
+    ],
+    "isError": false
+  }
+}

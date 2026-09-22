@@ -1,0 +1,30 @@
+{
+  "name": "PL_Olist_Gold_To_SQLServer",
+  "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"400\" height=\"240\"><rect width=\"400\" height=\"240\" fill=\"#f4f6f9\"/><text x=\"30\" y=\"120\" font-size=\"24\">Olist pipeline template</text></svg>",
+  "icons": [
+    "Copy",
+    "Copy",
+    "Copy"
+  ],
+  "requires": {
+    "linkedservices": {
+      "WH_Olist_Gold": {
+        "supportTypes": [
+          "DataWarehouse"
+        ]
+      },
+      "CN_Olist_SQLServer": {
+        "supportTypes": [
+          "AzureSqlDatabase"
+        ]
+      }
+    }
+  },
+  "author": "Olist Project",
+  "annotations": [],
+  "services": [],
+  "categories": [],
+  "scope": [
+    "PBI"
+  ]
+}

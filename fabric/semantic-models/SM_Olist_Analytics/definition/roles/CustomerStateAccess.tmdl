@@ -1,0 +1,10 @@
+﻿/// Single-user pilot: analyst@example.com may read SP customer transactions only. GoldLoadAudit blocked. Membership must be assigned and tested in Service.
+role CustomerStateAccess
+	modelPermission: read
+
+	tablePermission DimCustomer = USERPRINCIPALNAME() = "analyst@example.com" && DimCustomer[state_code] = "SP"
+
+	tablePermission GoldLoadAudit = FALSE()
+
+	member 'analyst@example.com'
+

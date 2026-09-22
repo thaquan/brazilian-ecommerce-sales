@@ -1,0 +1,31 @@
+{
+  "name": "PL_Olist_Load_Staging",
+  "description": "Load nine verified Olist Silver tables into WH_Olist_Gold staging with full-refresh copy and explicit mappings.",
+  "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"400\" height=\"240\"><rect width=\"400\" height=\"240\" fill=\"#f4f6f9\"/><text x=\"30\" y=\"120\" font-size=\"24\">Olist pipeline template</text></svg>",
+  "icons": [
+    "Copy",
+    "Copy",
+    "Copy"
+  ],
+  "requires": {
+    "linkedservices": {
+      "LH_Olist_Silver": {
+        "supportTypes": [
+          "Lakehouse"
+        ]
+      },
+      "WH_Olist_Gold": {
+        "supportTypes": [
+          "DataWarehouse"
+        ]
+      }
+    }
+  },
+  "author": "Olist Project",
+  "annotations": [],
+  "services": [],
+  "categories": [],
+  "scope": [
+    "PBI"
+  ]
+}

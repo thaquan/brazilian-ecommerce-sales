@@ -1,0 +1,111 @@
+table FactPayments
+	lineageTag: a189fee4-91d1-58cb-99f4-95841c66e3bc
+
+	measure 'Payment Value' = SUM(FactPayments[payment_value])
+		formatString: "R$ "#,0.00
+		displayFolder: Olist KPIs
+		lineageTag: 875e106d-681d-507b-bb0d-6efc9c23aa29
+
+	/// Display-only compact BRL value; charts use the numeric model measure.
+	measure 'KPI Payment Value' = VAR v = SUM(FactPayments[payment_value]) RETURN IF ( ISBLANK(v), BLANK(), "R$ " & SWITCH ( TRUE(), ABS(v) >= 1000000, FORMAT(v/1000000,"0.00") & "M", ABS(v) >= 1000, FORMAT(v/1000,"0.00") & "K", FORMAT(v,"0.00") ) )
+		displayFolder: Report metrics
+		lineageTag: 2f7aa207-239e-5db7-8773-0291202c2381
+
+	measure 'Paying Orders' = DISTINCTCOUNT ( FactPayments[order_id] )
+		formatString: #,0
+		displayFolder: Report metrics
+		lineageTag: dcc27c27-6f78-5f1f-8074-1592246a1d08
+
+	measure 'Payment Records' = COUNTROWS ( FactPayments )
+		formatString: #,0
+		displayFolder: Report metrics
+		lineageTag: b7519ed1-ecdb-51b7-8de8-1039f9e259ed
+
+	/// Average per payment record, not per order.
+	measure 'Average Installments' = AVERAGE ( FactPayments[payment_installments] )
+		formatString: 0.00
+		displayFolder: Report metrics
+		lineageTag: 16a3d073-3d74-5c24-8aea-ee095f1c7ca4
+
+	column payment_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 782f597d-3e7b-52df-9362-bee14162d29d
+		summarizeBy: sum
+		sourceColumn: payment_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_id
+		dataType: string
+		lineageTag: 9af6055b-6b8f-596d-b17f-f94ec39fa092
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column purchase_date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: d408491e-2e63-58ca-acaf-9d27eb0e6e15
+		summarizeBy: sum
+		sourceColumn: purchase_date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 07d4b78a-c234-5cdc-910e-17c03d89ac9a
+		summarizeBy: none
+		sourceColumn: customer_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_sequential
+		dataType: int64
+		formatString: 0
+		lineageTag: b1d54bb1-8bb1-578e-8c17-46ec8955c27b
+		summarizeBy: sum
+		sourceColumn: payment_sequential
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_type
+		dataType: string
+		lineageTag: 3dc274dd-6a3e-5aa7-b512-a06cb1225377
+		summarizeBy: none
+		sourceColumn: payment_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_installments
+		dataType: int64
+		formatString: 0
+		lineageTag: c698d005-60f8-574a-851a-5373525cc4f3
+		summarizeBy: sum
+		sourceColumn: payment_installments
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_value
+		dataType: double
+		lineageTag: c19d4b5c-0ffb-5b44-be15-d3f963345b91
+		summarizeBy: sum
+		sourceColumn: payment_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition FactPayments = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("SQLSERVER-DEMO\SQLEXPRESS"),
+				    OlistDW = Source{[Name="OlistDW"]}[Data],
+				    dbo_FactPayments = OlistDW{[Schema="dbo",Item="FactPayments"]}[Data]
+				in
+				    dbo_FactPayments
+
+	annotation PBI_ResultType = Table

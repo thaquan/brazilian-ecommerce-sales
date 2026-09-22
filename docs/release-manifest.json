@@ -1,0 +1,2001 @@
+{
+  "createdOn": "2026-09-22",
+  "scope": "sanitized public release",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 318,
+      "sha256": "3e0933a6be44e86b6ae9db31576d323703f78ec76ac9696bb5b237e66f61fe55"
+    },
+    {
+      "path": "docs/architecture.md",
+      "bytes": 2928,
+      "sha256": "fb4a1478bf824156029a95b13080c35f23e1e68ec2db0f87af90e604fee3ff2b"
+    },
+    {
+      "path": "docs/data-dictionary.md",
+      "bytes": 4736,
+      "sha256": "a28ad76722d6836bb76f0039e2687f939427545dc104b95a3f1dab3140d7ca39"
+    },
+    {
+      "path": "docs/demo-script.md",
+      "bytes": 2104,
+      "sha256": "525bcbd029ab7ed1160392d1891ee9c6f71e69d9d453b5cec86ac70e83b5cdc3"
+    },
+    {
+      "path": "docs/evidence/phase-9/README.md",
+      "bytes": 808,
+      "sha256": "6f8deb9800244a7b0c06fa2763e088fc42a5cb509e651424758ee541a441417a"
+    },
+    {
+      "path": "docs/evidence/phase-9/service-dax.json",
+      "bytes": 814,
+      "sha256": "063e07dcd43fc57dbf73bc112e43f84a19048b6fe344f040c4a7cf41aae83dd3"
+    },
+    {
+      "path": "docs/fabric-export-inventory.json",
+      "bytes": 11466,
+      "sha256": "f7bf89cf0190f92a5ad187004fe9d51501b75ad59dc3a624f79ee4ead62a3cc2"
+    },
+    {
+      "path": "docs/fabric-export-review.md",
+      "bytes": 4023,
+      "sha256": "41b2a54bd218d8226873b49c775180e0d2bf3d612f8734153cf0f1c6208e6e08"
+    },
+    {
+      "path": "docs/github-release.md",
+      "bytes": 2933,
+      "sha256": "c890473d12d140be95fae169a96553409f347a57b6c127564faff54f122a7b69"
+    },
+    {
+      "path": "docs/kpi-definitions.md",
+      "bytes": 6696,
+      "sha256": "8156e4f1a3ad562253c544964b0ec28178b4cbabc7998b31a9d121ae85cc9a63"
+    },
+    {
+      "path": "docs/limitations.md",
+      "bytes": 1986,
+      "sha256": "20b7f2f01f164c9e7e0886b07d7c6da7c85d91d5ad4546105f52dcfc252bac8e"
+    },
+    {
+      "path": "docs/notebook-review-2026-09-14.md",
+      "bytes": 4943,
+      "sha256": "8c0cb8d0a6492208dd4c598d3edbadd51d142d61e07310f0580e0746dc2496e0"
+    },
+    {
+      "path": "docs/phase-10-completion.md",
+      "bytes": 1490,
+      "sha256": "7da45580ac4b7e926976a939f012af03b7bb0147937aaa01030aefeb96d8d101"
+    },
+    {
+      "path": "docs/phase-5-gold-warehouse.md",
+      "bytes": 9342,
+      "sha256": "2cdbfeecb76c02bf4280f032b7695e37fb31654621555fa9ae37b55e2a8f6e09"
+    },
+    {
+      "path": "docs/phase-5-mcp-evidence-2026-09-15.json",
+      "bytes": 36335,
+      "sha256": "d5dad177a88ea6020101340742d0583fba98822814598aba075d3fa5254ebb9f"
+    },
+    {
+      "path": "docs/phase-5-mcp-review-2026-09-15.md",
+      "bytes": 3180,
+      "sha256": "bdc86423fa896599e03023a5ade1fa9f029ea0afda6fac6dcba18470b32b3876"
+    },
+    {
+      "path": "docs/phase-6-e2e-pipeline.md",
+      "bytes": 7112,
+      "sha256": "b1e828176e243e2c4b895f4018ce702441faa1b89d6ce98c677d8d353539a9f7"
+    },
+    {
+      "path": "docs/phase-9-service-verification-20260921.md",
+      "bytes": 2321,
+      "sha256": "6d3f6eefcbdd925eb21075753550d8ca6331ba808cf35e6a1d61ee7484135fcd"
+    },
+    {
+      "path": "docs/phase-9-sql-validation.json",
+      "bytes": 4118,
+      "sha256": "6c719477c4460f7a9f71199eceb7c00f6c7f49a092f011bdb8d6f46b84bdc2ea"
+    },
+    {
+      "path": "docs/phase-9-sqlserver.md",
+      "bytes": 5731,
+      "sha256": "b8578a62a44d9051f72988551b27c36c2be61b2b47e1a7b9d94ad6c5c1bc89a9"
+    },
+    {
+      "path": "docs/public-release.md",
+      "bytes": 1726,
+      "sha256": "ed2f9457d3ad50c7a79267b97aeafe5e46ef05c278906a45ec01544df0a4c3e8"
+    },
+    {
+      "path": "docs/runbook.md",
+      "bytes": 6865,
+      "sha256": "f333a8d9744c5279ad0585767daedd95191aaf2843490a9f1a36e130cddbf1ca"
+    },
+    {
+      "path": "docs/sources.md",
+      "bytes": 1087,
+      "sha256": "3a33a8376a4626e951a36dd45bb824d00257cd4d6528f1fa15a20938bab06c31"
+    },
+    {
+      "path": "docs/testing.md",
+      "bytes": 3695,
+      "sha256": "d1cf008676e9035575db0743270143e6ca38a6806b1891a7fe807fcdcd16dd68"
+    },
+    {
+      "path": "fabric/dataflows/brz_reviews.pq",
+      "bytes": 1108,
+      "sha256": "19c65bbb34014b126a5dcbc2c0818e57285aa290f8930bbf0b1a83001e0dab6e"
+    },
+    {
+      "path": "fabric/dataflows/DF_Olist_Bronze/[Content_Types].xml",
+      "bytes": 241,
+      "sha256": "24f48e5ad6178657d88d728def0625d61e6a03c62402741c1f5c6a22da33b1dd"
+    },
+    {
+      "path": "fabric/dataflows/DF_Olist_Bronze/MashupDocument.pq",
+      "bytes": 20475,
+      "sha256": "a3bfa30cba14a29c7ec5c5ec396a5ee228bb4282ae715b4f9afbc7d3465b7e88"
+    },
+    {
+      "path": "fabric/dataflows/DF_Olist_Bronze/MashupMetadata.json",
+      "bytes": 4005,
+      "sha256": "c4006f97a187d19de5d523010659b4fb7969f01794e58c723e03b11b02bc66e8"
+    },
+    {
+      "path": "fabric/dataflows/DF_Olist_Bronze/Metadata.json",
+      "bytes": 77,
+      "sha256": "29d61d756cff18754186e55e0756c721db3adeaf5a4e3d2d1e0f803a779fcfee"
+    },
+    {
+      "path": "fabric/dataflows/README.md",
+      "bytes": 295,
+      "sha256": "cd1bda40d0b941d34518e5ebec55b8d2a44beba1302090d6f597fb99c9849188"
+    },
+    {
+      "path": "fabric/dataflows/templates/DF_Olist_Bronze.pqt",
+      "bytes": 2617,
+      "sha256": "febea93e9c8ebdba47abe5982d57c34156a09122da1183df472368b5740d1983"
+    },
+    {
+      "path": "fabric/notebooks/build_reviewed_notebook.py",
+      "bytes": 13025,
+      "sha256": "ab611bcf9f1be719835ce822c78b61826aa1c0040534c753cbb00e96e1cb9cd6"
+    },
+    {
+      "path": "fabric/notebooks/NB_Olist_Silver_reviewed.ipynb",
+      "bytes": 37956,
+      "sha256": "973a205b576fe96e377e808567251fbfd63f9454dff1d068c566b32562bc081c"
+    },
+    {
+      "path": "fabric/notebooks/NB_Olist_Silver_TEST_DQ.ipynb",
+      "bytes": 38017,
+      "sha256": "8fc6b00c48c70f75c3f025da71be96edf6416477c296547e5ba7298e0d99cc00"
+    },
+    {
+      "path": "fabric/notebooks/phase6_pipeline_exit_cell.py",
+      "bytes": 849,
+      "sha256": "8dd5e84c1c6c1421f4870b950982fbcbf8d348e2b2009105f32350b907410673"
+    },
+    {
+      "path": "fabric/pipelines/PL_Olist_E2E/manifest.json",
+      "bytes": 805,
+      "sha256": "964d79da6701006f1db95ef40bccfb41cd5b38fefc96983f02e904973f6a85e6"
+    },
+    {
+      "path": "fabric/pipelines/PL_Olist_E2E/PL_Olist_E2E.json",
+      "bytes": 54709,
+      "sha256": "4fc8a80d2736f120f04e6e52f9056138e98a58aaa3604efd4f285ff604883983"
+    },
+    {
+      "path": "fabric/pipelines/PL_Olist_E2E_TEST_DQ/manifest.json",
+      "bytes": 813,
+      "sha256": "c3bb7ebba5320936a1fe7d2da46c8cd0fb54ad6cf1285856cd7319469ff1fd0b"
+    },
+    {
+      "path": "fabric/pipelines/PL_Olist_E2E_TEST_DQ/PL_Olist_E2E_TEST_DQ.json",
+      "bytes": 54717,
+      "sha256": "aee51feb9be0e3790ce4635a6b92a1c128f8485b34efb66c46059c698fd44e6f"
+    },
+    {
+      "path": "fabric/pipelines/PL_Olist_Gold_To_SQLServer/manifest.json",
+      "bytes": 679,
+      "sha256": "a225caa5923e9248db8755209e5ccdeba98fd088a52323eb8475a07935f5f6e6"
+    },
+    {
+      "path": "fabric/pipelines/PL_Olist_Gold_To_SQLServer/PL_Olist_Gold_To_SQLServer.json",
+      "bytes": 44357,
+      "sha256": "609d29bff96ca8ca1d72c824435f1a04a8bb4550adb6dedbba0e96cdc9e11a78"
+    },
+    {
+      "path": "fabric/pipelines/PL_Olist_Load_Staging/manifest.json",
+      "bytes": 796,
+      "sha256": "e84a7856a417ab5aab4e9f24a73cf5d6044b6a0f18d7687639a440f22e5b027b"
+    },
+    {
+      "path": "fabric/pipelines/PL_Olist_Load_Staging/PL_Olist_Load_Staging.json",
+      "bytes": 50538,
+      "sha256": "7de360aa6b1674930f6cc2e96297c786e5f619261d9493390d017561e5a2e873"
+    },
+    {
+      "path": "fabric/pipelines/README.md",
+      "bytes": 300,
+      "sha256": "b704c1172bfaf7f5e78221dabf909c4b01d6dbdc108d3e4fb4939d203e93afa7"
+    },
+    {
+      "path": "fabric/pipelines/templates/PL_Olist_E2E.zip",
+      "bytes": 3876,
+      "sha256": "7739e6e5c2ec2407ddeacf4f5e0296bda9bb518cc317c5faa306c4b2674c2a7f"
+    },
+    {
+      "path": "fabric/pipelines/templates/PL_Olist_E2E_TEST_DQ.zip",
+      "bytes": 3939,
+      "sha256": "a545daebd3930b7e2d488322f148728ca6a0eb6e45dd08342e7399239899ee9c"
+    },
+    {
+      "path": "fabric/pipelines/templates/PL_Olist_Gold_To_SQLServer.zip",
+      "bytes": 3069,
+      "sha256": "30019bbb7a1f1fb41554d5a2cdf36ce867d4463353192dd814213a60cdb5ba4f"
+    },
+    {
+      "path": "fabric/pipelines/templates/PL_Olist_Load_Staging.zip",
+      "bytes": 3289,
+      "sha256": "3c17dae31b3ff5331684510ad488c70655b4cd832df1f008ecc62502ba4f744e"
+    },
+    {
+      "path": "fabric/semantic-models/SM_Olist_Analytics/definition/database.tmdl",
+      "bytes": 144,
+      "sha256": "818c899f4452268183c3a2fa6e0f485b870c7891e83ce00e5ab57308dd53caeb"
+    },
+    {
+      "path": "fabric/semantic-models/SM_Olist_Analytics/definition/expressions.tmdl",
+      "bytes": 1549,
+      "sha256": "68b992195fc35ba40ba691b6cafbc0b436851b7d059105c2f55daebec5503cef"
+    },
+    {
+      "path": "fabric/semantic-models/SM_Olist_Analytics/definition/model.tmdl",
+      "bytes": 620,
+      "sha256": "d6fa579fdc8299ccb89562528befad7062a660045f7910a088e1f203515cbce6"
+    },
+    {
+      "path": "fabric/semantic-models/SM_Olist_Analytics/definition/relationships.tmdl",
+      "bytes": 1163,
+      "sha256": "63af6e81ecaab0c9068a0f4909fd5b8dadb0ad926581e79daeaec167328b2593"
+    },
+    {
+      "path": "fabric/semantic-models/SM_Olist_Analytics/definition/roles/CustomerStateAccess.tmdl",
+      "bytes": 396,
+      "sha256": "ff04b257da57a39576f7b96916341402c94bbfa2b6ba121bd1f3da9dac225480"
+    },
+    {
+      "path": "fabric/semantic-models/SM_Olist_Analytics/definition/tables/DimCustomer.tmdl",
+      "bytes": 2039,
+      "sha256": "0a26e1cd8e1fb18c706e0e7495486692cc5f9035c5792aca35ebe83a33b8d950"
+    },
+    {
+      "path": "fabric/semantic-models/SM_Olist_Analytics/definition/tables/DimDate.tmdl",
+      "bytes": 3061,
+      "sha256": "4abd02663d70dea9a153c0dda560afe22de3fda8f931cb6cf15da0b23eb0da72"
+    },
+    {
+      "path": "fabric/semantic-models/SM_Olist_Analytics/definition/tables/DimProduct.tmdl",
+      "bytes": 2126,
+      "sha256": "7555b96d8b60d57dc66aa33607a5089e818bbf5aa6e1f288c561d6cc30970259"
+    },
+    {
+      "path": "fabric/semantic-models/SM_Olist_Analytics/definition/tables/DimSeller.tmdl",
+      "bytes": 1938,
+      "sha256": "ddea9a07c24449d32388c9896c13e444a48f2e9b8ae093d35b883cbd3523447d"
+    },
+    {
+      "path": "fabric/semantic-models/SM_Olist_Analytics/definition/tables/FactOrderItem.tmdl",
+      "bytes": 4116,
+      "sha256": "9cd9f33d7a89c08097283dee1d925c36774371a88d4a504b558dca9bffb9a74f"
+    },
+    {
+      "path": "fabric/semantic-models/SM_Olist_Analytics/definition/tables/FactOrders.tmdl",
+      "bytes": 6396,
+      "sha256": "0ab633d4890ccd0e380a441eaf53c8e8d657b57d7ab4ae82a6664b45ae87b159"
+    },
+    {
+      "path": "fabric/semantic-models/SM_Olist_Analytics/definition/tables/FactPayments.tmdl",
+      "bytes": 2621,
+      "sha256": "a639da412152161d9e19f83bcf170309d50348705ef273cd94028af5f530d482"
+    },
+    {
+      "path": "fabric/semantic-models/SM_Olist_Analytics/definition/tables/GoldLoadAudit.tmdl",
+      "bytes": 1717,
+      "sha256": "6b54a58413671648b69206b86df304a552d508961af88c5657cb6ae8daf18580"
+    },
+    {
+      "path": "fabric/semantic-models/SM_Olist_Analytics/README.md",
+      "bytes": 939,
+      "sha256": "67ec49d4eef7aea6db6c8f3124354e877970f6dd2bd27888d77eab5ce44974b3"
+    },
+    {
+      "path": "fabric/sql/00_preflight_silver.sql",
+      "bytes": 1886,
+      "sha256": "c6bb06f2dda9d47a3a2e28f3adec5a53bc1014206874137dfc867d381c4a32f9"
+    },
+    {
+      "path": "fabric/sql/01_create_staging.sql",
+      "bytes": 3251,
+      "sha256": "fe1f838c6f134df09dbfc14d48254602c08cab48c2c2d05018de4a8f136dc9f6"
+    },
+    {
+      "path": "fabric/sql/02_create_gold.sql",
+      "bytes": 3388,
+      "sha256": "f9924f4c2db3a4ec49ed843faad6ed64c93310ef0c26bf4d3ad4b6e1cde8950e"
+    },
+    {
+      "path": "fabric/sql/03a_create_staging_validation.sql",
+      "bytes": 20409,
+      "sha256": "a7846dd6f529fa60daf5571679bd099fae6c8ca44b9ff26aaaa101234a58775c"
+    },
+    {
+      "path": "fabric/sql/03b_create_gold_validation.sql",
+      "bytes": 12792,
+      "sha256": "b939de3bbdfc009039796a3b423553bf764faaa06072068a01edbdfcd8196be2"
+    },
+    {
+      "path": "fabric/sql/04_create_usp_build_gold.sql",
+      "bytes": 5713,
+      "sha256": "4fa136537678c374cecd24244de82d50a2c03d9a8fcbf5072260ef398ceb616c"
+    },
+    {
+      "path": "fabric/sql/05_validate_and_reconcile.sql",
+      "bytes": 1596,
+      "sha256": "1d4fecbd591438c191b140bd49e7948a4da204f92d7f4c3d7130dc269d501a98"
+    },
+    {
+      "path": "fabric/sql/06_preview_gold.sql",
+      "bytes": 307,
+      "sha256": "40ef74b5e40a7d60c405087c23efc3ba6707ce23b5e517786bc9a6fe472a5af7"
+    },
+    {
+      "path": "fabric/sql/07_security_user_state.sql",
+      "bytes": 1686,
+      "sha256": "b18fc556d41a8670af377b829a195753ee31b604fa8e968eecf441aa3a860f41"
+    },
+    {
+      "path": "fabric/sql/check_phase5_logic.py",
+      "bytes": 4499,
+      "sha256": "8468d0fc489eb5f846bd011684b7fba2cdb27013831c7644926c4919148a4e18"
+    },
+    {
+      "path": "fabric/sql/copy_activity_mapping.csv",
+      "bytes": 6960,
+      "sha256": "aa0fb1ae99f11fa1a8b63a6f930a78f4356e05d8f6c9fa587434e172bc18fdc2"
+    },
+    {
+      "path": "fabric/sql/generate_phase5.py",
+      "bytes": 18412,
+      "sha256": "c7a9c24e805ba69ec19dfa719f1da0d11f99cdb22a32039135e5f143a8fdf913"
+    },
+    {
+      "path": "powerbi/_brief/report-spec.md",
+      "bytes": 2127,
+      "sha256": "ced02711982f3feb6e264b7a154985f8f8489fde2aa8fca615a816e861b17e02"
+    },
+    {
+      "path": "powerbi/build-manifest.json",
+      "bytes": 5470,
+      "sha256": "7a830ecf8894d54a3453db6eaa21a16899f655805bf6026a241fdb4ae842293c"
+    },
+    {
+      "path": "powerbi/build-report.cjs",
+      "bytes": 26268,
+      "sha256": "fd90bf724f7a5018ee9e47ff23c4d8b481dc2f255e138dc207fff0211eaa9b69"
+    },
+    {
+      "path": "powerbi/build-sql-report.cjs",
+      "bytes": 2302,
+      "sha256": "dbc0e6e4863b03648b7d2c9af756abef191217f3405f18d3c4f64f1c3cd3dac0"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.pbip",
+      "bytes": 282,
+      "sha256": "99bf1c39a0bb4be62d122658bdf508b8805db0c3d5f56eea6df78a590fbed605"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/.platform",
+      "bytes": 310,
+      "sha256": "e8f1ecd3376805a654d64e044ed902b16bcfd2c7af80af212a51cdf1c9794a28"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/247e6483e409ca56d561/page.json",
+      "bytes": 746,
+      "sha256": "ca853f75d48a75fe4de1f77f2868e9f1deaa270a8649afddda1888b342f9a226"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/247e6483e409ca56d561/visuals/0d632eb4d67b50c765de/visual.json",
+      "bytes": 7459,
+      "sha256": "50106f4711912a1fe5b2a96813c55f95b718869bfee7507a477d00aedaa1c921"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/247e6483e409ca56d561/visuals/12249f1cabb3f8223956/visual.json",
+      "bytes": 7167,
+      "sha256": "2bb0cea8e899ffc0310f65f032e2c6de2d5245c3e32ca437f2634705fe0380b1"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/247e6483e409ca56d561/visuals/1709588446d3cc3cfb12/visual.json",
+      "bytes": 7331,
+      "sha256": "2503b07fd3ffc532e5a8ffb1b0369e4d446e2318de6ac96474fad2e757e3fa97"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/247e6483e409ca56d561/visuals/1ca8123e9cec8c714933/visual.json",
+      "bytes": 12990,
+      "sha256": "2a9f82b075b383ce683909a24c9a0ae267a50d910119c5054be08d82a31179c3"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/247e6483e409ca56d561/visuals/242adc7a4eaffcb60e95/visual.json",
+      "bytes": 5278,
+      "sha256": "effb90b3d994750a0fb45fe45635c433d68afa2007e65799fa7d3fdb2e3f3a91"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/247e6483e409ca56d561/visuals/489910ba231b69f1a187/visual.json",
+      "bytes": 7931,
+      "sha256": "99c8a9ccf25ceea3679017ac378c714d502a8508ccd76da5d45a35a4e817aa79"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/247e6483e409ca56d561/visuals/495b1ec3a2497868aea5/visual.json",
+      "bytes": 14970,
+      "sha256": "0e2a767deb26d010c83a94e1e0ef3d2b684c1bda729c41af77a12ea2414ca075"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/247e6483e409ca56d561/visuals/4b49f1dafe8fc413cf88/visual.json",
+      "bytes": 7331,
+      "sha256": "6c083ade0f9d5a7aa608044e60b3aafb5277914837bc2dc35e5474d3625dfdc7"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/247e6483e409ca56d561/visuals/4d0c3f0ba9595b361181/visual.json",
+      "bytes": 13014,
+      "sha256": "9d1fa5801914e27b9ce1dc526d81a6df148db1ef2916c425cf32ddd2052c5ca7"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/247e6483e409ca56d561/visuals/56337bdf7cae8e7d2170/visual.json",
+      "bytes": 6088,
+      "sha256": "21e03e6ff7a23739727195cdfb42d1cd7b7eddfea8786f36f3740c37f680ca1d"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/247e6483e409ca56d561/visuals/6af9374258df63e44248/visual.json",
+      "bytes": 5257,
+      "sha256": "f5208c39c0960f9bc9374616a682b3c54c138385132660060c3ce408df326218"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/247e6483e409ca56d561/visuals/6ba50cb3d1ab85588cd1/visual.json",
+      "bytes": 12955,
+      "sha256": "0e1e2ace83a3f6a85a39af27f1711eff807869c8a66f2c055512cd242c12ff55"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/247e6483e409ca56d561/visuals/927559c4e75363ef4a97/visual.json",
+      "bytes": 5355,
+      "sha256": "5db85bea762aa2572d0f9694fbc96a27d20959a6ae0421a44f837aa4cd90846a"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/247e6483e409ca56d561/visuals/a1c80e27d9f32c9ce1a6/visual.json",
+      "bytes": 6089,
+      "sha256": "b8162d496353a6c58cc1c01a60dfed0ca9622ed1b7ccda7d5bac7aec6c8225f6"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/247e6483e409ca56d561/visuals/a4606259b10ce3716ed8/visual.json",
+      "bytes": 13258,
+      "sha256": "ba53cd3e8336fda82b84f619d79f310383833a2f5a57d49c6f24f1cf6baf0df5"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/247e6483e409ca56d561/visuals/a5dea85eaac3cbdb4d27/visual.json",
+      "bytes": 5256,
+      "sha256": "df6243fb5dda54580e3f72d709d7d88ebf34768365aaff9474ac4389a25066d6"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/247e6483e409ca56d561/visuals/ac2841abfbcc49c8a0fc/visual.json",
+      "bytes": 9671,
+      "sha256": "43d3ab7eaa64c7230606f5de7d2118fc888e7730a03a34bb05055e4d043ee89b"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/247e6483e409ca56d561/visuals/b79ce612a58b15e142c7/visual.json",
+      "bytes": 5305,
+      "sha256": "64cd9537853f505ce1be91d55d3fb927b156f23b18e2b7f9965c724bc554d236"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/247e6483e409ca56d561/visuals/c8d5e84b54182aff5dbf/visual.json",
+      "bytes": 12464,
+      "sha256": "41f05a4002fb7f7042e49b38e5266e299ab3d6be935f31dda9c9b7f6e419ae55"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/247e6483e409ca56d561/visuals/e0c0e4c18e2fcc2255f9/visual.json",
+      "bytes": 12936,
+      "sha256": "7d15e15d8f1c2ddd65a3de501ded1a0882d8094c73158bbcd44779fb99232e79"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/247e6483e409ca56d561/visuals/e50976da3b48cf17315d/visual.json",
+      "bytes": 12099,
+      "sha256": "769adab3305b92005855b38460519958cca3cd330319e7eaf74200bf31912908"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/247e6483e409ca56d561/visuals/f275ac7c35c367336138/visual.json",
+      "bytes": 5252,
+      "sha256": "0c93fb8e7e9dd4feb20c3e687b10f33fead0cb79796749974f42156d0a5cae39"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/247e6483e409ca56d561/visuals/f28e7268bd19127b3cfd/visual.json",
+      "bytes": 5267,
+      "sha256": "2b1aa0380a94ddddac6680bddcecba6269ff8b2de7489df6c4501cb1b1f2b820"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/247e6483e409ca56d561/visuals/f67082e82f1df18780b7/visual.json",
+      "bytes": 5260,
+      "sha256": "b4a5af80dc85499bb9be5fe1c49d72a5b792df607f67aba2c815e4f5ca141c66"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/31cf8fe944c083ef9102/page.json",
+      "bytes": 749,
+      "sha256": "efb69f90c3d81f400cf85bef0f332d20873eb613bbf53d7ef5df178d67219b43"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/31cf8fe944c083ef9102/visuals/05bee489fc9386146f4d/visual.json",
+      "bytes": 11665,
+      "sha256": "8335615d00f93e39278e29f09519a5d5e198f0245d68b0363c5847394ec4c6b1"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/31cf8fe944c083ef9102/visuals/0dc09a3196b07bec9d8b/visual.json",
+      "bytes": 5270,
+      "sha256": "3b407b729ff1f5321c58a82e3a2c6a232bc829c07067165a6848bf40244368bf"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/31cf8fe944c083ef9102/visuals/13138695f2cd06f1a405/visual.json",
+      "bytes": 12956,
+      "sha256": "33297d100680fce2b0802f88f7e7256d53a0765542273e003c093654a5b76a0a"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/31cf8fe944c083ef9102/visuals/2c87b389d4709ae7edb1/visual.json",
+      "bytes": 12464,
+      "sha256": "d80f25123e2bedd2025c39328b205f87b887ef76031705b87a9dd06be6731045"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/31cf8fe944c083ef9102/visuals/5826162963fdea154ed3/visual.json",
+      "bytes": 12981,
+      "sha256": "65da9bdacc6d01e2d590983e034e3b4380c4c3dca562ce345558bb33ec208896"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/31cf8fe944c083ef9102/visuals/585f318127e4e9d51d2d/visual.json",
+      "bytes": 12950,
+      "sha256": "f509078ced64e7de6526f8743c20c466e681626b0d9abbcff1c0d2a378ffa798"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/31cf8fe944c083ef9102/visuals/60458a980499eb374f7f/visual.json",
+      "bytes": 6089,
+      "sha256": "72fbfde8570688950d4dd7ba0628dadc1ea793856524e64dadf54c871fbe70b6"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/31cf8fe944c083ef9102/visuals/68ad5302ef2614e63907/visual.json",
+      "bytes": 14970,
+      "sha256": "8505a3daff9943f93b3dd2aa1d1cd9d0547871cace20a676ef3e764d2f36a3a9"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/31cf8fe944c083ef9102/visuals/6ec5b5a84937df3da5cd/visual.json",
+      "bytes": 12942,
+      "sha256": "1cea39994b15e0d4c440165da934ecac25d0b97304bb78b0338a7a8911297878"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/31cf8fe944c083ef9102/visuals/715198cd42954a919771/visual.json",
+      "bytes": 12968,
+      "sha256": "ba3720ff590b766d2be5fc23fcc295bc2bc9c24f460b4b71c489f2fc4765a357"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/31cf8fe944c083ef9102/visuals/74990f8e60cb92eb1998/visual.json",
+      "bytes": 7167,
+      "sha256": "7162f597719563ee0c340a0c0d2449b6ae249378d86e16729b25ab77eb144f31"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/31cf8fe944c083ef9102/visuals/7575c0fd7271109b7137/visual.json",
+      "bytes": 5301,
+      "sha256": "2360ca5f8ce51fe7ef7661baa61667cb94a4c6159aadfec3d8fe5de0f74c961f"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/31cf8fe944c083ef9102/visuals/76f434dfc56e473e61ca/visual.json",
+      "bytes": 7931,
+      "sha256": "a67e279241cc8a8d25b3ffefe298a59e4fddcb16e98473c96d698afcec6ee3f4"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/31cf8fe944c083ef9102/visuals/770b5cf8fe448609a5f2/visual.json",
+      "bytes": 9675,
+      "sha256": "9530eddacd9f89ba03c7bac121bf908571ad1a6599aefae3b1f045a7de6db18f"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/31cf8fe944c083ef9102/visuals/86b1842db326bedb1f80/visual.json",
+      "bytes": 5260,
+      "sha256": "9b9437f838fa11e7e9a055adcfa8565eb627eb225586ffc6d6a28e931dbd3f3e"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/31cf8fe944c083ef9102/visuals/93e9f5b167533cdfd049/visual.json",
+      "bytes": 5278,
+      "sha256": "95adda5be53b2cae0f15079d4535c1f8c64afcb00f6957866428c7ee5c850b88"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/31cf8fe944c083ef9102/visuals/97ec9f1d48eaa1ed4536/visual.json",
+      "bytes": 5257,
+      "sha256": "3dc6ba42e18aaac7fb690bcca9d91b24754a9a3d7fba4104bb2aa5a17d673bea"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/31cf8fe944c083ef9102/visuals/9b7335750ce8a2791db3/visual.json",
+      "bytes": 7459,
+      "sha256": "f489753418b2679a7a2a9706484f2597346d49a0c60b61dcca6366cb34819820"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/31cf8fe944c083ef9102/visuals/a5653edffaed2fbf7178/visual.json",
+      "bytes": 5373,
+      "sha256": "adcaf3d986e8d8ebabdaac703ecec599fb0021277bfc3a2007cc8b130589a213"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/31cf8fe944c083ef9102/visuals/afdb24f495bbcdf7804a/visual.json",
+      "bytes": 12938,
+      "sha256": "10ff41deff56469cebaf6eb44d4e753e894b4f7f857dc4a976523d70233bd5d6"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/31cf8fe944c083ef9102/visuals/c68d17d6a18b8a55a5c7/visual.json",
+      "bytes": 5256,
+      "sha256": "b2ff1c10303e908a47fbccd24f5dd72483a7d2ef5fe384da7abddf593cbcdc5f"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/31cf8fe944c083ef9102/visuals/eb2608bae0f4ae990053/visual.json",
+      "bytes": 12972,
+      "sha256": "94b012d7cd084d5872a6e6591a5293fbb44c74c58bebf5b91ad4b34fae3c834c"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/31cf8fe944c083ef9102/visuals/ebece6ad5fd3c4ff1518/visual.json",
+      "bytes": 6088,
+      "sha256": "abfe873d4e81d1eaf5e2d4f89c8959e1f86a8e76ed852529332cd0086f7c238d"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/31cf8fe944c083ef9102/visuals/ebf1a6433782eb5e429a/visual.json",
+      "bytes": 9678,
+      "sha256": "d299909cf87d85bbe1acd92d1cda61e1928c0d44ac4f1121c9d42213707c2ee1"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/31cf8fe944c083ef9102/visuals/fa83a0fc07d248ead0a2/visual.json",
+      "bytes": 5252,
+      "sha256": "c972769947f53ab4910f1426b986c547833c3f519865fd770500901cc11a03be"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/9b2921901624d7ca2562/page.json",
+      "bytes": 6433,
+      "sha256": "f213d8f0bb8e23be262380276ddf0c99134220a3235ffee88a44315b9e0b56ec"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/9b2921901624d7ca2562/visuals/0bdff80db0148e9400e0/visual.json",
+      "bytes": 14970,
+      "sha256": "ce08f859852a0e7e5a173405a0b6e3eb9d3532d8131560ebd43f0f4af17a0719"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/9b2921901624d7ca2562/visuals/0dc7304b672902ad9445/visual.json",
+      "bytes": 13246,
+      "sha256": "1191c4661c04d5748f694150ee5947968132c426adba1bcd4627a6d83fdcd872"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/9b2921901624d7ca2562/visuals/0e3b7b150036be3a1aa3/visual.json",
+      "bytes": 7459,
+      "sha256": "eab907d59eafee331dd67b3aec597e784974539dc0e92c4ee4071ef503468a63"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/9b2921901624d7ca2562/visuals/107431a99ed315bd7b86/visual.json",
+      "bytes": 5278,
+      "sha256": "f8da4f273ea3e49c5a1cd1a3b7bd6c5ce3991eef4abb79872ec587b0892e2c8f"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/9b2921901624d7ca2562/visuals/2223a3bb842228770601/visual.json",
+      "bytes": 7167,
+      "sha256": "c6702cadf68552405f5852e7a08332107a986020ad37e85d57b205847f0010c9"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/9b2921901624d7ca2562/visuals/22f400ef493cffa48a68/visual.json",
+      "bytes": 5260,
+      "sha256": "289c322acccebf3771ee9ff318d465d0175986aa6b7667bb61469e1827e81bdf"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/9b2921901624d7ca2562/visuals/236b34c8c51e235d2d09/visual.json",
+      "bytes": 9979,
+      "sha256": "a402d19ca8df27775f44bebc5d831837a95a293cad3b33af4eb8c706e94b4ecb"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/9b2921901624d7ca2562/visuals/35b3c32b5931641513c0/visual.json",
+      "bytes": 12918,
+      "sha256": "67c06c2d21c2358b14337e471fac4a21afadcc832dd64f14c0c1cd579665ee39"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/9b2921901624d7ca2562/visuals/4ecea18081da2de778f1/visual.json",
+      "bytes": 13017,
+      "sha256": "a26a689f83e263c515f691696e9dd0d1b05fe0e4e46401736d9bc9b8ced862a0"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/9b2921901624d7ca2562/visuals/641db38ac68a80c97e08/visual.json",
+      "bytes": 5252,
+      "sha256": "fc9bf37bfcd7630b1b343e5dcc9ecf334510cb48478a3c1a06209134718b031f"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/9b2921901624d7ca2562/visuals/706ecbc88251367b6471/visual.json",
+      "bytes": 12954,
+      "sha256": "33842e6593239bcaf1d2588101d9ebee5d5ad26cfa06159d7dfff46a5aeb0999"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/9b2921901624d7ca2562/visuals/79a491b3e0d4caba6397/visual.json",
+      "bytes": 12464,
+      "sha256": "f8f3e80ddaf7a787664a2f7da8b85a0cc4e09ac3de1cdb7c01c3fc286b3a9efa"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/9b2921901624d7ca2562/visuals/7a5a7ab6e049e23a1f68/visual.json",
+      "bytes": 6088,
+      "sha256": "ca29c8b33ade1be8e012cfa4a5c5d615ce347b8afbb183f2130bdfc6b841cede"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/9b2921901624d7ca2562/visuals/932591663e7f0bd998f4/visual.json",
+      "bytes": 13255,
+      "sha256": "211ec66462a5c83370d7e212fe92fd76a0e74da1b7c1470aa0225d84af38f3a2"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/9b2921901624d7ca2562/visuals/abbee44185a36cb125f6/visual.json",
+      "bytes": 12955,
+      "sha256": "8deed5dc31f82ec2f37524e2b3c2253885a87d1114c47392c7dca429206a2a43"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/9b2921901624d7ca2562/visuals/abfdfe69175266e496c5/visual.json",
+      "bytes": 7931,
+      "sha256": "357405b694bdb4fece02d4f6b31f5f99d62012ab2d5838118d07381a56195fb0"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/9b2921901624d7ca2562/visuals/ba7c8d93a13d65b5b1d1/visual.json",
+      "bytes": 6089,
+      "sha256": "4c79de304facae1de3b785f5ae5de1645887fd9f77c1e7716005f13adeb4799f"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/9b2921901624d7ca2562/visuals/bbca517c4c7980a92994/visual.json",
+      "bytes": 5345,
+      "sha256": "11f1f21ff0d238c3749576256b9152e8ef9469d97edd671be38094c209d7bd99"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/9b2921901624d7ca2562/visuals/bed89d54d59f904bf7d3/visual.json",
+      "bytes": 9725,
+      "sha256": "592d6394ece6d0530cfb041ba5fbf4243a8841767ba4d35e7e8d75454f3410d3"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/9b2921901624d7ca2562/visuals/c3939825aec095d3c299/visual.json",
+      "bytes": 5306,
+      "sha256": "a82ed1c033572d5a8392550d8a4b92fbb177064c4af54c053b4a5f573eccfb45"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/9b2921901624d7ca2562/visuals/c86dc7439ba14599bd9b/visual.json",
+      "bytes": 13074,
+      "sha256": "83af6eb92bc83af7e5f5c93130fc9c74303254850702ff81ee8dde7d2333f29e"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/9b2921901624d7ca2562/visuals/d48229aee1bd10dce344/visual.json",
+      "bytes": 12971,
+      "sha256": "986268883a0bf6793652e3f46909edce26f410bcadb372c9bbf433a54980a04b"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/9b2921901624d7ca2562/visuals/de3727e6c67a39293557/visual.json",
+      "bytes": 5260,
+      "sha256": "e7e52910a32697c0d7e1f7c33bdcbc279e5d13edff0e0f3566aa50c9f4f9cddf"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/9b2921901624d7ca2562/visuals/e1e0168158ea3233a444/visual.json",
+      "bytes": 12980,
+      "sha256": "8c7b5e534b9cbe4d8f940c17b170d1653213324aa2308bdbd2095bc9d85e8bd2"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/9b2921901624d7ca2562/visuals/ecc0971655febed84b3a/visual.json",
+      "bytes": 5257,
+      "sha256": "b257b735ff1f998638c81ef458d0705f93cca4bd66d1c17dc3af0bf65d90f103"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/9b2921901624d7ca2562/visuals/f60b0dbe86d69acdf909/visual.json",
+      "bytes": 5256,
+      "sha256": "c9ea79620fac041e27ec507ada4754f29030eaa2ba8ad3bdb9c93378413cfe8e"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b07721708771ee06148a/page.json",
+      "bytes": 740,
+      "sha256": "3ac422c07d1cf2af4bed91e3b4442a56f2c91a54bde32d3083f00a9013423b5a"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b07721708771ee06148a/visuals/058cacdb0f74a620ae54/visual.json",
+      "bytes": 12963,
+      "sha256": "f5ee1224184fdde7e6363f4e47229c66db523c4a613f91b456ca97a93a65d7d7"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b07721708771ee06148a/visuals/09a92c858573e0395d32/visual.json",
+      "bytes": 14970,
+      "sha256": "571c8d9c7712b726fca0488cddbf03d74282b1ce8aed285cdf67a4b4300f4f60"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b07721708771ee06148a/visuals/09d46a548446c890bae3/visual.json",
+      "bytes": 7931,
+      "sha256": "7c8061d71efe86e9a68fdc15a54aea45f1c31cfe18e4e17c39422ff04292441f"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b07721708771ee06148a/visuals/0c82217181436b905992/visual.json",
+      "bytes": 5260,
+      "sha256": "948abc43772ccc282d9293fb563d393ee3f9c21aa611875f5c4dc72ada565ae3"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b07721708771ee06148a/visuals/113f4679f427c78243ae/visual.json",
+      "bytes": 5311,
+      "sha256": "110f3b3592d4f0acd717efbee1003d6432b6338b69027511229dffc8f55b72d6"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b07721708771ee06148a/visuals/1522456ecf9dd1331bcc/visual.json",
+      "bytes": 6089,
+      "sha256": "abf982999f02e912ee45e4143638dd017260e6dc45956ba705d444b7efdd9120"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b07721708771ee06148a/visuals/40b0b222a24babdb24a8/visual.json",
+      "bytes": 6088,
+      "sha256": "ca7d07a308260f541a61dd2292a4e236dc44ce7242d35c92edf6f05a4485a091"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b07721708771ee06148a/visuals/67e8aa820a329c04a61e/visual.json",
+      "bytes": 5257,
+      "sha256": "a1e4704c394ae2872d90c10ff6e97ed8ef54832f27b146bbf6d806cd2353ee93"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b07721708771ee06148a/visuals/6db1f2abc9c74725ec88/visual.json",
+      "bytes": 5256,
+      "sha256": "d9aad4750f5b315237f2b41b1dd68d0a0cf14142521d496d3a64f53718ce6613"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b07721708771ee06148a/visuals/76018967a085cdbb8a03/visual.json",
+      "bytes": 9660,
+      "sha256": "e5075affca198e2ce16493e7c8457c687c7b95e6a7031a4951bc4bde941bd0b5"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b07721708771ee06148a/visuals/9f529bb65a5a8a9a0d19/visual.json",
+      "bytes": 10010,
+      "sha256": "19de235acc935f0ad80a40b5ed404d7805af31d63e5257e88b51bb8ff6d725ca"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b07721708771ee06148a/visuals/9f7058986a6793d7f44c/visual.json",
+      "bytes": 5252,
+      "sha256": "c35054ad03a66159f7771b7aaccfd5d805e46f3c25f25750f524b56717bf9786"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b07721708771ee06148a/visuals/a0997213c1754f92b63b/visual.json",
+      "bytes": 12969,
+      "sha256": "e21465cc66e4743b3a09315bf3adb2dc5b8c46b4365b9b810218351e8109f183"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b07721708771ee06148a/visuals/a33b9f299b84ce69ad11/visual.json",
+      "bytes": 5362,
+      "sha256": "d8667b2c15e66ab68d4b6df06ed58e0f1ea5eb74cb8ccfc0841f0a752566b8ca"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b07721708771ee06148a/visuals/a59b1d3cf40966890385/visual.json",
+      "bytes": 12968,
+      "sha256": "944c23622c8ce70fc7cebbfce7624454d968ec6aae34fb2aaf6ef2bf109f19c2"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b07721708771ee06148a/visuals/a703817261584ba478df/visual.json",
+      "bytes": 7459,
+      "sha256": "2b986d91ff73c97099eb641ee88b685b33609cedc82695fef40e723ddfe7f5b1"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b07721708771ee06148a/visuals/aa85f4901c221b01f7a4/visual.json",
+      "bytes": 12464,
+      "sha256": "5c46427f020d6ae93a3216d10fde8a5669d1c9816012451bb6b05986ad84f897"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b07721708771ee06148a/visuals/bef9dfba77db4ccf9406/visual.json",
+      "bytes": 5261,
+      "sha256": "09f8c29a1fd39c64db217c74eaafea6a8b0c59563019f6bafa596d5054f4391d"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b07721708771ee06148a/visuals/daaa7e9c333d03443b16/visual.json",
+      "bytes": 5278,
+      "sha256": "66c0265fb462d17f326fb2fc39394bda0cbbb94a83e283ef220f97acb6e3ff9c"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b07721708771ee06148a/visuals/e87456c1422d62a04d01/visual.json",
+      "bytes": 7167,
+      "sha256": "a5b38324ed3df0de25e3bbcc1231c45064682a74cbde229c674be29a8a21f7a5"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b07721708771ee06148a/visuals/ef5ccaa8903df756b1c0/visual.json",
+      "bytes": 12954,
+      "sha256": "1ddd45418c1930abb76517322145f3bd0647a1b00eb9687a20f8ac7c0141d64e"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b07721708771ee06148a/visuals/f900cfa439dab795eec6/visual.json",
+      "bytes": 12095,
+      "sha256": "8544a37cc806db4aff464730be502ea43be6b59a4f1d8c4480ce0a8811208487"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b5bc6a16b35baeeed57f/page.json",
+      "bytes": 739,
+      "sha256": "acefab2b77f739442cafce1cfd3f19e6982d88e08f9fd0a2beaa56208503a0df"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/048063d7fbcaa644714b/visual.json",
+      "bytes": 7931,
+      "sha256": "7bc0eecb27b80f871bfc97dd9b0219ab8ab8edddf800e0e3796941b669dcf636"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/18179aefb356be81e544/visual.json",
+      "bytes": 7459,
+      "sha256": "230efac4e94efcca74ed27c5bdfcd726577d7060a4d764be957dedc28e0c3ece"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/25cb4d0926d0791bea85/visual.json",
+      "bytes": 7167,
+      "sha256": "65c25809a1e912fe1afb7512618c2896b4a7b194c82f8c1ba5d50746ef09a7d9"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/2a7d26e0f299fec4002b/visual.json",
+      "bytes": 12988,
+      "sha256": "99d915e5c27075d84b0ce3dd0b197abfea44f211647c499dc88a68440035362f"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/3734439a8fe49de1ad54/visual.json",
+      "bytes": 12985,
+      "sha256": "4b7381f6ab90840623879994b6b0082cbbbe3baacd2542cdfc208495c5d06b67"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/5d036cd375dbaf7db7ce/visual.json",
+      "bytes": 5302,
+      "sha256": "b2bacdcc403a1dd2ba345048296bd51ece45ca29f75fef324c93c2c9d7f315d3"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/5d8d18678fe2df02ad98/visual.json",
+      "bytes": 12949,
+      "sha256": "0f22913d215563eb2d3601eb2cdbb5f235736b52b88b0a7aab081591464122a7"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/6887c0af89b410ac7a9b/visual.json",
+      "bytes": 5260,
+      "sha256": "36062fc237068733203aaa476ffc621229bb7e6ee30ead734c554022711c3b1b"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/721606b29c61be8c17ed/visual.json",
+      "bytes": 5257,
+      "sha256": "17a891b7114a466feb8171995efad50f9c69d977aa1773e2b0d84b435936a171"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/7eb52f487398bdb8c9be/visual.json",
+      "bytes": 5256,
+      "sha256": "29cd373ff52373e4bc400f1df1d4f492034797a0ddd793d65b44e8b4266a7262"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/8b2ca610ff228524c932/visual.json",
+      "bytes": 11170,
+      "sha256": "b7930deceec696b2fc34d7aa72bd21b7227c8d5a5acc688ec19a412b29313363"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/a168b8bbf5337a7295d9/visual.json",
+      "bytes": 12940,
+      "sha256": "93f474772def833fc9497295e8c350399c1395aa5581b652646061ae7b445e5e"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/b28094c5c6b17f6c3534/visual.json",
+      "bytes": 14970,
+      "sha256": "1493ee38fd65c548b1098db95e38e214ef735a241ff6ab3600ad552d2992ab4f"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/c4244fcf8d139070e6e5/visual.json",
+      "bytes": 9729,
+      "sha256": "ab24634e989944c891ae7959ca9fac6e2621bf1a89178809f2b2f901257b415a"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/c4bfc72653b018378410/visual.json",
+      "bytes": 10026,
+      "sha256": "07caefd3e328ba6b15b4e2bf5a645527fea582fe211d927eac485fa677361fa0"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/caa18ae964783137a3b9/visual.json",
+      "bytes": 5278,
+      "sha256": "9d4d9c6f45b54f662496c981e6cbd2db2e765b36eaa219267a9858d3ac1a6ba0"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/da71c3efcfe8aaf52dae/visual.json",
+      "bytes": 6089,
+      "sha256": "61eff87d62d6ce369bbecaa63869ad035d3c20af8bd87e8940f13f4482b42238"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/dd6227344c3728bda30f/visual.json",
+      "bytes": 5260,
+      "sha256": "899442611ce2011451c4289fdb65e43380c56a81aa73abc5e333a1cb48a62f7d"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/def2487f8505b99b87bc/visual.json",
+      "bytes": 12464,
+      "sha256": "fe0ad18ee13b3edd1fddf01a81e6fb32c636392e8b29372755bf1d029afe4a23"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/e495916207417d779fdf/visual.json",
+      "bytes": 7344,
+      "sha256": "9dee4d7ad10b8ee99c64f57f665148498f7c9c522c4befcd10bca27ce68c22f8"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/e5dbb9fdac95b3b96dae/visual.json",
+      "bytes": 5252,
+      "sha256": "69d909005bae6b0e1449a92c5c25ffa078a2d5fc96342f951e3f93a9bf3c880b"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/eb682e5892ac4c81915b/visual.json",
+      "bytes": 9669,
+      "sha256": "02a712edaea4e0102bd1fd930dd19049584b9e88ebbb48940429bfcabb247e44"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/f013bc3653ba7bd7eda4/visual.json",
+      "bytes": 5353,
+      "sha256": "4231bcf34370324fa1b5f8e533329c82967bc3e5ee67cba676613b6248783694"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/f2cdfc075d88d646b098/visual.json",
+      "bytes": 6088,
+      "sha256": "88621dcb82a0f9d0b24adf82b5aca4f263c4d52792bc4ac5af29953922fc54ee"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/pages/pages.json",
+      "bytes": 331,
+      "sha256": "d914f79aaf9468375bd3f6dece25df01b925cb5a846f4809ce3c2a33c9531cd5"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/report.json",
+      "bytes": 2017,
+      "sha256": "93cdf7dee47611fdff694532eb422fd47ec6561dc27e2ecf61af42e55944042c"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition/version.json",
+      "bytes": 150,
+      "sha256": "0f9f217a60981bf882d7b1963977fc72cc051078df8512b46caa607aff2e5220"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/definition.pbir",
+      "bytes": 242,
+      "sha256": "615a7a246837169ed101371ed7f5c88c8aa648456614901d7790765465449d32"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/StaticResources/RegisteredResources/OlistAdminLTE-20260918a.json",
+      "bytes": 1104,
+      "sha256": "138eddab4f5fb8d03237c52e4df9d62505f8c1288169718a6e78d719fc45b5a9"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.Report/StaticResources/SharedResources/BaseThemes/Fluent2-CY26SU08.json",
+      "bytes": 95083,
+      "sha256": "587d473ec81fad831208e65a2d04881f4e24d37c12fcef64c3d9d45b0a7b7e63"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.SemanticModel/.platform",
+      "bytes": 317,
+      "sha256": "239315f28a5daab191af1d1030ff0bf2a276189fbc72ce265d837c2fd3ee6887"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.SemanticModel/definition/cultures/en-US.tmdl",
+      "bytes": 13297,
+      "sha256": "e8a8b2b4f72bc48f4315c6beeefa6950728f1ac48f46510d07ebc55931a5c168"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.SemanticModel/definition/database.tmdl",
+      "bytes": 36,
+      "sha256": "137969ea16a7f7ebf1ad13798fbd3340d0534018a69ad7d3cb111ffa27a6f187"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.SemanticModel/definition/model.tmdl",
+      "bytes": 622,
+      "sha256": "81b495207e47cb105ad91c843715c7f73f317a252da123d7dfaf448829e77d38"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.SemanticModel/definition/relationships.tmdl",
+      "bytes": 1181,
+      "sha256": "56a3f63e0f7d599ba9da5eb86308b6b0a385588fc2f9223e7997f3c3479cacb6"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.SemanticModel/definition/tables/DimCustomer.tmdl",
+      "bytes": 1870,
+      "sha256": "979ad4d044f39e945f47a2363b7fc4b0c696273f79a71f02a20c6bc948d057c3"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.SemanticModel/definition/tables/DimDate.tmdl",
+      "bytes": 2736,
+      "sha256": "e92b02e74dc749ed473990d3724b1c6f5c0b174b6f227b40825994306f2637cb"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.SemanticModel/definition/tables/DimProduct.tmdl",
+      "bytes": 1995,
+      "sha256": "44a9b9eb570e36a5d17c988f40c2cb7014a2930464e1796d65b33bcef47bd515"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.SemanticModel/definition/tables/DimSeller.tmdl",
+      "bytes": 1840,
+      "sha256": "3ffc65cabe0d8c9d0f12e8c6bc12de038278055bee88d615a39dc2da3ec5e5d1"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.SemanticModel/definition/tables/FactOrderItem.tmdl",
+      "bytes": 5368,
+      "sha256": "04a05c534789fe0559fe33c5ea5229fd1cef16f6a18b5956e14d5880c92e4c03"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.SemanticModel/definition/tables/FactOrders.tmdl",
+      "bytes": 7013,
+      "sha256": "fcdba85d07181dbb8b4973e17d169e61f1fa05fec03ca08944b1792ee791b75f"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.SemanticModel/definition/tables/FactPayments.tmdl",
+      "bytes": 3292,
+      "sha256": "62cf33796902fe2d2c3461578d14607fe0929c0bf1046548a70f5c610cb41321"
+    },
+    {
+      "path": "powerbi/Olist_SQLServer.SemanticModel/definition.pbism",
+      "bytes": 167,
+      "sha256": "a1133b18a3ba9daa65d98d300f00cfbc1e9dc35c05ef73fe5aceadd885ecb888"
+    },
+    {
+      "path": "powerbi/README-sqlserver.md",
+      "bytes": 2740,
+      "sha256": "8b20d8345ffb1072c1c615ac39a0f692d10ce3634dcf6b1249b2e67569274256"
+    },
+    {
+      "path": "powerbi/README.md",
+      "bytes": 4580,
+      "sha256": "cf36e8e028fc82854d44f6bef438649e84b4f60f9442fddb87003df712ecae15"
+    },
+    {
+      "path": "powerbi/rls-customer-state.md",
+      "bytes": 6531,
+      "sha256": "9f531d28a2364a8f9122ec1eab0763a8fb6439cdf1df14f3528d2a0aa58f1a4a"
+    },
+    {
+      "path": "powerbi/rls-evidence-20260919.json",
+      "bytes": 8759,
+      "sha256": "66a11838abad273bad9697f4b43cc5071cb3a8e5469aefab41438adca0c28a11"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.pbip",
+      "bytes": 286,
+      "sha256": "17b0cf556c4f7866f778dacaf2f19dfadf44f1ffca15c97afef1560bcec4d2f9"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/.platform",
+      "bytes": 314,
+      "sha256": "9344bdd0cac5eb048b3241cedad89c5567a8d93fd656c440926a6a35707563ff"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/247e6483e409ca56d561/page.json",
+      "bytes": 746,
+      "sha256": "ca853f75d48a75fe4de1f77f2868e9f1deaa270a8649afddda1888b342f9a226"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/247e6483e409ca56d561/visuals/0d632eb4d67b50c765de/visual.json",
+      "bytes": 7459,
+      "sha256": "50106f4711912a1fe5b2a96813c55f95b718869bfee7507a477d00aedaa1c921"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/247e6483e409ca56d561/visuals/12249f1cabb3f8223956/visual.json",
+      "bytes": 7167,
+      "sha256": "2bb0cea8e899ffc0310f65f032e2c6de2d5245c3e32ca437f2634705fe0380b1"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/247e6483e409ca56d561/visuals/1709588446d3cc3cfb12/visual.json",
+      "bytes": 7331,
+      "sha256": "2503b07fd3ffc532e5a8ffb1b0369e4d446e2318de6ac96474fad2e757e3fa97"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/247e6483e409ca56d561/visuals/1ca8123e9cec8c714933/visual.json",
+      "bytes": 13045,
+      "sha256": "14cff3e41d8fb3ba61cea4f976796e2130f06e819f8c54e94b253645fcc077be"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/247e6483e409ca56d561/visuals/242adc7a4eaffcb60e95/visual.json",
+      "bytes": 5278,
+      "sha256": "effb90b3d994750a0fb45fe45635c433d68afa2007e65799fa7d3fdb2e3f3a91"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/247e6483e409ca56d561/visuals/489910ba231b69f1a187/visual.json",
+      "bytes": 7931,
+      "sha256": "99c8a9ccf25ceea3679017ac378c714d502a8508ccd76da5d45a35a4e817aa79"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/247e6483e409ca56d561/visuals/495b1ec3a2497868aea5/visual.json",
+      "bytes": 14970,
+      "sha256": "cbcc2beb6654866671810dc015b2c1da2d8edcca57441625a12b502489c60f94"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/247e6483e409ca56d561/visuals/4b49f1dafe8fc413cf88/visual.json",
+      "bytes": 7331,
+      "sha256": "6c083ade0f9d5a7aa608044e60b3aafb5277914837bc2dc35e5474d3625dfdc7"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/247e6483e409ca56d561/visuals/4d0c3f0ba9595b361181/visual.json",
+      "bytes": 13069,
+      "sha256": "eea441caa203f5fe4f1c18004a47da48bbb75ee77651dd2885c10f6522b66499"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/247e6483e409ca56d561/visuals/56337bdf7cae8e7d2170/visual.json",
+      "bytes": 6088,
+      "sha256": "21e03e6ff7a23739727195cdfb42d1cd7b7eddfea8786f36f3740c37f680ca1d"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/247e6483e409ca56d561/visuals/6af9374258df63e44248/visual.json",
+      "bytes": 5257,
+      "sha256": "f5208c39c0960f9bc9374616a682b3c54c138385132660060c3ce408df326218"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/247e6483e409ca56d561/visuals/6ba50cb3d1ab85588cd1/visual.json",
+      "bytes": 12955,
+      "sha256": "0e1e2ace83a3f6a85a39af27f1711eff807869c8a66f2c055512cd242c12ff55"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/247e6483e409ca56d561/visuals/927559c4e75363ef4a97/visual.json",
+      "bytes": 5355,
+      "sha256": "5db85bea762aa2572d0f9694fbc96a27d20959a6ae0421a44f837aa4cd90846a"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/247e6483e409ca56d561/visuals/a1c80e27d9f32c9ce1a6/visual.json",
+      "bytes": 6089,
+      "sha256": "b8162d496353a6c58cc1c01a60dfed0ca9622ed1b7ccda7d5bac7aec6c8225f6"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/247e6483e409ca56d561/visuals/a4606259b10ce3716ed8/visual.json",
+      "bytes": 13258,
+      "sha256": "ba53cd3e8336fda82b84f619d79f310383833a2f5a57d49c6f24f1cf6baf0df5"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/247e6483e409ca56d561/visuals/a5dea85eaac3cbdb4d27/visual.json",
+      "bytes": 5256,
+      "sha256": "df6243fb5dda54580e3f72d709d7d88ebf34768365aaff9474ac4389a25066d6"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/247e6483e409ca56d561/visuals/ac2841abfbcc49c8a0fc/visual.json",
+      "bytes": 9671,
+      "sha256": "43d3ab7eaa64c7230606f5de7d2118fc888e7730a03a34bb05055e4d043ee89b"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/247e6483e409ca56d561/visuals/b79ce612a58b15e142c7/visual.json",
+      "bytes": 5305,
+      "sha256": "64cd9537853f505ce1be91d55d3fb927b156f23b18e2b7f9965c724bc554d236"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/247e6483e409ca56d561/visuals/c8d5e84b54182aff5dbf/visual.json",
+      "bytes": 12464,
+      "sha256": "41f05a4002fb7f7042e49b38e5266e299ab3d6be935f31dda9c9b7f6e419ae55"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/247e6483e409ca56d561/visuals/e0c0e4c18e2fcc2255f9/visual.json",
+      "bytes": 12936,
+      "sha256": "7d15e15d8f1c2ddd65a3de501ded1a0882d8094c73158bbcd44779fb99232e79"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/247e6483e409ca56d561/visuals/e50976da3b48cf17315d/visual.json",
+      "bytes": 12099,
+      "sha256": "769adab3305b92005855b38460519958cca3cd330319e7eaf74200bf31912908"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/247e6483e409ca56d561/visuals/f275ac7c35c367336138/visual.json",
+      "bytes": 5252,
+      "sha256": "0c93fb8e7e9dd4feb20c3e687b10f33fead0cb79796749974f42156d0a5cae39"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/247e6483e409ca56d561/visuals/f28e7268bd19127b3cfd/visual.json",
+      "bytes": 5267,
+      "sha256": "2b1aa0380a94ddddac6680bddcecba6269ff8b2de7489df6c4501cb1b1f2b820"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/247e6483e409ca56d561/visuals/f67082e82f1df18780b7/visual.json",
+      "bytes": 5260,
+      "sha256": "b4a5af80dc85499bb9be5fe1c49d72a5b792df607f67aba2c815e4f5ca141c66"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/31cf8fe944c083ef9102/page.json",
+      "bytes": 749,
+      "sha256": "efb69f90c3d81f400cf85bef0f332d20873eb613bbf53d7ef5df178d67219b43"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/31cf8fe944c083ef9102/visuals/05bee489fc9386146f4d/visual.json",
+      "bytes": 11665,
+      "sha256": "8335615d00f93e39278e29f09519a5d5e198f0245d68b0363c5847394ec4c6b1"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/31cf8fe944c083ef9102/visuals/0dc09a3196b07bec9d8b/visual.json",
+      "bytes": 5270,
+      "sha256": "3b407b729ff1f5321c58a82e3a2c6a232bc829c07067165a6848bf40244368bf"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/31cf8fe944c083ef9102/visuals/13138695f2cd06f1a405/visual.json",
+      "bytes": 12956,
+      "sha256": "33297d100680fce2b0802f88f7e7256d53a0765542273e003c093654a5b76a0a"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/31cf8fe944c083ef9102/visuals/2c87b389d4709ae7edb1/visual.json",
+      "bytes": 12464,
+      "sha256": "d80f25123e2bedd2025c39328b205f87b887ef76031705b87a9dd06be6731045"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/31cf8fe944c083ef9102/visuals/5826162963fdea154ed3/visual.json",
+      "bytes": 12981,
+      "sha256": "65da9bdacc6d01e2d590983e034e3b4380c4c3dca562ce345558bb33ec208896"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/31cf8fe944c083ef9102/visuals/585f318127e4e9d51d2d/visual.json",
+      "bytes": 13005,
+      "sha256": "bdc047e1c279fe6c8e0a64e00fdfbf7257bc31795ab65ef0f7ac0761f4b46443"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/31cf8fe944c083ef9102/visuals/60458a980499eb374f7f/visual.json",
+      "bytes": 6089,
+      "sha256": "72fbfde8570688950d4dd7ba0628dadc1ea793856524e64dadf54c871fbe70b6"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/31cf8fe944c083ef9102/visuals/68ad5302ef2614e63907/visual.json",
+      "bytes": 14970,
+      "sha256": "ddd52295ff60d4063fe888f01201214924404dbcce817d2bc2ee8f5f9347465b"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/31cf8fe944c083ef9102/visuals/6ec5b5a84937df3da5cd/visual.json",
+      "bytes": 12942,
+      "sha256": "1cea39994b15e0d4c440165da934ecac25d0b97304bb78b0338a7a8911297878"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/31cf8fe944c083ef9102/visuals/715198cd42954a919771/visual.json",
+      "bytes": 13023,
+      "sha256": "d40387a676b84232e2fa58223f597bb3f7a279204b80d1ebcf1c5e0ccce3b49c"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/31cf8fe944c083ef9102/visuals/74990f8e60cb92eb1998/visual.json",
+      "bytes": 7167,
+      "sha256": "7162f597719563ee0c340a0c0d2449b6ae249378d86e16729b25ab77eb144f31"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/31cf8fe944c083ef9102/visuals/7575c0fd7271109b7137/visual.json",
+      "bytes": 5301,
+      "sha256": "2360ca5f8ce51fe7ef7661baa61667cb94a4c6159aadfec3d8fe5de0f74c961f"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/31cf8fe944c083ef9102/visuals/76f434dfc56e473e61ca/visual.json",
+      "bytes": 7931,
+      "sha256": "a67e279241cc8a8d25b3ffefe298a59e4fddcb16e98473c96d698afcec6ee3f4"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/31cf8fe944c083ef9102/visuals/770b5cf8fe448609a5f2/visual.json",
+      "bytes": 9675,
+      "sha256": "9530eddacd9f89ba03c7bac121bf908571ad1a6599aefae3b1f045a7de6db18f"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/31cf8fe944c083ef9102/visuals/86b1842db326bedb1f80/visual.json",
+      "bytes": 5260,
+      "sha256": "9b9437f838fa11e7e9a055adcfa8565eb627eb225586ffc6d6a28e931dbd3f3e"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/31cf8fe944c083ef9102/visuals/93e9f5b167533cdfd049/visual.json",
+      "bytes": 5278,
+      "sha256": "95adda5be53b2cae0f15079d4535c1f8c64afcb00f6957866428c7ee5c850b88"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/31cf8fe944c083ef9102/visuals/97ec9f1d48eaa1ed4536/visual.json",
+      "bytes": 5257,
+      "sha256": "3dc6ba42e18aaac7fb690bcca9d91b24754a9a3d7fba4104bb2aa5a17d673bea"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/31cf8fe944c083ef9102/visuals/9b7335750ce8a2791db3/visual.json",
+      "bytes": 7459,
+      "sha256": "f489753418b2679a7a2a9706484f2597346d49a0c60b61dcca6366cb34819820"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/31cf8fe944c083ef9102/visuals/a5653edffaed2fbf7178/visual.json",
+      "bytes": 5373,
+      "sha256": "adcaf3d986e8d8ebabdaac703ecec599fb0021277bfc3a2007cc8b130589a213"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/31cf8fe944c083ef9102/visuals/afdb24f495bbcdf7804a/visual.json",
+      "bytes": 12938,
+      "sha256": "10ff41deff56469cebaf6eb44d4e753e894b4f7f857dc4a976523d70233bd5d6"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/31cf8fe944c083ef9102/visuals/c68d17d6a18b8a55a5c7/visual.json",
+      "bytes": 5256,
+      "sha256": "b2ff1c10303e908a47fbccd24f5dd72483a7d2ef5fe384da7abddf593cbcdc5f"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/31cf8fe944c083ef9102/visuals/eb2608bae0f4ae990053/visual.json",
+      "bytes": 12972,
+      "sha256": "94b012d7cd084d5872a6e6591a5293fbb44c74c58bebf5b91ad4b34fae3c834c"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/31cf8fe944c083ef9102/visuals/ebece6ad5fd3c4ff1518/visual.json",
+      "bytes": 6088,
+      "sha256": "abfe873d4e81d1eaf5e2d4f89c8959e1f86a8e76ed852529332cd0086f7c238d"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/31cf8fe944c083ef9102/visuals/ebf1a6433782eb5e429a/visual.json",
+      "bytes": 9678,
+      "sha256": "d299909cf87d85bbe1acd92d1cda61e1928c0d44ac4f1121c9d42213707c2ee1"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/31cf8fe944c083ef9102/visuals/fa83a0fc07d248ead0a2/visual.json",
+      "bytes": 5252,
+      "sha256": "c972769947f53ab4910f1426b986c547833c3f519865fd770500901cc11a03be"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/6a6d7961023ac0b2d37b/page.json",
+      "bytes": 1598,
+      "sha256": "2e1232f61907e6db9c03d244b54b41f3766212422784b4bc85436e491e2d6884"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/6a6d7961023ac0b2d37b/visuals/031beb1dca9b8563161b/visual.json",
+      "bytes": 5263,
+      "sha256": "2a0c7d625ee6f6f3068a3bb856e65db5cd8a91a15a156d9c9451f42591f7c50a"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/6a6d7961023ac0b2d37b/visuals/0ba415630efa6e2fdd6f/visual.json",
+      "bytes": 13030,
+      "sha256": "6ea708f1a8d0af79d9af24beba79d02c21e510ffcc726f004fe79a4eb96e9dab"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/6a6d7961023ac0b2d37b/visuals/13782f6c85bd51f96412/visual.json",
+      "bytes": 5275,
+      "sha256": "36da8176caea813ee545f39e9a525f9b3f625b4c1268f57bd1f5e5fc9a330396"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/6a6d7961023ac0b2d37b/visuals/13e1be35f1e708219f00/visual.json",
+      "bytes": 5353,
+      "sha256": "00aa67597ee08a3ef806be49885bc755c590947cfe5a911537305900c71d211f"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/6a6d7961023ac0b2d37b/visuals/16abcdb76e16600e43fd/visual.json",
+      "bytes": 5252,
+      "sha256": "67be14e70c94f184940d3d801231fb1cffdaed85b4a5d9fbccdfff9b5667961b"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/6a6d7961023ac0b2d37b/visuals/48fac534ef6e136e458f/visual.json",
+      "bytes": 5260,
+      "sha256": "f0d9e7385103fb93f7709879b69c1549d5c641c0a6bc0891edbbdc04cabfcfcf"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/6a6d7961023ac0b2d37b/visuals/4b9361d2c7f0ad7d80fc/visual.json",
+      "bytes": 13024,
+      "sha256": "79450190a1eb13aec28552c478c616d7195ee444cde806f3b102e22ca84e37e6"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/6a6d7961023ac0b2d37b/visuals/5c853f0ab6ff363b5b0d/visual.json",
+      "bytes": 13052,
+      "sha256": "4ddbee6bb8be7bde240ecc475fc86dc497443d58b79063ebbf408ec3d027c732"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/6a6d7961023ac0b2d37b/visuals/74d3d57df21309e86141/visual.json",
+      "bytes": 13037,
+      "sha256": "374194d492ddb9d1c5d02b0221e63979d6b04e80df9bc10ae1a67b03b30624c0"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/6a6d7961023ac0b2d37b/visuals/77cc800b8e3ee378130b/visual.json",
+      "bytes": 12464,
+      "sha256": "8c45a496ffb779fa501c11fc87c13dc9449736827695de8826ba3bb91e2ffb84"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/6a6d7961023ac0b2d37b/visuals/89db1d99f7c817a66c6e/visual.json",
+      "bytes": 5256,
+      "sha256": "c9cd45e19ab0f7b35def5a2d666afd4ea3194ae244031b24fb29d0ca7759a0d1"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/6a6d7961023ac0b2d37b/visuals/8b2424b62b35473bbd79/visual.json",
+      "bytes": 13043,
+      "sha256": "a26077344eeaf0884bdd20ad9e027d868e86f081e2f14a9739174f06f86756c3"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/6a6d7961023ac0b2d37b/visuals/8c70ff401037295defdb/visual.json",
+      "bytes": 6088,
+      "sha256": "755e7cccf2236dadc0b9332ebe2a8800243a12dfaec304cc050ff955be060324"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/6a6d7961023ac0b2d37b/visuals/93383fc8a3cd4c19a159/visual.json",
+      "bytes": 5257,
+      "sha256": "3f63518cf4cd8f190364ec0e473133b07678e452c61e58e420070c76f5ff2ce3"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/6a6d7961023ac0b2d37b/visuals/bb55cce74e20afb91540/visual.json",
+      "bytes": 5302,
+      "sha256": "9f06bc96d33609d54b116a36a413e5a2beb931ea072375488ec4b1c5b2aa1f05"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/6a6d7961023ac0b2d37b/visuals/cbedfd3e5e1d894015c7/visual.json",
+      "bytes": 11807,
+      "sha256": "8c0757a046643ad9e99c9a003a6defb54ae0037c9e71c72af3e166d8be5f91a7"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/6a6d7961023ac0b2d37b/visuals/d1423b046568c06adc3b/visual.json",
+      "bytes": 14970,
+      "sha256": "fab89e46733cff9346a25618638d97b90be49430a44cf438f639dbac731463e2"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/6a6d7961023ac0b2d37b/visuals/d231a3b043dccda0bbe2/visual.json",
+      "bytes": 13036,
+      "sha256": "a058832934ec4f78a2b0b1c6aaf02d88841492fd2d4cfa1798497b647deb67e9"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/6a6d7961023ac0b2d37b/visuals/d3a5bb927b9a19c59f16/visual.json",
+      "bytes": 13018,
+      "sha256": "f2e1d1adfc18a41be90f729e260365bb2cd8d4ea57d9c5be271ab168d74dc19c"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/6a6d7961023ac0b2d37b/visuals/ef43437db14a77916d1b/visual.json",
+      "bytes": 5392,
+      "sha256": "afb36e3a5d083e6d0640a2ecf55f6881360d4015096886ea945f98f00a98813c"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/6a6d7961023ac0b2d37b/visuals/f2357a740d98c53c8fff/visual.json",
+      "bytes": 6089,
+      "sha256": "48ec77f711747cbbf2049634f2589c39dde45807f717beb7a4f6b4b194b268c6"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/6a6d7961023ac0b2d37b/visuals/fcf0608633338e4e66c4/visual.json",
+      "bytes": 5349,
+      "sha256": "ac540ecb9eb77ba66c82c7a836c0a75e9a4ccaa4c3e9aafdf532cca70fe4f622"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/6a6d7961023ac0b2d37b/visuals/fd48b506eb34325c5db7/visual.json",
+      "bytes": 5278,
+      "sha256": "b91197d26e05e761328b8a6245db5c8c5e1b5b7d00a43439386960f23b30aab9"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/9b2921901624d7ca2562/page.json",
+      "bytes": 6433,
+      "sha256": "f213d8f0bb8e23be262380276ddf0c99134220a3235ffee88a44315b9e0b56ec"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/9b2921901624d7ca2562/visuals/0bdff80db0148e9400e0/visual.json",
+      "bytes": 14970,
+      "sha256": "20186dac212bea8c869042d789ea84bf9f5c72f93789d14451126d7dac8a948a"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/9b2921901624d7ca2562/visuals/0dc7304b672902ad9445/visual.json",
+      "bytes": 13246,
+      "sha256": "1191c4661c04d5748f694150ee5947968132c426adba1bcd4627a6d83fdcd872"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/9b2921901624d7ca2562/visuals/0e3b7b150036be3a1aa3/visual.json",
+      "bytes": 7459,
+      "sha256": "eab907d59eafee331dd67b3aec597e784974539dc0e92c4ee4071ef503468a63"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/9b2921901624d7ca2562/visuals/107431a99ed315bd7b86/visual.json",
+      "bytes": 5278,
+      "sha256": "f8da4f273ea3e49c5a1cd1a3b7bd6c5ce3991eef4abb79872ec587b0892e2c8f"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/9b2921901624d7ca2562/visuals/2223a3bb842228770601/visual.json",
+      "bytes": 7167,
+      "sha256": "c6702cadf68552405f5852e7a08332107a986020ad37e85d57b205847f0010c9"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/9b2921901624d7ca2562/visuals/22f400ef493cffa48a68/visual.json",
+      "bytes": 5260,
+      "sha256": "289c322acccebf3771ee9ff318d465d0175986aa6b7667bb61469e1827e81bdf"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/9b2921901624d7ca2562/visuals/236b34c8c51e235d2d09/visual.json",
+      "bytes": 9979,
+      "sha256": "a402d19ca8df27775f44bebc5d831837a95a293cad3b33af4eb8c706e94b4ecb"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/9b2921901624d7ca2562/visuals/35b3c32b5931641513c0/visual.json",
+      "bytes": 12918,
+      "sha256": "67c06c2d21c2358b14337e471fac4a21afadcc832dd64f14c0c1cd579665ee39"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/9b2921901624d7ca2562/visuals/4ecea18081da2de778f1/visual.json",
+      "bytes": 13072,
+      "sha256": "faba6fda7be976a7ea3b035d98dd4f35768cc05c0e604e790a84b08413d79e75"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/9b2921901624d7ca2562/visuals/641db38ac68a80c97e08/visual.json",
+      "bytes": 5252,
+      "sha256": "fc9bf37bfcd7630b1b343e5dcc9ecf334510cb48478a3c1a06209134718b031f"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/9b2921901624d7ca2562/visuals/706ecbc88251367b6471/visual.json",
+      "bytes": 12954,
+      "sha256": "33842e6593239bcaf1d2588101d9ebee5d5ad26cfa06159d7dfff46a5aeb0999"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/9b2921901624d7ca2562/visuals/79a491b3e0d4caba6397/visual.json",
+      "bytes": 12464,
+      "sha256": "f8f3e80ddaf7a787664a2f7da8b85a0cc4e09ac3de1cdb7c01c3fc286b3a9efa"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/9b2921901624d7ca2562/visuals/7a5a7ab6e049e23a1f68/visual.json",
+      "bytes": 6088,
+      "sha256": "ca29c8b33ade1be8e012cfa4a5c5d615ce347b8afbb183f2130bdfc6b841cede"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/9b2921901624d7ca2562/visuals/932591663e7f0bd998f4/visual.json",
+      "bytes": 13255,
+      "sha256": "211ec66462a5c83370d7e212fe92fd76a0e74da1b7c1470aa0225d84af38f3a2"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/9b2921901624d7ca2562/visuals/abbee44185a36cb125f6/visual.json",
+      "bytes": 12955,
+      "sha256": "8deed5dc31f82ec2f37524e2b3c2253885a87d1114c47392c7dca429206a2a43"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/9b2921901624d7ca2562/visuals/abfdfe69175266e496c5/visual.json",
+      "bytes": 7931,
+      "sha256": "357405b694bdb4fece02d4f6b31f5f99d62012ab2d5838118d07381a56195fb0"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/9b2921901624d7ca2562/visuals/ba7c8d93a13d65b5b1d1/visual.json",
+      "bytes": 6089,
+      "sha256": "4c79de304facae1de3b785f5ae5de1645887fd9f77c1e7716005f13adeb4799f"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/9b2921901624d7ca2562/visuals/bbca517c4c7980a92994/visual.json",
+      "bytes": 5345,
+      "sha256": "11f1f21ff0d238c3749576256b9152e8ef9469d97edd671be38094c209d7bd99"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/9b2921901624d7ca2562/visuals/bed89d54d59f904bf7d3/visual.json",
+      "bytes": 9725,
+      "sha256": "592d6394ece6d0530cfb041ba5fbf4243a8841767ba4d35e7e8d75454f3410d3"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/9b2921901624d7ca2562/visuals/c3939825aec095d3c299/visual.json",
+      "bytes": 5306,
+      "sha256": "a82ed1c033572d5a8392550d8a4b92fbb177064c4af54c053b4a5f573eccfb45"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/9b2921901624d7ca2562/visuals/c86dc7439ba14599bd9b/visual.json",
+      "bytes": 13129,
+      "sha256": "adf8dd86ec43c246434a2ce5dd47aeb4b8ce4c3efc1b5a8fc72317702f33dea5"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/9b2921901624d7ca2562/visuals/d48229aee1bd10dce344/visual.json",
+      "bytes": 12971,
+      "sha256": "986268883a0bf6793652e3f46909edce26f410bcadb372c9bbf433a54980a04b"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/9b2921901624d7ca2562/visuals/de3727e6c67a39293557/visual.json",
+      "bytes": 5260,
+      "sha256": "e7e52910a32697c0d7e1f7c33bdcbc279e5d13edff0e0f3566aa50c9f4f9cddf"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/9b2921901624d7ca2562/visuals/e1e0168158ea3233a444/visual.json",
+      "bytes": 12980,
+      "sha256": "8c7b5e534b9cbe4d8f940c17b170d1653213324aa2308bdbd2095bc9d85e8bd2"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/9b2921901624d7ca2562/visuals/ecc0971655febed84b3a/visual.json",
+      "bytes": 5257,
+      "sha256": "b257b735ff1f998638c81ef458d0705f93cca4bd66d1c17dc3af0bf65d90f103"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/9b2921901624d7ca2562/visuals/f60b0dbe86d69acdf909/visual.json",
+      "bytes": 5256,
+      "sha256": "c9ea79620fac041e27ec507ada4754f29030eaa2ba8ad3bdb9c93378413cfe8e"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b07721708771ee06148a/page.json",
+      "bytes": 740,
+      "sha256": "3ac422c07d1cf2af4bed91e3b4442a56f2c91a54bde32d3083f00a9013423b5a"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b07721708771ee06148a/visuals/058cacdb0f74a620ae54/visual.json",
+      "bytes": 13018,
+      "sha256": "4d0511ff13dd2bbbbef628125f438fc882f08fa36548491d9ada5d5500db203f"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b07721708771ee06148a/visuals/09a92c858573e0395d32/visual.json",
+      "bytes": 14970,
+      "sha256": "a55bb5f9bf32d3ef9a8b4c0a80bb4a7cfc2ddd2233f01dd93963ee73b40171dd"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b07721708771ee06148a/visuals/09d46a548446c890bae3/visual.json",
+      "bytes": 7931,
+      "sha256": "7c8061d71efe86e9a68fdc15a54aea45f1c31cfe18e4e17c39422ff04292441f"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b07721708771ee06148a/visuals/0c82217181436b905992/visual.json",
+      "bytes": 5260,
+      "sha256": "948abc43772ccc282d9293fb563d393ee3f9c21aa611875f5c4dc72ada565ae3"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b07721708771ee06148a/visuals/113f4679f427c78243ae/visual.json",
+      "bytes": 5311,
+      "sha256": "110f3b3592d4f0acd717efbee1003d6432b6338b69027511229dffc8f55b72d6"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b07721708771ee06148a/visuals/1522456ecf9dd1331bcc/visual.json",
+      "bytes": 6089,
+      "sha256": "abf982999f02e912ee45e4143638dd017260e6dc45956ba705d444b7efdd9120"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b07721708771ee06148a/visuals/40b0b222a24babdb24a8/visual.json",
+      "bytes": 6088,
+      "sha256": "ca7d07a308260f541a61dd2292a4e236dc44ce7242d35c92edf6f05a4485a091"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b07721708771ee06148a/visuals/67e8aa820a329c04a61e/visual.json",
+      "bytes": 5257,
+      "sha256": "a1e4704c394ae2872d90c10ff6e97ed8ef54832f27b146bbf6d806cd2353ee93"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b07721708771ee06148a/visuals/6db1f2abc9c74725ec88/visual.json",
+      "bytes": 5256,
+      "sha256": "d9aad4750f5b315237f2b41b1dd68d0a0cf14142521d496d3a64f53718ce6613"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b07721708771ee06148a/visuals/76018967a085cdbb8a03/visual.json",
+      "bytes": 9660,
+      "sha256": "e5075affca198e2ce16493e7c8457c687c7b95e6a7031a4951bc4bde941bd0b5"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b07721708771ee06148a/visuals/9f529bb65a5a8a9a0d19/visual.json",
+      "bytes": 10010,
+      "sha256": "19de235acc935f0ad80a40b5ed404d7805af31d63e5257e88b51bb8ff6d725ca"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b07721708771ee06148a/visuals/9f7058986a6793d7f44c/visual.json",
+      "bytes": 5252,
+      "sha256": "c35054ad03a66159f7771b7aaccfd5d805e46f3c25f25750f524b56717bf9786"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b07721708771ee06148a/visuals/a0997213c1754f92b63b/visual.json",
+      "bytes": 13024,
+      "sha256": "fc33c0d739bc4554ca1c48991fccea647a89eda14ac9ba2c9f5cc664068ec036"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b07721708771ee06148a/visuals/a33b9f299b84ce69ad11/visual.json",
+      "bytes": 5362,
+      "sha256": "d8667b2c15e66ab68d4b6df06ed58e0f1ea5eb74cb8ccfc0841f0a752566b8ca"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b07721708771ee06148a/visuals/a59b1d3cf40966890385/visual.json",
+      "bytes": 13023,
+      "sha256": "1944ccc1cbacd913373422b513d91c51e80f5e0e44ca8aea55b65a1423b34838"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b07721708771ee06148a/visuals/a703817261584ba478df/visual.json",
+      "bytes": 7459,
+      "sha256": "2b986d91ff73c97099eb641ee88b685b33609cedc82695fef40e723ddfe7f5b1"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b07721708771ee06148a/visuals/aa85f4901c221b01f7a4/visual.json",
+      "bytes": 12464,
+      "sha256": "5c46427f020d6ae93a3216d10fde8a5669d1c9816012451bb6b05986ad84f897"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b07721708771ee06148a/visuals/bef9dfba77db4ccf9406/visual.json",
+      "bytes": 5261,
+      "sha256": "09f8c29a1fd39c64db217c74eaafea6a8b0c59563019f6bafa596d5054f4391d"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b07721708771ee06148a/visuals/daaa7e9c333d03443b16/visual.json",
+      "bytes": 5278,
+      "sha256": "66c0265fb462d17f326fb2fc39394bda0cbbb94a83e283ef220f97acb6e3ff9c"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b07721708771ee06148a/visuals/e87456c1422d62a04d01/visual.json",
+      "bytes": 7167,
+      "sha256": "a5b38324ed3df0de25e3bbcc1231c45064682a74cbde229c674be29a8a21f7a5"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b07721708771ee06148a/visuals/ef5ccaa8903df756b1c0/visual.json",
+      "bytes": 12954,
+      "sha256": "1ddd45418c1930abb76517322145f3bd0647a1b00eb9687a20f8ac7c0141d64e"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b07721708771ee06148a/visuals/f900cfa439dab795eec6/visual.json",
+      "bytes": 12260,
+      "sha256": "db68f3acc7049369dcc591fee0890654b01ed72d10bf0ff904f63df45bf839bc"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b5bc6a16b35baeeed57f/page.json",
+      "bytes": 739,
+      "sha256": "acefab2b77f739442cafce1cfd3f19e6982d88e08f9fd0a2beaa56208503a0df"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/048063d7fbcaa644714b/visual.json",
+      "bytes": 7931,
+      "sha256": "7bc0eecb27b80f871bfc97dd9b0219ab8ab8edddf800e0e3796941b669dcf636"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/18179aefb356be81e544/visual.json",
+      "bytes": 7459,
+      "sha256": "230efac4e94efcca74ed27c5bdfcd726577d7060a4d764be957dedc28e0c3ece"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/25cb4d0926d0791bea85/visual.json",
+      "bytes": 7167,
+      "sha256": "65c25809a1e912fe1afb7512618c2896b4a7b194c82f8c1ba5d50746ef09a7d9"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/2a7d26e0f299fec4002b/visual.json",
+      "bytes": 13043,
+      "sha256": "2279701d9f2a13e8f79e68a41285b31884ece87703babb5746a02265134649ad"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/3734439a8fe49de1ad54/visual.json",
+      "bytes": 13040,
+      "sha256": "3864fb3d7d4b23630b6e679c66ddce456363155f6d22e35b411925a3f98431d1"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/5d036cd375dbaf7db7ce/visual.json",
+      "bytes": 5302,
+      "sha256": "b2bacdcc403a1dd2ba345048296bd51ece45ca29f75fef324c93c2c9d7f315d3"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/5d8d18678fe2df02ad98/visual.json",
+      "bytes": 13004,
+      "sha256": "85431914c72979f3706b261587fdb92f67ddaa9d77df6fc76218c9222c2f62b7"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/6887c0af89b410ac7a9b/visual.json",
+      "bytes": 5260,
+      "sha256": "36062fc237068733203aaa476ffc621229bb7e6ee30ead734c554022711c3b1b"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/721606b29c61be8c17ed/visual.json",
+      "bytes": 5257,
+      "sha256": "17a891b7114a466feb8171995efad50f9c69d977aa1773e2b0d84b435936a171"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/7eb52f487398bdb8c9be/visual.json",
+      "bytes": 5256,
+      "sha256": "29cd373ff52373e4bc400f1df1d4f492034797a0ddd793d65b44e8b4266a7262"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/8b2ca610ff228524c932/visual.json",
+      "bytes": 11280,
+      "sha256": "a9a48195c68c25555e34f3acae9c33d0753dee13e3968f4338606b0ff32d5db0"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/a168b8bbf5337a7295d9/visual.json",
+      "bytes": 12995,
+      "sha256": "488a11b8b5faefa014e75b65fdbd1f2cdfd885773b7991447d0124dc8c499481"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/b28094c5c6b17f6c3534/visual.json",
+      "bytes": 14970,
+      "sha256": "87a1083f4ae43f909992ae1a8bc0d82d35989ec25ea7c1c586b4dcdfbf1dcc88"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/c4244fcf8d139070e6e5/visual.json",
+      "bytes": 9784,
+      "sha256": "59dc74e471a151ae195859c96340491b691bb6c5844a339330ee3886a677e435"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/c4bfc72653b018378410/visual.json",
+      "bytes": 10026,
+      "sha256": "07caefd3e328ba6b15b4e2bf5a645527fea582fe211d927eac485fa677361fa0"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/caa18ae964783137a3b9/visual.json",
+      "bytes": 5278,
+      "sha256": "9d4d9c6f45b54f662496c981e6cbd2db2e765b36eaa219267a9858d3ac1a6ba0"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/da71c3efcfe8aaf52dae/visual.json",
+      "bytes": 6089,
+      "sha256": "61eff87d62d6ce369bbecaa63869ad035d3c20af8bd87e8940f13f4482b42238"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/dd6227344c3728bda30f/visual.json",
+      "bytes": 5260,
+      "sha256": "899442611ce2011451c4289fdb65e43380c56a81aa73abc5e333a1cb48a62f7d"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/def2487f8505b99b87bc/visual.json",
+      "bytes": 12464,
+      "sha256": "fe0ad18ee13b3edd1fddf01a81e6fb32c636392e8b29372755bf1d029afe4a23"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/e495916207417d779fdf/visual.json",
+      "bytes": 7344,
+      "sha256": "9dee4d7ad10b8ee99c64f57f665148498f7c9c522c4befcd10bca27ce68c22f8"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/e5dbb9fdac95b3b96dae/visual.json",
+      "bytes": 5252,
+      "sha256": "69d909005bae6b0e1449a92c5c25ffa078a2d5fc96342f951e3f93a9bf3c880b"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/eb682e5892ac4c81915b/visual.json",
+      "bytes": 9669,
+      "sha256": "02a712edaea4e0102bd1fd930dd19049584b9e88ebbb48940429bfcabb247e44"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/f013bc3653ba7bd7eda4/visual.json",
+      "bytes": 5353,
+      "sha256": "4231bcf34370324fa1b5f8e533329c82967bc3e5ee67cba676613b6248783694"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/b5bc6a16b35baeeed57f/visuals/f2cdfc075d88d646b098/visual.json",
+      "bytes": 6088,
+      "sha256": "88621dcb82a0f9d0b24adf82b5aca4f263c4d52792bc4ac5af29953922fc54ee"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/pages/pages.json",
+      "bytes": 359,
+      "sha256": "368bfdcb2289acf6411ffb04214e0312a24f4fbdd7efc788cdc4b1d16db7e116"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/report.json",
+      "bytes": 2017,
+      "sha256": "93cdf7dee47611fdff694532eb422fd47ec6561dc27e2ecf61af42e55944042c"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/reportExtensions.json",
+      "bytes": 7809,
+      "sha256": "6ab5597893c7d9f64037a05d18e847dd12a9b58303d65d240d65c33374f01eef"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition/version.json",
+      "bytes": 150,
+      "sha256": "0f9f217a60981bf882d7b1963977fc72cc051078df8512b46caa607aff2e5220"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/definition.pbir",
+      "bytes": 431,
+      "sha256": "fe7e7ee44ab0a1f2d3c077102d6fbe6ad65dd593a0fe6fd571103fd08b0fdd34"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/StaticResources/RegisteredResources/OlistAdminLTE-20260918a.json",
+      "bytes": 1104,
+      "sha256": "138eddab4f5fb8d03237c52e4df9d62505f8c1288169718a6e78d719fc45b5a9"
+    },
+    {
+      "path": "powerbi/RPT_Olist_Analytics.Report/StaticResources/SharedResources/BaseThemes/Fluent2-CY26SU08.json",
+      "bytes": 95083,
+      "sha256": "587d473ec81fad831208e65a2d04881f4e24d37c12fcef64c3d9d45b0a7b7e63"
+    },
+    {
+      "path": "powerbi/screenshots/sqlserver/Customers.png",
+      "bytes": 75699,
+      "sha256": "524869d3423651bcf52c5a576bdb79033023c48af2da37670c698dced6fd4423"
+    },
+    {
+      "path": "powerbi/screenshots/sqlserver/Delivery & Reviews.png",
+      "bytes": 82414,
+      "sha256": "1fdad87efa3a57decb05a04cd9d3c96b97f9cd3d01a351a66c0d6d7a9b4972c6"
+    },
+    {
+      "path": "powerbi/screenshots/sqlserver/Overview.png",
+      "bytes": 88712,
+      "sha256": "53102c3e83bc3a46ab06e646c44e7f56c99556ef6d134ef2c02a0719f2fce4ff"
+    },
+    {
+      "path": "powerbi/screenshots/sqlserver/Payments.png",
+      "bytes": 89489,
+      "sha256": "3c18e9ac4be8569b9239354c40a4c9485001ab9075c3be46eb9d64e824c6b0af"
+    },
+    {
+      "path": "powerbi/screenshots/sqlserver/Sales & Sellers.png",
+      "bytes": 95191,
+      "sha256": "35cc5ccca905ef01536af7a42fceebab8bc55118939109ef240f5d0a24859a5a"
+    },
+    {
+      "path": "powerbi/sql-report-validation.json",
+      "bytes": 6017,
+      "sha256": "816b84f3e53f1f20055aec2d25f0a0e9c912838153b0356c66d68781d464b480"
+    },
+    {
+      "path": "powerbi/validation.json",
+      "bytes": 204,
+      "sha256": "3b20d0cb9f20da9ef709660d57177d4769639b437581fc30f300917b1ff75d2c"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4948,
+      "sha256": "60dfc2940da4fa7dbac799a75a19869af1d9e7b30b10db8d9fef602c65bf71a0"
+    },
+    {
+      "path": "sql/provision-sqlserver.ps1",
+      "bytes": 2285,
+      "sha256": "84b01c5d6716390cd3bfb2136bee215c27a203c1a9968fc0e2330210644091b7"
+    },
+    {
+      "path": "sql/validate-sqlserver.ps1",
+      "bytes": 2404,
+      "sha256": "33258d3de82fb4adc90c053a38051f296c3b3a2addd23d066b24c4401be09860"
+    },
+    {
+      "path": "sql/validation/09_reconcile_sqlserver.sql",
+      "bytes": 1916,
+      "sha256": "727cf113f3aefd05e344cda84be360e5b9e5960b3dbfb4bbb6ed99cccdd65c3b"
+    }
+  ]
+}

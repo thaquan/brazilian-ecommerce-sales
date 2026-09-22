@@ -1,0 +1,423 @@
+{
+  "sourceFolder": "Public templates derived from private Fabric exports",
+  "files": [
+    {
+      "name": "DF_Olist_Bronze.pqt",
+      "bytes": 2617,
+      "sha256": "febea93e9c8ebdba47abe5982d57c34156a09122da1183df472368b5740d1983",
+      "scope": "sanitized public artifact"
+    },
+    {
+      "name": "NB_Olist_Silver_reviewed.ipynb",
+      "bytes": 37956,
+      "sha256": "973a205b576fe96e377e808567251fbfd63f9454dff1d068c566b32562bc081c",
+      "scope": "sanitized public artifact"
+    },
+    {
+      "name": "NB_Olist_Silver_TEST_DQ.ipynb",
+      "bytes": 38017,
+      "sha256": "8fc6b00c48c70f75c3f025da71be96edf6416477c296547e5ba7298e0d99cc00",
+      "scope": "sanitized public artifact"
+    },
+    {
+      "name": "PL_Olist_E2E.zip",
+      "bytes": 3876,
+      "sha256": "7739e6e5c2ec2407ddeacf4f5e0296bda9bb518cc317c5faa306c4b2674c2a7f",
+      "scope": "sanitized public artifact"
+    },
+    {
+      "name": "PL_Olist_E2E_TEST_DQ.zip",
+      "bytes": 3939,
+      "sha256": "a545daebd3930b7e2d488322f148728ca6a0eb6e45dd08342e7399239899ee9c",
+      "scope": "sanitized public artifact"
+    },
+    {
+      "name": "PL_Olist_Gold_To_SQLServer.zip",
+      "bytes": 3069,
+      "sha256": "30019bbb7a1f1fb41554d5a2cdf36ce867d4463353192dd814213a60cdb5ba4f",
+      "scope": "sanitized public artifact"
+    },
+    {
+      "name": "PL_Olist_Load_Staging.zip",
+      "bytes": 3289,
+      "sha256": "3c17dae31b3ff5331684510ad488c70655b4cd832df1f008ecc62502ba4f744e",
+      "scope": "sanitized public artifact"
+    }
+  ],
+  "pipelineSummary": [
+    {
+      "template": "PL_Olist_E2E.zip",
+      "parameters": [
+        "FabricDataPipelines DEMO_USER",
+        "WH_Olist_Gold",
+        "LH_Olist_Silver"
+      ],
+      "resources": [
+        {
+          "name": "PL_Olist_E2E",
+          "activities": [
+            {
+              "name": "DF_Bronze",
+              "type": "RefreshDataflow",
+              "dependsOn": []
+            },
+            {
+              "name": "NB_Silver",
+              "type": "TridentNotebook",
+              "dependsOn": [
+                {
+                  "activity": "DF_Bronze",
+                  "dependencyConditions": [
+                    "Succeeded"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "LOAD_Staging",
+              "type": "InvokePipeline",
+              "dependsOn": [
+                {
+                  "activity": "NB_Silver",
+                  "dependencyConditions": [
+                    "Succeeded"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "SP_Build_Gold",
+              "type": "SqlServerStoredProcedure",
+              "dependsOn": [
+                {
+                  "activity": "LOAD_Staging",
+                  "dependencyConditions": [
+                    "Succeeded"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "PL_Olist_Load_Staging",
+          "activities": [
+            {
+              "name": "CP_orders",
+              "type": "Copy",
+              "dependsOn": []
+            },
+            {
+              "name": "CP_customers",
+              "type": "Copy",
+              "dependsOn": []
+            },
+            {
+              "name": "CP_order_items",
+              "type": "Copy",
+              "dependsOn": []
+            },
+            {
+              "name": "CP_customer_current",
+              "type": "Copy",
+              "dependsOn": []
+            },
+            {
+              "name": "CP_products",
+              "type": "Copy",
+              "dependsOn": []
+            },
+            {
+              "name": "CP_sellers",
+              "type": "Copy",
+              "dependsOn": []
+            },
+            {
+              "name": "CP_payments",
+              "type": "Copy",
+              "dependsOn": []
+            },
+            {
+              "name": "CP_reviews_order",
+              "type": "Copy",
+              "dependsOn": []
+            },
+            {
+              "name": "CP_date",
+              "type": "Copy",
+              "dependsOn": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "template": "PL_Olist_E2E_TEST_DQ.zip",
+      "parameters": [
+        "FabricDataPipelines DEMO_USER",
+        "WH_Olist_Gold",
+        "LH_Olist_Silver"
+      ],
+      "resources": [
+        {
+          "name": "PL_Olist_E2E_TEST_DQ",
+          "activities": [
+            {
+              "name": "DF_Bronze",
+              "type": "RefreshDataflow",
+              "dependsOn": []
+            },
+            {
+              "name": "NB_Silver",
+              "type": "TridentNotebook",
+              "dependsOn": [
+                {
+                  "activity": "DF_Bronze",
+                  "dependencyConditions": [
+                    "Succeeded"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "LOAD_Staging",
+              "type": "InvokePipeline",
+              "dependsOn": [
+                {
+                  "activity": "NB_Silver",
+                  "dependencyConditions": [
+                    "Succeeded"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "SP_Build_Gold",
+              "type": "SqlServerStoredProcedure",
+              "dependsOn": [
+                {
+                  "activity": "LOAD_Staging",
+                  "dependencyConditions": [
+                    "Succeeded"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "PL_Olist_Load_Staging",
+          "activities": [
+            {
+              "name": "CP_orders",
+              "type": "Copy",
+              "dependsOn": []
+            },
+            {
+              "name": "CP_customers",
+              "type": "Copy",
+              "dependsOn": []
+            },
+            {
+              "name": "CP_order_items",
+              "type": "Copy",
+              "dependsOn": []
+            },
+            {
+              "name": "CP_customer_current",
+              "type": "Copy",
+              "dependsOn": []
+            },
+            {
+              "name": "CP_products",
+              "type": "Copy",
+              "dependsOn": []
+            },
+            {
+              "name": "CP_sellers",
+              "type": "Copy",
+              "dependsOn": []
+            },
+            {
+              "name": "CP_payments",
+              "type": "Copy",
+              "dependsOn": []
+            },
+            {
+              "name": "CP_reviews_order",
+              "type": "Copy",
+              "dependsOn": []
+            },
+            {
+              "name": "CP_date",
+              "type": "Copy",
+              "dependsOn": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "template": "PL_Olist_Gold_To_SQLServer.zip",
+      "parameters": [
+        "WH_Olist_Gold",
+        "CN_Olist_SQLServer"
+      ],
+      "resources": [
+        {
+          "name": "PL_Olist_Gold_To_SQLServer",
+          "activities": [
+            {
+              "name": "Copy_DimDate",
+              "type": "Copy",
+              "dependsOn": []
+            },
+            {
+              "name": "Copy_DimCustomer",
+              "type": "Copy",
+              "dependsOn": [
+                {
+                  "activity": "Copy_DimDate",
+                  "dependencyConditions": [
+                    "Succeeded"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Copy_DimProduct",
+              "type": "Copy",
+              "dependsOn": [
+                {
+                  "activity": "Copy_DimCustomer",
+                  "dependencyConditions": [
+                    "Succeeded"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Copy_DimSeller",
+              "type": "Copy",
+              "dependsOn": [
+                {
+                  "activity": "Copy_DimProduct",
+                  "dependencyConditions": [
+                    "Succeeded"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Copy_FactOrders",
+              "type": "Copy",
+              "dependsOn": [
+                {
+                  "activity": "Copy_DimSeller",
+                  "dependencyConditions": [
+                    "Succeeded"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Copy_FactOrderItem",
+              "type": "Copy",
+              "dependsOn": [
+                {
+                  "activity": "Copy_FactOrders",
+                  "dependencyConditions": [
+                    "Succeeded"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Copy_FactPayments",
+              "type": "Copy",
+              "dependsOn": [
+                {
+                  "activity": "Copy_FactOrderItem",
+                  "dependencyConditions": [
+                    "Succeeded"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "template": "PL_Olist_Load_Staging.zip",
+      "parameters": [
+        "LH_Olist_Silver",
+        "WH_Olist_Gold"
+      ],
+      "resources": [
+        {
+          "name": "PL_Olist_Load_Staging",
+          "activities": [
+            {
+              "name": "CP_orders",
+              "type": "Copy",
+              "dependsOn": []
+            },
+            {
+              "name": "CP_customers",
+              "type": "Copy",
+              "dependsOn": []
+            },
+            {
+              "name": "CP_order_items",
+              "type": "Copy",
+              "dependsOn": []
+            },
+            {
+              "name": "CP_customer_current",
+              "type": "Copy",
+              "dependsOn": []
+            },
+            {
+              "name": "CP_products",
+              "type": "Copy",
+              "dependsOn": []
+            },
+            {
+              "name": "CP_sellers",
+              "type": "Copy",
+              "dependsOn": []
+            },
+            {
+              "name": "CP_payments",
+              "type": "Copy",
+              "dependsOn": []
+            },
+            {
+              "name": "CP_reviews_order",
+              "type": "Copy",
+              "dependsOn": []
+            },
+            {
+              "name": "CP_date",
+              "type": "Copy",
+              "dependsOn": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "duplicateResources": [
+    {
+      "resource": "PL_Olist_Load_Staging",
+      "templates": [
+        "PL_Olist_E2E.zip",
+        "PL_Olist_E2E_TEST_DQ.zip",
+        "PL_Olist_Load_Staging.zip"
+      ],
+      "identical": true
+    }
+  ],
+  "notebookOutputs": "Removed from public source; original TEST output is not accepted as forced-failure evidence."
+}

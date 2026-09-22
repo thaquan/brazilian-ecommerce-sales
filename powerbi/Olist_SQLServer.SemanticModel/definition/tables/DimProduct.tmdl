@@ -1,0 +1,83 @@
+table DimProduct
+	lineageTag: d861b4cd-9b3e-518e-8e6d-bb8cd6512913
+
+	column product_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 71be3384-b20b-54c9-9d0b-167a84dcf9cb
+		summarizeBy: none
+		sourceColumn: product_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_id
+		dataType: string
+		lineageTag: 93c813c8-a91c-5378-8a0b-2f7c157684ee
+		summarizeBy: none
+		sourceColumn: product_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column category_pt
+		dataType: string
+		lineageTag: 09e811ae-946d-544c-ba91-04688928d7c4
+		summarizeBy: none
+		sourceColumn: category_pt
+
+		annotation SummarizationSetBy = Automatic
+
+	column category_en
+		dataType: string
+		lineageTag: 906f8915-6f86-56f8-843d-90bfaa2f0f7e
+		summarizeBy: none
+		sourceColumn: category_en
+
+		annotation SummarizationSetBy = Automatic
+
+	column weight_g
+		dataType: int64
+		formatString: 0
+		lineageTag: 976df283-7a09-59dc-a72e-9af685d88f22
+		summarizeBy: none
+		sourceColumn: weight_g
+
+		annotation SummarizationSetBy = Automatic
+
+	column length_cm
+		dataType: int64
+		formatString: 0
+		lineageTag: 1b262f77-80d1-57a8-887a-d9f2b4d5e6cc
+		summarizeBy: none
+		sourceColumn: length_cm
+
+		annotation SummarizationSetBy = Automatic
+
+	column height_cm
+		dataType: int64
+		formatString: 0
+		lineageTag: 9418bdbb-095d-5f9f-aeb4-27a65a3fbeef
+		summarizeBy: none
+		sourceColumn: height_cm
+
+		annotation SummarizationSetBy = Automatic
+
+	column width_cm
+		dataType: int64
+		formatString: 0
+		lineageTag: b2b7fa22-f777-5436-b882-bcb056a5238b
+		summarizeBy: none
+		sourceColumn: width_cm
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimProduct = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("SQLSERVER-DEMO\SQLEXPRESS"),
+				    OlistDW = Source{[Name="OlistDW"]}[Data],
+				    dbo_DimProduct = OlistDW{[Schema="dbo",Item="DimProduct"]}[Data]
+				in
+				    dbo_DimProduct
+
+	annotation PBI_ResultType = Table

@@ -1,0 +1,215 @@
+[
+  {
+    "task": {
+      "name": "connection_operations",
+      "arguments": {
+        "request": {
+          "operation": "ConnectFabric",
+          "workspaceName": "WS_Olist_Demo",
+          "semanticModelName": "SM_Olist_Analytics",
+          "clearCredential": true
+        }
+      }
+    },
+    "result": {
+      "_meta": {
+        "annotations": {
+          "title": "connection_operations.connectfabric",
+          "readOnlyHint": true
+        }
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"message\":\"Connected to Fabric workspace 'WS_Olist_Demo' semantic model 'SM_Olist_Analytics' as 'Fabric-WS_Olist_Demo-SM_Olist_Analytics'.\",\"operation\":\"ConnectFabric\",\"data\":{\"connectionName\":\"Fabric-WS_Olist_Demo-SM_Olist_Analytics\",\"workspaceName\":\"WS_Olist_Demo\",\"semanticModelName\":\"SM_Olist_Analytics\",\"tenantName\":\"myorg\",\"xmlaEndpoint\":\"powerbi://api.powerbi.com/v1.0/myorg/WS_Olist_Demo\"}}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "task": {
+      "name": "security_role_operations",
+      "arguments": {
+        "request": {
+          "operation": "Create",
+          "definitions": [
+            {
+              "name": "CustomerStateAccess",
+              "modelPermission": "Read",
+              "description": "Single-user pilot: analyst@example.com may read SP customer transactions only. GoldLoadAudit blocked. Membership must be assigned and tested in Service."
+            }
+          ]
+        }
+      }
+    },
+    "result": {
+      "_meta": {
+        "annotations": {
+          "title": "security_role_operations.create",
+          "readOnlyHint": false
+        }
+      },
+      "content": [],
+      "isError": false
+    }
+  },
+  {
+    "task": {
+      "name": "security_role_operations",
+      "arguments": {
+        "request": {
+          "operation": "CreatePermissions",
+          "permissionDefinitions": [
+            {
+              "roleName": "CustomerStateAccess",
+              "tableName": "DimCustomer",
+              "filterExpression": "USERPRINCIPALNAME() = \"analyst@example.com\" && DimCustomer[state_code] = \"SP\""
+            },
+            {
+              "roleName": "CustomerStateAccess",
+              "tableName": "GoldLoadAudit",
+              "filterExpression": "FALSE()"
+            }
+          ],
+          "options": {
+            "useTransaction": true,
+            "continueOnError": false
+          }
+        }
+      }
+    },
+    "result": {
+      "_meta": {
+        "annotations": {
+          "title": "security_role_operations.createpermissions",
+          "readOnlyHint": false
+        }
+      },
+      "content": [],
+      "isError": false
+    }
+  },
+  {
+    "task": {
+      "name": "security_role_operations",
+      "arguments": {
+        "request": {
+          "operation": "ListPermissions",
+          "permissionFilter": {
+            "roleName": "CustomerStateAccess"
+          }
+        }
+      }
+    },
+    "result": {
+      "_meta": {
+        "annotations": {
+          "title": "security_role_operations.listpermissions",
+          "readOnlyHint": true
+        }
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"message\":\"Found 2 table permissions for role 'CustomerStateAccess'\",\"operation\":\"ListPermissions\",\"data\":[{\"TableName\":\"DimCustomer\",\"FilterExpression\":\"USERPRINCIPALNAME() = \\\"analyst@example.com\\\" && DimCustomer[state_code] = \\\"SP\\\"\",\"MetadataPermission\":\"Default\"},{\"TableName\":\"GoldLoadAudit\",\"FilterExpression\":\"FALSE()\",\"MetadataPermission\":\"Default\"}]}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "task": {
+      "name": "dax_query_operations",
+      "arguments": {
+        "request": {
+          "operation": "Execute",
+          "query": "EVALUATE CALCULATETABLE(ROW(\"Orders\",COUNTROWS(FactOrders),\"Items\",COUNTROWS(FactOrderItem),\"Payments\",COUNTROWS(FactPayments),\"OrderValue\",SUM(FactOrderItem[item_gmv]),\"PaymentValue\",SUM(FactPayments[payment_value])),DimCustomer[state_code]=\"SP\")",
+          "timeoutSeconds": 30,
+          "resultMode": "Inline"
+        }
+      }
+    },
+    "result": {
+      "_meta": {
+        "annotations": {
+          "title": "dax_query_operations.execute",
+          "readOnlyHint": true
+        }
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"message\":\"DAX query executed successfully, returned 1 rows in 606ms\",\"operation\":\"Execute\",\"data\":{\"rowCount\":1,\"columns\":[{\"name\":\"[Orders]\",\"dataType\":\"Int64\",\"isNullable\":true,\"ordinal\":0},{\"name\":\"[Items]\",\"dataType\":\"Int64\",\"isNullable\":true,\"ordinal\":1},{\"name\":\"[Payments]\",\"dataType\":\"Int64\",\"isNullable\":true,\"ordinal\":2},{\"name\":\"[OrderValue]\",\"dataType\":\"Double\",\"isNullable\":true,\"ordinal\":3},{\"name\":\"[PaymentValue]\",\"dataType\":\"Double\",\"isNullable\":true,\"ordinal\":4}],\"rows\":[{\"[Orders]\":41752,\"[Items]\":47461,\"[Payments]\":43625,\"[OrderValue]\":5924087.819999982,\"[PaymentValue]\":6000585.04000001}],\"executionTimeMs\":606}}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "task": {
+      "name": "dax_query_operations",
+      "arguments": {
+        "request": {
+          "operation": "Execute",
+          "query": "EVALUATE ROW(\"UPN\",USERPRINCIPALNAME(),\"States\",CONCATENATEX(VALUES(DimCustomer[state_code]),DimCustomer[state_code],\",\"),\"Orders\",COUNTROWS(FactOrders),\"Items\",COUNTROWS(FactOrderItem),\"Payments\",COUNTROWS(FactPayments),\"OrderValue\",SUM(FactOrderItem[item_gmv]),\"PaymentValue\",SUM(FactPayments[payment_value]),\"AuditRows\",COUNTROWS(GoldLoadAudit))",
+          "impersonation": {
+            "roles": [
+              "CustomerStateAccess"
+            ]
+          },
+          "timeoutSeconds": 30,
+          "resultMode": "Inline"
+        }
+      }
+    },
+    "result": {
+      "_meta": {
+        "annotations": {
+          "title": "dax_query_operations.execute",
+          "readOnlyHint": true
+        }
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"message\":\"DAX query executed successfully using impersonation (roles 'CustomerStateAccess'), returned 1 rows in 640ms\",\"operation\":\"Execute\",\"data\":{\"rowCount\":1,\"columns\":[{\"name\":\"[UPN]\",\"dataType\":\"String\",\"isNullable\":true,\"ordinal\":0},{\"name\":\"[States]\",\"dataType\":\"String\",\"isNullable\":true,\"ordinal\":1},{\"name\":\"[Orders]\",\"dataType\":\"Int64\",\"isNullable\":true,\"ordinal\":2},{\"name\":\"[Items]\",\"dataType\":\"Int64\",\"isNullable\":true,\"ordinal\":3},{\"name\":\"[Payments]\",\"dataType\":\"Int64\",\"isNullable\":true,\"ordinal\":4},{\"name\":\"[OrderValue]\",\"dataType\":\"Double\",\"isNullable\":true,\"ordinal\":5},{\"name\":\"[PaymentValue]\",\"dataType\":\"Double\",\"isNullable\":true,\"ordinal\":6},{\"name\":\"[AuditRows]\",\"dataType\":\"Int64\",\"isNullable\":true,\"ordinal\":7}],\"rows\":[{\"[UPN]\":\"analyst@example.com\",\"[States]\":\"SP\",\"[Orders]\":41752,\"[Items]\":47461,\"[Payments]\":43625,\"[OrderValue]\":5924087.819999982,\"[PaymentValue]\":6000585.04000001,\"[AuditRows]\":null}],\"executionTimeMs\":640}}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "task": {
+      "name": "dax_query_operations",
+      "arguments": {
+        "request": {
+          "operation": "Execute",
+          "query": "EVALUATE ROW(\"StatesAfterReset\",CALCULATE(CONCATENATEX(VALUES(DimCustomer[state_code]),DimCustomer[state_code],\",\"),REMOVEFILTERS()),\"RJOrders\",CALCULATE(COUNTROWS(FactOrders),DimCustomer[state_code]=\"RJ\"),\"AuditWithALL\",COUNTROWS(ALL(GoldLoadAudit)))",
+          "impersonation": {
+            "roles": [
+              "CustomerStateAccess"
+            ]
+          },
+          "timeoutSeconds": 30,
+          "resultMode": "Inline"
+        }
+      }
+    },
+    "result": {
+      "_meta": {
+        "annotations": {
+          "title": "dax_query_operations.execute",
+          "readOnlyHint": true
+        }
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"message\":\"DAX query executed successfully using impersonation (roles 'CustomerStateAccess'), returned 1 rows in 438ms\",\"operation\":\"Execute\",\"data\":{\"rowCount\":1,\"columns\":[{\"name\":\"[StatesAfterReset]\",\"dataType\":\"String\",\"isNullable\":true,\"ordinal\":0},{\"name\":\"[RJOrders]\",\"dataType\":\"Int64\",\"isNullable\":true,\"ordinal\":1},{\"name\":\"[AuditWithALL]\",\"dataType\":\"Int64\",\"isNullable\":true,\"ordinal\":2}],\"rows\":[{\"[StatesAfterReset]\":\"SP\",\"[RJOrders]\":null,\"[AuditWithALL]\":null}],\"executionTimeMs\":438}}"
+        }
+      ],
+      "isError": false
+    }
+  }
+]

@@ -1,0 +1,1544 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "FabricDataPipelines DEMO_USER": {
+      "type": "string"
+    },
+    "WH_Olist_Gold": {
+      "type": "string"
+    },
+    "LH_Olist_Silver": {
+      "type": "string"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "name": "PL_Olist_E2E_TEST_DQ",
+      "type": "pipelines",
+      "apiVersion": "2018-06-01",
+      "properties": {
+        "activities": [
+          {
+            "name": "DF_Bronze",
+            "type": "RefreshDataflow",
+            "dependsOn": [],
+            "policy": {
+              "timeout": "0.12:00:00",
+              "retry": 0,
+              "retryIntervalInSeconds": 30,
+              "secureOutput": false,
+              "secureInput": false
+            },
+            "typeProperties": {
+              "dataflowId": "57cce114-bbb8-5c62-9edc-ce70646f5a7b",
+              "workspaceId": "23f4a256-949e-5f7d-8c35-b63242139c25",
+              "notifyOption": "NoNotification",
+              "dataflowType": "DataflowFabric",
+              "executeMashupQueriesOnly": true
+            }
+          },
+          {
+            "name": "NB_Silver",
+            "type": "TridentNotebook",
+            "dependsOn": [
+              {
+                "activity": "DF_Bronze",
+                "dependencyConditions": [
+                  "Succeeded"
+                ]
+              }
+            ],
+            "policy": {
+              "timeout": "0.12:00:00",
+              "retry": 0,
+              "retryIntervalInSeconds": 30,
+              "secureOutput": false,
+              "secureInput": false
+            },
+            "typeProperties": {
+              "notebookId": "44b828d7-286a-55d7-85b5-42d82df4097d",
+              "workspaceId": "23f4a256-949e-5f7d-8c35-b63242139c25"
+            }
+          },
+          {
+            "name": "LOAD_Staging",
+            "type": "InvokePipeline",
+            "dependsOn": [
+              {
+                "activity": "NB_Silver",
+                "dependencyConditions": [
+                  "Succeeded"
+                ]
+              }
+            ],
+            "policy": {
+              "timeout": "0.12:00:00",
+              "retry": 0,
+              "retryIntervalInSeconds": 30,
+              "secureOutput": false,
+              "secureInput": false
+            },
+            "typeProperties": {
+              "waitOnCompletion": true,
+              "operationType": "InvokeFabricPipeline",
+              "pipelineId": "b5f9ba3b-9b7b-54bd-815d-2fdc5fa90cd0",
+              "workspaceId": "23f4a256-949e-5f7d-8c35-b63242139c25",
+              "parameters": {}
+            },
+            "externalReferences": {
+              "connection": "[parameters('FabricDataPipelines DEMO_USER')]"
+            }
+          },
+          {
+            "name": "SP_Build_Gold",
+            "type": "SqlServerStoredProcedure",
+            "dependsOn": [
+              {
+                "activity": "LOAD_Staging",
+                "dependencyConditions": [
+                  "Succeeded"
+                ]
+              }
+            ],
+            "policy": {
+              "timeout": "0.12:00:00",
+              "retry": 0,
+              "retryIntervalInSeconds": 30,
+              "secureOutput": false,
+              "secureInput": false
+            },
+            "typeProperties": {
+              "storedProcedureName": "[[dbo].[usp_build_gold]",
+              "storedProcedureParameters": {
+                "silver_run_id": {
+                  "value": {
+                    "value": "@activity('NB_Silver').output.result.exitValue",
+                    "type": "Expression"
+                  },
+                  "type": "String"
+                }
+              }
+            },
+            "linkedService": {
+              "name": "WH_Olist_Gold",
+              "properties": {
+                "annotations": [],
+                "type": "DataWarehouse",
+                "typeProperties": {
+                  "endpoint": "warehouse-example.datawarehouse.fabric.microsoft.com",
+                  "artifactId": "[parameters('WH_Olist_Gold')]",
+                  "workspaceId": "23f4a256-949e-5f7d-8c35-b63242139c25"
+                }
+              }
+            }
+          }
+        ],
+        "lastModifiedByObjectId": "3b8ecc97-cdfd-5b85-89ce-5b95500f3a33",
+        "lastPublishTime": "2026-09-17T08:16:14Z"
+      },
+      "dependsOn": []
+    },
+    {
+      "name": "PL_Olist_Load_Staging",
+      "type": "pipelines",
+      "apiVersion": "2018-06-01",
+      "properties": {
+        "description": "Load nine verified Olist Silver tables into WH_Olist_Gold staging with full-refresh copy and explicit mappings.",
+        "activities": [
+          {
+            "name": "CP_orders",
+            "type": "Copy",
+            "dependsOn": [],
+            "policy": {
+              "timeout": "0.12:00:00",
+              "retry": 0,
+              "retryIntervalInSeconds": 30,
+              "secureOutput": false,
+              "secureInput": false
+            },
+            "typeProperties": {
+              "source": {
+                "type": "LakehouseTableSource",
+                "datasetSettings": {
+                  "annotations": [],
+                  "connectionSettings": {
+                    "name": "LH_Olist_Silver",
+                    "properties": {
+                      "annotations": [],
+                      "type": "Lakehouse",
+                      "typeProperties": {
+                        "workspaceId": "23f4a256-949e-5f7d-8c35-b63242139c25",
+                        "artifactId": "[parameters('LH_Olist_Silver')]",
+                        "rootFolder": "Tables"
+                      },
+                      "externalReferences": {
+                        "connection": "688e7dde-7b43-5c41-b369-f33cf4401dff"
+                      }
+                    }
+                  },
+                  "type": "LakehouseTable",
+                  "schema": [],
+                  "typeProperties": {
+                    "schema": "dbo",
+                    "table": "slv_orders"
+                  }
+                }
+              },
+              "sink": {
+                "type": "DataWarehouseSink",
+                "preCopyScript": "TRUNCATE TABLE staging.orders;",
+                "allowCopyCommand": true,
+                "copyCommandSettings": {},
+                "writeBehavior": "Insert",
+                "disableMetricsCollection": false,
+                "datasetSettings": {
+                  "annotations": [],
+                  "linkedService": {
+                    "name": "WH_Olist_Gold",
+                    "properties": {
+                      "annotations": [],
+                      "type": "DataWarehouse",
+                      "typeProperties": {
+                        "endpoint": "warehouse-example.datawarehouse.fabric.microsoft.com",
+                        "artifactId": "[parameters('WH_Olist_Gold')]",
+                        "workspaceId": "23f4a256-949e-5f7d-8c35-b63242139c25"
+                      }
+                    }
+                  },
+                  "type": "DataWarehouseTable",
+                  "schema": [],
+                  "typeProperties": {
+                    "schema": "staging",
+                    "table": "orders"
+                  }
+                }
+              },
+              "enableStaging": true,
+              "translator": {
+                "type": "TabularTranslator",
+                "mappings": [
+                  {
+                    "source": {
+                      "name": "order_id",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "order_id",
+                      "physicalType": "varchar",
+                      "length": "32"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "customer_id",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "customer_id",
+                      "physicalType": "varchar",
+                      "length": "32"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "order_status",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "order_status",
+                      "physicalType": "varchar",
+                      "length": "30"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "order_purchase_timestamp",
+                      "type": "DateTime",
+                      "physicalType": "timestamp"
+                    },
+                    "sink": {
+                      "name": "order_purchase_timestamp",
+                      "physicalType": "datetime2",
+                      "precision": 6
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "purchase_date_key",
+                      "type": "Int32",
+                      "physicalType": "integer"
+                    },
+                    "sink": {
+                      "name": "purchase_date_key",
+                      "physicalType": "int"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "delivered_date_key",
+                      "type": "Int32",
+                      "physicalType": "integer"
+                    },
+                    "sink": {
+                      "name": "delivered_date_key",
+                      "physicalType": "int"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "estimated_date_key",
+                      "type": "Int32",
+                      "physicalType": "integer"
+                    },
+                    "sink": {
+                      "name": "estimated_date_key",
+                      "physicalType": "int"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "delivery_days",
+                      "type": "Int32",
+                      "physicalType": "integer"
+                    },
+                    "sink": {
+                      "name": "delivery_days",
+                      "physicalType": "int"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "delay_days",
+                      "type": "Int32",
+                      "physicalType": "integer"
+                    },
+                    "sink": {
+                      "name": "delay_days",
+                      "physicalType": "int"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "is_late",
+                      "type": "Int32",
+                      "physicalType": "integer"
+                    },
+                    "sink": {
+                      "name": "is_late",
+                      "physicalType": "int"
+                    }
+                  }
+                ],
+                "typeConversion": true,
+                "typeConversionSettings": {
+                  "allowDataTruncation": true,
+                  "treatBooleanAsNumber": false
+                }
+              }
+            }
+          },
+          {
+            "name": "CP_customers",
+            "type": "Copy",
+            "dependsOn": [],
+            "policy": {
+              "timeout": "0.12:00:00",
+              "retry": 0,
+              "retryIntervalInSeconds": 30,
+              "secureOutput": false,
+              "secureInput": false
+            },
+            "typeProperties": {
+              "source": {
+                "type": "LakehouseTableSource",
+                "datasetSettings": {
+                  "annotations": [],
+                  "connectionSettings": {
+                    "name": "LH_Olist_Silver",
+                    "properties": {
+                      "annotations": [],
+                      "type": "Lakehouse",
+                      "typeProperties": {
+                        "workspaceId": "23f4a256-949e-5f7d-8c35-b63242139c25",
+                        "artifactId": "[parameters('LH_Olist_Silver')]",
+                        "rootFolder": "Tables"
+                      },
+                      "externalReferences": {
+                        "connection": "688e7dde-7b43-5c41-b369-f33cf4401dff"
+                      }
+                    }
+                  },
+                  "type": "LakehouseTable",
+                  "schema": [],
+                  "typeProperties": {
+                    "schema": "dbo",
+                    "table": "slv_customers"
+                  }
+                }
+              },
+              "sink": {
+                "type": "DataWarehouseSink",
+                "preCopyScript": "TRUNCATE TABLE staging.customers;",
+                "allowCopyCommand": true,
+                "copyCommandSettings": {},
+                "writeBehavior": "Insert",
+                "disableMetricsCollection": false,
+                "datasetSettings": {
+                  "annotations": [],
+                  "linkedService": {
+                    "name": "WH_Olist_Gold",
+                    "properties": {
+                      "annotations": [],
+                      "type": "DataWarehouse",
+                      "typeProperties": {
+                        "endpoint": "warehouse-example.datawarehouse.fabric.microsoft.com",
+                        "artifactId": "[parameters('WH_Olist_Gold')]",
+                        "workspaceId": "23f4a256-949e-5f7d-8c35-b63242139c25"
+                      }
+                    }
+                  },
+                  "type": "DataWarehouseTable",
+                  "schema": [],
+                  "typeProperties": {
+                    "schema": "staging",
+                    "table": "customers"
+                  }
+                }
+              },
+              "enableStaging": true,
+              "translator": {
+                "type": "TabularTranslator",
+                "mappings": [
+                  {
+                    "source": {
+                      "name": "customer_id",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "customer_id",
+                      "physicalType": "varchar",
+                      "length": "32"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "customer_unique_id",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "customer_unique_id",
+                      "physicalType": "varchar",
+                      "length": "32"
+                    }
+                  }
+                ],
+                "typeConversion": true,
+                "typeConversionSettings": {
+                  "allowDataTruncation": true,
+                  "treatBooleanAsNumber": false
+                }
+              }
+            }
+          },
+          {
+            "name": "CP_order_items",
+            "type": "Copy",
+            "dependsOn": [],
+            "policy": {
+              "timeout": "0.12:00:00",
+              "retry": 0,
+              "retryIntervalInSeconds": 30,
+              "secureOutput": false,
+              "secureInput": false
+            },
+            "typeProperties": {
+              "source": {
+                "type": "LakehouseTableSource",
+                "datasetSettings": {
+                  "annotations": [],
+                  "connectionSettings": {
+                    "name": "LH_Olist_Silver",
+                    "properties": {
+                      "annotations": [],
+                      "type": "Lakehouse",
+                      "typeProperties": {
+                        "workspaceId": "23f4a256-949e-5f7d-8c35-b63242139c25",
+                        "artifactId": "[parameters('LH_Olist_Silver')]",
+                        "rootFolder": "Tables"
+                      },
+                      "externalReferences": {
+                        "connection": "688e7dde-7b43-5c41-b369-f33cf4401dff"
+                      }
+                    }
+                  },
+                  "type": "LakehouseTable",
+                  "schema": [],
+                  "typeProperties": {
+                    "schema": "dbo",
+                    "table": "slv_order_items"
+                  }
+                }
+              },
+              "sink": {
+                "type": "DataWarehouseSink",
+                "preCopyScript": "TRUNCATE TABLE staging.order_items;",
+                "allowCopyCommand": true,
+                "copyCommandSettings": {},
+                "writeBehavior": "Insert",
+                "disableMetricsCollection": false,
+                "datasetSettings": {
+                  "annotations": [],
+                  "linkedService": {
+                    "name": "WH_Olist_Gold",
+                    "properties": {
+                      "annotations": [],
+                      "type": "DataWarehouse",
+                      "typeProperties": {
+                        "endpoint": "warehouse-example.datawarehouse.fabric.microsoft.com",
+                        "artifactId": "[parameters('WH_Olist_Gold')]",
+                        "workspaceId": "23f4a256-949e-5f7d-8c35-b63242139c25"
+                      }
+                    }
+                  },
+                  "type": "DataWarehouseTable",
+                  "schema": [],
+                  "typeProperties": {
+                    "schema": "staging",
+                    "table": "order_items"
+                  }
+                }
+              },
+              "enableStaging": true,
+              "translator": {
+                "type": "TabularTranslator",
+                "mappings": [
+                  {
+                    "source": {
+                      "name": "order_id",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "order_id",
+                      "physicalType": "varchar",
+                      "length": "32"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "order_item_id",
+                      "type": "Int32",
+                      "physicalType": "integer"
+                    },
+                    "sink": {
+                      "name": "order_item_id",
+                      "physicalType": "int"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "product_id",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "product_id",
+                      "physicalType": "varchar",
+                      "length": "32"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "seller_id",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "seller_id",
+                      "physicalType": "varchar",
+                      "length": "32"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "price",
+                      "type": "Decimal",
+                      "physicalType": "decimal",
+                      "scale": 2,
+                      "precision": 18
+                    },
+                    "sink": {
+                      "name": "price",
+                      "physicalType": "decimal",
+                      "scale": 2,
+                      "precision": 18
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "freight_value",
+                      "type": "Decimal",
+                      "physicalType": "decimal",
+                      "scale": 2,
+                      "precision": 18
+                    },
+                    "sink": {
+                      "name": "freight_value",
+                      "physicalType": "decimal",
+                      "scale": 2,
+                      "precision": 18
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "item_gmv",
+                      "type": "Decimal",
+                      "physicalType": "decimal",
+                      "scale": 2,
+                      "precision": 19
+                    },
+                    "sink": {
+                      "name": "item_gmv",
+                      "physicalType": "decimal",
+                      "scale": 2,
+                      "precision": 19
+                    }
+                  }
+                ],
+                "typeConversion": true,
+                "typeConversionSettings": {
+                  "allowDataTruncation": true,
+                  "treatBooleanAsNumber": false
+                }
+              }
+            }
+          },
+          {
+            "name": "CP_customer_current",
+            "type": "Copy",
+            "dependsOn": [],
+            "policy": {
+              "timeout": "0.12:00:00",
+              "retry": 0,
+              "retryIntervalInSeconds": 30,
+              "secureOutput": false,
+              "secureInput": false
+            },
+            "typeProperties": {
+              "source": {
+                "type": "LakehouseTableSource",
+                "datasetSettings": {
+                  "annotations": [],
+                  "connectionSettings": {
+                    "name": "LH_Olist_Silver",
+                    "properties": {
+                      "annotations": [],
+                      "type": "Lakehouse",
+                      "typeProperties": {
+                        "workspaceId": "23f4a256-949e-5f7d-8c35-b63242139c25",
+                        "artifactId": "[parameters('LH_Olist_Silver')]",
+                        "rootFolder": "Tables"
+                      },
+                      "externalReferences": {
+                        "connection": "688e7dde-7b43-5c41-b369-f33cf4401dff"
+                      }
+                    }
+                  },
+                  "type": "LakehouseTable",
+                  "schema": [],
+                  "typeProperties": {
+                    "schema": "dbo",
+                    "table": "slv_customer_current"
+                  }
+                }
+              },
+              "sink": {
+                "type": "DataWarehouseSink",
+                "preCopyScript": "TRUNCATE TABLE staging.customer_current;",
+                "allowCopyCommand": true,
+                "copyCommandSettings": {},
+                "writeBehavior": "Insert",
+                "disableMetricsCollection": false,
+                "datasetSettings": {
+                  "annotations": [],
+                  "linkedService": {
+                    "name": "WH_Olist_Gold",
+                    "properties": {
+                      "annotations": [],
+                      "type": "DataWarehouse",
+                      "typeProperties": {
+                        "endpoint": "warehouse-example.datawarehouse.fabric.microsoft.com",
+                        "artifactId": "[parameters('WH_Olist_Gold')]",
+                        "workspaceId": "23f4a256-949e-5f7d-8c35-b63242139c25"
+                      }
+                    }
+                  },
+                  "type": "DataWarehouseTable",
+                  "schema": [],
+                  "typeProperties": {
+                    "schema": "staging",
+                    "table": "customer_current"
+                  }
+                }
+              },
+              "enableStaging": true,
+              "translator": {
+                "type": "TabularTranslator",
+                "mappings": [
+                  {
+                    "source": {
+                      "name": "customer_unique_id",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "customer_unique_id",
+                      "physicalType": "varchar",
+                      "length": "32"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "customer_zip_code_prefix",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "customer_zip_code_prefix",
+                      "physicalType": "varchar",
+                      "length": "5"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "customer_city",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "customer_city",
+                      "physicalType": "varchar",
+                      "length": "300"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "customer_state",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "customer_state",
+                      "physicalType": "varchar",
+                      "length": "2"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "latitude",
+                      "type": "Double",
+                      "physicalType": "double"
+                    },
+                    "sink": {
+                      "name": "latitude",
+                      "physicalType": "float"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "longitude",
+                      "type": "Double",
+                      "physicalType": "double"
+                    },
+                    "sink": {
+                      "name": "longitude",
+                      "physicalType": "float"
+                    }
+                  }
+                ],
+                "typeConversion": true,
+                "typeConversionSettings": {
+                  "allowDataTruncation": true,
+                  "treatBooleanAsNumber": false
+                }
+              }
+            }
+          },
+          {
+            "name": "CP_products",
+            "type": "Copy",
+            "dependsOn": [],
+            "policy": {
+              "timeout": "0.12:00:00",
+              "retry": 0,
+              "retryIntervalInSeconds": 30,
+              "secureOutput": false,
+              "secureInput": false
+            },
+            "typeProperties": {
+              "source": {
+                "type": "LakehouseTableSource",
+                "datasetSettings": {
+                  "annotations": [],
+                  "connectionSettings": {
+                    "name": "LH_Olist_Silver",
+                    "properties": {
+                      "annotations": [],
+                      "type": "Lakehouse",
+                      "typeProperties": {
+                        "workspaceId": "23f4a256-949e-5f7d-8c35-b63242139c25",
+                        "artifactId": "[parameters('LH_Olist_Silver')]",
+                        "rootFolder": "Tables"
+                      },
+                      "externalReferences": {
+                        "connection": "688e7dde-7b43-5c41-b369-f33cf4401dff"
+                      }
+                    }
+                  },
+                  "type": "LakehouseTable",
+                  "schema": [],
+                  "typeProperties": {
+                    "schema": "dbo",
+                    "table": "slv_products"
+                  }
+                }
+              },
+              "sink": {
+                "type": "DataWarehouseSink",
+                "preCopyScript": "TRUNCATE TABLE staging.products;",
+                "allowCopyCommand": true,
+                "copyCommandSettings": {},
+                "writeBehavior": "Insert",
+                "disableMetricsCollection": false,
+                "datasetSettings": {
+                  "annotations": [],
+                  "linkedService": {
+                    "name": "WH_Olist_Gold",
+                    "properties": {
+                      "annotations": [],
+                      "type": "DataWarehouse",
+                      "typeProperties": {
+                        "endpoint": "warehouse-example.datawarehouse.fabric.microsoft.com",
+                        "artifactId": "[parameters('WH_Olist_Gold')]",
+                        "workspaceId": "23f4a256-949e-5f7d-8c35-b63242139c25"
+                      }
+                    }
+                  },
+                  "type": "DataWarehouseTable",
+                  "schema": [],
+                  "typeProperties": {
+                    "schema": "staging",
+                    "table": "products"
+                  }
+                }
+              },
+              "enableStaging": true,
+              "translator": {
+                "type": "TabularTranslator",
+                "mappings": [
+                  {
+                    "source": {
+                      "name": "product_id",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "product_id",
+                      "physicalType": "varchar",
+                      "length": "32"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "product_category_name",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "product_category_name",
+                      "physicalType": "varchar",
+                      "length": "200"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "product_category_name_english",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "product_category_name_english",
+                      "physicalType": "varchar",
+                      "length": "200"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "product_weight_g",
+                      "type": "Int32",
+                      "physicalType": "integer"
+                    },
+                    "sink": {
+                      "name": "product_weight_g",
+                      "physicalType": "int"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "product_length_cm",
+                      "type": "Int32",
+                      "physicalType": "integer"
+                    },
+                    "sink": {
+                      "name": "product_length_cm",
+                      "physicalType": "int"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "product_height_cm",
+                      "type": "Int32",
+                      "physicalType": "integer"
+                    },
+                    "sink": {
+                      "name": "product_height_cm",
+                      "physicalType": "int"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "product_width_cm",
+                      "type": "Int32",
+                      "physicalType": "integer"
+                    },
+                    "sink": {
+                      "name": "product_width_cm",
+                      "physicalType": "int"
+                    }
+                  }
+                ],
+                "typeConversion": true,
+                "typeConversionSettings": {
+                  "allowDataTruncation": true,
+                  "treatBooleanAsNumber": false
+                }
+              }
+            }
+          },
+          {
+            "name": "CP_sellers",
+            "type": "Copy",
+            "dependsOn": [],
+            "policy": {
+              "timeout": "0.12:00:00",
+              "retry": 0,
+              "retryIntervalInSeconds": 30,
+              "secureOutput": false,
+              "secureInput": false
+            },
+            "typeProperties": {
+              "source": {
+                "type": "LakehouseTableSource",
+                "datasetSettings": {
+                  "annotations": [],
+                  "connectionSettings": {
+                    "name": "LH_Olist_Silver",
+                    "properties": {
+                      "annotations": [],
+                      "type": "Lakehouse",
+                      "typeProperties": {
+                        "workspaceId": "23f4a256-949e-5f7d-8c35-b63242139c25",
+                        "artifactId": "[parameters('LH_Olist_Silver')]",
+                        "rootFolder": "Tables"
+                      },
+                      "externalReferences": {
+                        "connection": "688e7dde-7b43-5c41-b369-f33cf4401dff"
+                      }
+                    }
+                  },
+                  "type": "LakehouseTable",
+                  "schema": [],
+                  "typeProperties": {
+                    "schema": "dbo",
+                    "table": "slv_sellers"
+                  }
+                }
+              },
+              "sink": {
+                "type": "DataWarehouseSink",
+                "preCopyScript": "TRUNCATE TABLE staging.sellers;",
+                "allowCopyCommand": true,
+                "copyCommandSettings": {},
+                "writeBehavior": "Insert",
+                "disableMetricsCollection": false,
+                "datasetSettings": {
+                  "annotations": [],
+                  "linkedService": {
+                    "name": "WH_Olist_Gold",
+                    "properties": {
+                      "annotations": [],
+                      "type": "DataWarehouse",
+                      "typeProperties": {
+                        "endpoint": "warehouse-example.datawarehouse.fabric.microsoft.com",
+                        "artifactId": "[parameters('WH_Olist_Gold')]",
+                        "workspaceId": "23f4a256-949e-5f7d-8c35-b63242139c25"
+                      }
+                    }
+                  },
+                  "type": "DataWarehouseTable",
+                  "schema": [],
+                  "typeProperties": {
+                    "schema": "staging",
+                    "table": "sellers"
+                  }
+                }
+              },
+              "enableStaging": true,
+              "translator": {
+                "type": "TabularTranslator",
+                "mappings": [
+                  {
+                    "source": {
+                      "name": "seller_id",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "seller_id",
+                      "physicalType": "varchar",
+                      "length": "32"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "seller_zip_code_prefix",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "seller_zip_code_prefix",
+                      "physicalType": "varchar",
+                      "length": "5"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "seller_city",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "seller_city",
+                      "physicalType": "varchar",
+                      "length": "300"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "seller_state",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "seller_state",
+                      "physicalType": "varchar",
+                      "length": "2"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "latitude",
+                      "type": "Double",
+                      "physicalType": "double"
+                    },
+                    "sink": {
+                      "name": "latitude",
+                      "physicalType": "float"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "longitude",
+                      "type": "Double",
+                      "physicalType": "double"
+                    },
+                    "sink": {
+                      "name": "longitude",
+                      "physicalType": "float"
+                    }
+                  }
+                ],
+                "typeConversion": true,
+                "typeConversionSettings": {
+                  "allowDataTruncation": true,
+                  "treatBooleanAsNumber": false
+                }
+              }
+            }
+          },
+          {
+            "name": "CP_payments",
+            "type": "Copy",
+            "dependsOn": [],
+            "policy": {
+              "timeout": "0.12:00:00",
+              "retry": 0,
+              "retryIntervalInSeconds": 30,
+              "secureOutput": false,
+              "secureInput": false
+            },
+            "typeProperties": {
+              "source": {
+                "type": "LakehouseTableSource",
+                "datasetSettings": {
+                  "annotations": [],
+                  "connectionSettings": {
+                    "name": "LH_Olist_Silver",
+                    "properties": {
+                      "annotations": [],
+                      "type": "Lakehouse",
+                      "typeProperties": {
+                        "workspaceId": "23f4a256-949e-5f7d-8c35-b63242139c25",
+                        "artifactId": "[parameters('LH_Olist_Silver')]",
+                        "rootFolder": "Tables"
+                      },
+                      "externalReferences": {
+                        "connection": "688e7dde-7b43-5c41-b369-f33cf4401dff"
+                      }
+                    }
+                  },
+                  "type": "LakehouseTable",
+                  "schema": [],
+                  "typeProperties": {
+                    "schema": "dbo",
+                    "table": "slv_payments"
+                  }
+                }
+              },
+              "sink": {
+                "type": "DataWarehouseSink",
+                "preCopyScript": "TRUNCATE TABLE staging.payments;",
+                "allowCopyCommand": true,
+                "copyCommandSettings": {},
+                "writeBehavior": "Insert",
+                "disableMetricsCollection": false,
+                "datasetSettings": {
+                  "annotations": [],
+                  "linkedService": {
+                    "name": "WH_Olist_Gold",
+                    "properties": {
+                      "annotations": [],
+                      "type": "DataWarehouse",
+                      "typeProperties": {
+                        "endpoint": "warehouse-example.datawarehouse.fabric.microsoft.com",
+                        "artifactId": "[parameters('WH_Olist_Gold')]",
+                        "workspaceId": "23f4a256-949e-5f7d-8c35-b63242139c25"
+                      }
+                    }
+                  },
+                  "type": "DataWarehouseTable",
+                  "schema": [],
+                  "typeProperties": {
+                    "schema": "staging",
+                    "table": "payments"
+                  }
+                }
+              },
+              "enableStaging": true,
+              "translator": {
+                "type": "TabularTranslator",
+                "mappings": [
+                  {
+                    "source": {
+                      "name": "order_id",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "order_id",
+                      "physicalType": "varchar",
+                      "length": "32"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "payment_sequential",
+                      "type": "Int32",
+                      "physicalType": "integer"
+                    },
+                    "sink": {
+                      "name": "payment_sequential",
+                      "physicalType": "int"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "payment_type",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "payment_type",
+                      "physicalType": "varchar",
+                      "length": "30"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "payment_installments",
+                      "type": "Int32",
+                      "physicalType": "integer"
+                    },
+                    "sink": {
+                      "name": "payment_installments",
+                      "physicalType": "int"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "payment_value",
+                      "type": "Decimal",
+                      "physicalType": "decimal",
+                      "scale": 2,
+                      "precision": 18
+                    },
+                    "sink": {
+                      "name": "payment_value",
+                      "physicalType": "decimal",
+                      "scale": 2,
+                      "precision": 18
+                    }
+                  }
+                ],
+                "typeConversion": true,
+                "typeConversionSettings": {
+                  "allowDataTruncation": true,
+                  "treatBooleanAsNumber": false
+                }
+              }
+            }
+          },
+          {
+            "name": "CP_reviews_order",
+            "type": "Copy",
+            "dependsOn": [],
+            "policy": {
+              "timeout": "0.12:00:00",
+              "retry": 0,
+              "retryIntervalInSeconds": 30,
+              "secureOutput": false,
+              "secureInput": false
+            },
+            "typeProperties": {
+              "source": {
+                "type": "LakehouseTableSource",
+                "datasetSettings": {
+                  "annotations": [],
+                  "connectionSettings": {
+                    "name": "LH_Olist_Silver",
+                    "properties": {
+                      "annotations": [],
+                      "type": "Lakehouse",
+                      "typeProperties": {
+                        "workspaceId": "23f4a256-949e-5f7d-8c35-b63242139c25",
+                        "artifactId": "[parameters('LH_Olist_Silver')]",
+                        "rootFolder": "Tables"
+                      },
+                      "externalReferences": {
+                        "connection": "688e7dde-7b43-5c41-b369-f33cf4401dff"
+                      }
+                    }
+                  },
+                  "type": "LakehouseTable",
+                  "schema": [],
+                  "typeProperties": {
+                    "schema": "dbo",
+                    "table": "slv_reviews_order"
+                  }
+                }
+              },
+              "sink": {
+                "type": "DataWarehouseSink",
+                "preCopyScript": "TRUNCATE TABLE staging.reviews_order;",
+                "allowCopyCommand": true,
+                "copyCommandSettings": {},
+                "writeBehavior": "Insert",
+                "disableMetricsCollection": false,
+                "datasetSettings": {
+                  "annotations": [],
+                  "linkedService": {
+                    "name": "WH_Olist_Gold",
+                    "properties": {
+                      "annotations": [],
+                      "type": "DataWarehouse",
+                      "typeProperties": {
+                        "endpoint": "warehouse-example.datawarehouse.fabric.microsoft.com",
+                        "artifactId": "[parameters('WH_Olist_Gold')]",
+                        "workspaceId": "23f4a256-949e-5f7d-8c35-b63242139c25"
+                      }
+                    }
+                  },
+                  "type": "DataWarehouseTable",
+                  "schema": [],
+                  "typeProperties": {
+                    "schema": "staging",
+                    "table": "reviews_order"
+                  }
+                }
+              },
+              "enableStaging": true,
+              "translator": {
+                "type": "TabularTranslator",
+                "mappings": [
+                  {
+                    "source": {
+                      "name": "order_id",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "order_id",
+                      "physicalType": "varchar",
+                      "length": "32"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "review_score",
+                      "type": "Int32",
+                      "physicalType": "integer"
+                    },
+                    "sink": {
+                      "name": "review_score",
+                      "physicalType": "int"
+                    }
+                  }
+                ],
+                "typeConversion": true,
+                "typeConversionSettings": {
+                  "allowDataTruncation": true,
+                  "treatBooleanAsNumber": false
+                }
+              }
+            }
+          },
+          {
+            "name": "CP_date",
+            "type": "Copy",
+            "dependsOn": [],
+            "policy": {
+              "timeout": "0.12:00:00",
+              "retry": 0,
+              "retryIntervalInSeconds": 30,
+              "secureOutput": false,
+              "secureInput": false
+            },
+            "typeProperties": {
+              "source": {
+                "type": "LakehouseTableSource",
+                "datasetSettings": {
+                  "annotations": [],
+                  "connectionSettings": {
+                    "name": "LH_Olist_Silver",
+                    "properties": {
+                      "annotations": [],
+                      "type": "Lakehouse",
+                      "typeProperties": {
+                        "workspaceId": "23f4a256-949e-5f7d-8c35-b63242139c25",
+                        "artifactId": "[parameters('LH_Olist_Silver')]",
+                        "rootFolder": "Tables"
+                      },
+                      "externalReferences": {
+                        "connection": "688e7dde-7b43-5c41-b369-f33cf4401dff"
+                      }
+                    }
+                  },
+                  "type": "LakehouseTable",
+                  "schema": [],
+                  "typeProperties": {
+                    "schema": "dbo",
+                    "table": "slv_date"
+                  }
+                }
+              },
+              "sink": {
+                "type": "DataWarehouseSink",
+                "preCopyScript": "TRUNCATE TABLE staging.date;",
+                "allowCopyCommand": true,
+                "copyCommandSettings": {},
+                "writeBehavior": "Insert",
+                "disableMetricsCollection": false,
+                "datasetSettings": {
+                  "annotations": [],
+                  "linkedService": {
+                    "name": "WH_Olist_Gold",
+                    "properties": {
+                      "annotations": [],
+                      "type": "DataWarehouse",
+                      "typeProperties": {
+                        "endpoint": "warehouse-example.datawarehouse.fabric.microsoft.com",
+                        "artifactId": "[parameters('WH_Olist_Gold')]",
+                        "workspaceId": "23f4a256-949e-5f7d-8c35-b63242139c25"
+                      }
+                    }
+                  },
+                  "type": "DataWarehouseTable",
+                  "schema": [],
+                  "typeProperties": {
+                    "schema": "staging",
+                    "table": "date"
+                  }
+                }
+              },
+              "enableStaging": true,
+              "translator": {
+                "type": "TabularTranslator",
+                "mappings": [
+                  {
+                    "source": {
+                      "name": "date_key",
+                      "type": "Int32",
+                      "physicalType": "integer"
+                    },
+                    "sink": {
+                      "name": "date_key",
+                      "physicalType": "int"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "full_date",
+                      "type": "Date",
+                      "physicalType": "date"
+                    },
+                    "sink": {
+                      "name": "full_date",
+                      "physicalType": "date"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "year",
+                      "type": "Int32",
+                      "physicalType": "integer"
+                    },
+                    "sink": {
+                      "name": "year",
+                      "physicalType": "int"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "quarter",
+                      "type": "Int32",
+                      "physicalType": "integer"
+                    },
+                    "sink": {
+                      "name": "quarter",
+                      "physicalType": "int"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "month_number",
+                      "type": "Int32",
+                      "physicalType": "integer"
+                    },
+                    "sink": {
+                      "name": "month_number",
+                      "physicalType": "int"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "month_name",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "month_name",
+                      "physicalType": "varchar",
+                      "length": "20"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "year_month",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "year_month",
+                      "physicalType": "varchar",
+                      "length": "7"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "week_number",
+                      "type": "Int32",
+                      "physicalType": "integer"
+                    },
+                    "sink": {
+                      "name": "week_number",
+                      "physicalType": "int"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "day_of_week",
+                      "type": "Int32",
+                      "physicalType": "integer"
+                    },
+                    "sink": {
+                      "name": "day_of_week",
+                      "physicalType": "int"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "day_name",
+                      "type": "String",
+                      "physicalType": "string"
+                    },
+                    "sink": {
+                      "name": "day_name",
+                      "physicalType": "varchar",
+                      "length": "20"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "is_weekend",
+                      "type": "Int32",
+                      "physicalType": "integer"
+                    },
+                    "sink": {
+                      "name": "is_weekend",
+                      "physicalType": "int"
+                    }
+                  }
+                ],
+                "typeConversion": true,
+                "typeConversionSettings": {
+                  "allowDataTruncation": true,
+                  "treatBooleanAsNumber": false
+                }
+              }
+            }
+          }
+        ],
+        "lastModifiedByObjectId": "3b8ecc97-cdfd-5b85-89ce-5b95500f3a33",
+        "lastPublishTime": "2026-09-17T02:51:05Z"
+      },
+      "dependsOn": []
+    }
+  ]
+}

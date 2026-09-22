@@ -1,0 +1,37 @@
+﻿relationship 600946d1-bb7b-519f-8967-4db41398f39f
+	fromColumn: FactOrders.purchase_date_key
+	toColumn: DimDate.date_key
+
+relationship 4fe13201-9b4c-51f4-8cfd-d576e3fc8c1d
+	fromColumn: FactOrderItem.purchase_date_key
+	toColumn: DimDate.date_key
+
+relationship 431c8a96-4f43-5699-98ee-35731fabd755
+	fromColumn: FactPayments.purchase_date_key
+	toColumn: DimDate.date_key
+
+relationship 061ce8a1-ab23-50bb-83ef-3ab5f5f5ba88
+	fromColumn: FactOrders.customer_key
+	toColumn: DimCustomer.customer_key
+
+relationship c0a4be4d-f39d-5a86-a291-37369641e571
+	fromColumn: FactPayments.customer_key
+	toColumn: DimCustomer.customer_key
+
+relationship cef72b1c-1e25-59d6-a5a0-7f0293829c43
+	fromColumn: FactOrderItem.customer_key
+	toColumn: DimCustomer.customer_key
+
+relationship 7b7507c2-4bb7-5c04-833d-4b8bbb88fac6
+	fromColumn: FactOrderItem.product_key
+	toColumn: DimProduct.product_key
+
+relationship f182a3a3-1825-5930-aa63-c4b6506b926f
+	fromColumn: FactOrderItem.seller_key
+	toColumn: DimSeller.seller_key
+
+relationship ff60df7f-ab1a-552b-8917-fdc5a38c2173
+	isActive: false
+	fromColumn: FactOrders.delivered_date_key
+	toColumn: DimDate.date_key
+

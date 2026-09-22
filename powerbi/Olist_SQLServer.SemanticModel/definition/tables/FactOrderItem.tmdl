@@ -1,0 +1,156 @@
+table FactOrderItem
+	lineageTag: b5c6da47-3156-54e2-a272-cc4cfd01772f
+
+	measure 'Merchandise Value' = SUM(FactOrderItem[price])
+		formatString: "R$ "#,0.00
+		displayFolder: Olist KPIs
+		lineageTag: f18f3f7d-cda6-55bc-845f-8267a713f732
+
+	measure 'Freight Value' = SUM(FactOrderItem[freight_value])
+		formatString: "R$ "#,0.00
+		displayFolder: Olist KPIs
+		lineageTag: 4d7257fd-dc65-5a4e-8e8a-bdf565b6d932
+
+	measure 'Order Value Including Freight' = SUM(FactOrderItem[item_gmv])
+		formatString: "R$ "#,0.00
+		displayFolder: Olist KPIs
+		lineageTag: 3dcc9e76-19d9-5571-8a46-1b5418030dec
+
+	measure 'Total Order Items' = COUNTROWS(FactOrderItem)
+		formatString: #,0
+		displayFolder: Olist KPIs
+		lineageTag: f0dbb9c5-8c86-566c-930e-c26deaee13f8
+
+	measure 'Orders With Items' = DISTINCTCOUNT(FactOrderItem[order_id])
+		formatString: #,0
+		displayFolder: Olist KPIs
+		lineageTag: 3f4288e5-c860-56db-a670-8242c83ed0cb
+
+	measure 'Average Order Value' = DIVIDE([Order Value Including Freight],[Orders With Items])
+		formatString: "R$ "#,0.00
+		displayFolder: Olist KPIs
+		lineageTag: 7f0c4293-a8d8-5434-98ea-742c28592ce0
+
+	/// Display-only compact BRL value; charts use the numeric model measure.
+	measure 'KPI Order Value Including Freight' = VAR v = SUM(FactOrderItem[item_gmv]) RETURN IF ( ISBLANK(v), BLANK(), "R$ " & SWITCH ( TRUE(), ABS(v) >= 1000000, FORMAT(v/1000000,"0.00") & "M", ABS(v) >= 1000, FORMAT(v/1000,"0.00") & "K", FORMAT(v,"0.00") ) )
+		displayFolder: Report metrics
+		lineageTag: 1c63f1b0-cd26-5f79-b625-aee2dda8a181
+
+	/// Display-only compact BRL value; charts use the numeric model measure.
+	measure 'KPI Merchandise Value' = VAR v = SUM(FactOrderItem[price]) RETURN IF ( ISBLANK(v), BLANK(), "R$ " & SWITCH ( TRUE(), ABS(v) >= 1000000, FORMAT(v/1000000,"0.00") & "M", ABS(v) >= 1000, FORMAT(v/1000,"0.00") & "K", FORMAT(v,"0.00") ) )
+		displayFolder: Report metrics
+		lineageTag: d89a50f8-0939-5d0b-a23c-c7c3f6a8f95a
+
+	/// Display-only compact BRL value; charts use the numeric model measure.
+	measure 'KPI Freight Value' = VAR v = SUM(FactOrderItem[freight_value]) RETURN IF ( ISBLANK(v), BLANK(), "R$ " & SWITCH ( TRUE(), ABS(v) >= 1000000, FORMAT(v/1000000,"0.00") & "M", ABS(v) >= 1000, FORMAT(v/1000,"0.00") & "K", FORMAT(v,"0.00") ) )
+		displayFolder: Report metrics
+		lineageTag: ad80bb2b-6190-54b0-afe8-dd956cbbac9e
+
+	/// Display-only compact BRL value; charts use the numeric model measure.
+	measure 'KPI Average Order Value' = VAR v = DIVIDE(SUM(FactOrderItem[item_gmv]),DISTINCTCOUNT(FactOrderItem[order_id])) RETURN IF ( ISBLANK(v), BLANK(), "R$ " & SWITCH ( TRUE(), ABS(v) >= 1000000, FORMAT(v/1000000,"0.00") & "M", ABS(v) >= 1000, FORMAT(v/1000,"0.00") & "K", FORMAT(v,"0.00") ) )
+		displayFolder: Report metrics
+		lineageTag: 341b74d3-45e5-59a9-91f9-c908f8841140
+
+	column sales_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 6af97974-b638-5108-927c-eed830222db3
+		summarizeBy: sum
+		sourceColumn: sales_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_id
+		dataType: string
+		lineageTag: 8de1587c-a28b-5434-8157-407d0ba3b565
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_item_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 472b8ef9-b311-5858-bf08-47ee40d50b7a
+		summarizeBy: sum
+		sourceColumn: order_item_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column purchase_date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 48847ef4-9d2d-58b6-8b89-a362009d2cf9
+		summarizeBy: sum
+		sourceColumn: purchase_date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_key
+		dataType: int64
+		formatString: 0
+		lineageTag: a650c466-56cb-5c1d-ad4c-a2ef09169aef
+		summarizeBy: none
+		sourceColumn: customer_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 0861d81c-50a7-50d2-bd79-f10f59c9b6a1
+		summarizeBy: none
+		sourceColumn: product_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column seller_key
+		dataType: int64
+		formatString: 0
+		lineageTag: d3c16569-7590-54f7-b14a-c0692e33aebf
+		summarizeBy: none
+		sourceColumn: seller_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column price
+		dataType: double
+		lineageTag: 651ab81a-520f-5e91-a875-e061cfb5f4a7
+		summarizeBy: sum
+		sourceColumn: price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column freight_value
+		dataType: double
+		lineageTag: 51c7169a-3c54-534c-9acf-dc2ba1bd626d
+		summarizeBy: sum
+		sourceColumn: freight_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column item_gmv
+		dataType: double
+		lineageTag: 72133b25-0a17-5ce9-b018-31ee0ab7f7d6
+		summarizeBy: sum
+		sourceColumn: item_gmv
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition FactOrderItem = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("SQLSERVER-DEMO\SQLEXPRESS"),
+				    OlistDW = Source{[Name="OlistDW"]}[Data],
+				    dbo_FactOrderItem = OlistDW{[Schema="dbo",Item="FactOrderItem"]}[Data]
+				in
+				    dbo_FactOrderItem
+
+	annotation PBI_ResultType = Table

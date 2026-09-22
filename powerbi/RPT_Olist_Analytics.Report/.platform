@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "RPT_Olist_Analytics"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "778832cd-2bd9-5ac6-8f8c-fc5ca64b0d84"
+  }
+}

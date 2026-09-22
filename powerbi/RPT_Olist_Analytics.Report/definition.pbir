@@ -1,0 +1,9 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definitionProperties/2.0.0/schema.json",
+  "version": "4.0",
+  "datasetReference": {
+    "byConnection": {
+      "connectionString": "Data Source=powerbi://api.powerbi.com/v1.0/myorg/WS_Olist_Demo;initial catalog=SM_Olist_Analytics;access mode=readonly;integrated security=ClaimsToken;semanticmodelid=d1c62937-aaa1-5929-a863-540fb54180a8"
+    }
+  }
+}

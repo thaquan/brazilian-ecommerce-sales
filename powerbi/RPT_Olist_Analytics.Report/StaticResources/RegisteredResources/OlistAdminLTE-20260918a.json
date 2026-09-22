@@ -1,0 +1,64 @@
+{
+  "name": "OlistAdminLTE-20260918a.json",
+  "dataColors": [
+    "#0D6EFD",
+    "#087F8C",
+    "#AD6500",
+    "#C0392B",
+    "#6F42C1",
+    "#495057"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#212529",
+  "tableAccent": "#0D6EFD",
+  "good": "#087F8C",
+  "bad": "#C0392B",
+  "neutral": "#AD6500",
+  "textClasses": {
+    "label": {
+      "fontFace": "Segoe UI",
+      "fontSize": 11,
+      "color": "#5B6573"
+    },
+    "title": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 14,
+      "color": "#212529"
+    },
+    "callout": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 26,
+      "color": "#212529"
+    }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "visualHeader": [
+          {
+            "show": false
+          }
+        ]
+      }
+    },
+    "cardVisual": {
+      "*": {
+        "padding": [
+          {
+            "paddingUniform": 0
+          }
+        ],
+        "layout": [
+          {
+            "paddingUniform": 0
+          }
+        ],
+        "spacing": [
+          {
+            "verticalSpacing": 6
+          }
+        ]
+      }
+    }
+  }
+}

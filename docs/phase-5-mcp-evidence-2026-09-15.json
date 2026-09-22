@@ -1,0 +1,1441 @@
+{
+  "checkedDate": "2026-09-15",
+  "workspace": "WS_Olist_Demo",
+  "workspaceId": "23f4a256-949e-5f7d-8c35-b63242139c25",
+  "warehouse": "WH_Olist_Gold",
+  "warehouseId": "16e8686d-40c4-5372-bde4-0b5af8d807f8",
+  "metadata": [
+    {
+      "status": "fulfilled",
+      "value": {
+        "schema": "dbo",
+        "table": "DimDate",
+        "status": 200,
+        "fields": [
+          {
+            "id": 1,
+            "name": "date_key",
+            "required": true,
+            "type": "int"
+          },
+          {
+            "id": 2,
+            "name": "full_date",
+            "required": true,
+            "type": "date"
+          },
+          {
+            "id": 3,
+            "name": "year",
+            "required": false,
+            "type": "int"
+          },
+          {
+            "id": 4,
+            "name": "quarter",
+            "required": false,
+            "type": "int"
+          },
+          {
+            "id": 5,
+            "name": "month_number",
+            "required": false,
+            "type": "int"
+          },
+          {
+            "id": 6,
+            "name": "month_name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "id": 7,
+            "name": "year_month",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "id": 8,
+            "name": "week_number",
+            "required": false,
+            "type": "int"
+          },
+          {
+            "id": 9,
+            "name": "day_of_week",
+            "required": false,
+            "type": "int"
+          },
+          {
+            "id": 10,
+            "name": "day_name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "id": 11,
+            "name": "is_weekend",
+            "required": false,
+            "type": "int"
+          }
+        ],
+        "currentSnapshot": -1,
+        "snapshots": [],
+        "sync": "{\"lastInstantSynced\":\"2026-09-14T15:16:04Z\",\"instantsToConsiderForNextSync\":[],\"version\":0,\"sourceTableFormat\":\"DELTA\",\"sourceIdentifier\":\"0\",\"targetConversionEpoch\":0}"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "schema": "dbo",
+        "table": "DimCustomer",
+        "status": 200,
+        "fields": [
+          {
+            "id": 1,
+            "name": "customer_key",
+            "required": true,
+            "type": "long"
+          },
+          {
+            "id": 2,
+            "name": "customer_unique_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "id": 3,
+            "name": "zip_code_prefix",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "id": 4,
+            "name": "city",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "id": 5,
+            "name": "state_code",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "id": 6,
+            "name": "latitude",
+            "required": false,
+            "type": "double"
+          },
+          {
+            "id": 7,
+            "name": "longitude",
+            "required": false,
+            "type": "double"
+          }
+        ],
+        "currentSnapshot": -1,
+        "snapshots": [],
+        "sync": "{\"lastInstantSynced\":\"2026-09-14T15:16:04Z\",\"instantsToConsiderForNextSync\":[],\"version\":0,\"sourceTableFormat\":\"DELTA\",\"sourceIdentifier\":\"0\",\"targetConversionEpoch\":0}"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "schema": "dbo",
+        "table": "DimProduct",
+        "status": 200,
+        "fields": [
+          {
+            "id": 1,
+            "name": "product_key",
+            "required": true,
+            "type": "long"
+          },
+          {
+            "id": 2,
+            "name": "product_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "id": 3,
+            "name": "category_pt",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "id": 4,
+            "name": "category_en",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "id": 5,
+            "name": "weight_g",
+            "required": false,
+            "type": "int"
+          },
+          {
+            "id": 6,
+            "name": "length_cm",
+            "required": false,
+            "type": "int"
+          },
+          {
+            "id": 7,
+            "name": "height_cm",
+            "required": false,
+            "type": "int"
+          },
+          {
+            "id": 8,
+            "name": "width_cm",
+            "required": false,
+            "type": "int"
+          }
+        ],
+        "currentSnapshot": -1,
+        "snapshots": [],
+        "sync": "{\"lastInstantSynced\":\"2026-09-14T15:16:04Z\",\"instantsToConsiderForNextSync\":[],\"version\":0,\"sourceTableFormat\":\"DELTA\",\"sourceIdentifier\":\"0\",\"targetConversionEpoch\":0}"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "schema": "dbo",
+        "table": "DimSeller",
+        "status": 200,
+        "fields": [
+          {
+            "id": 1,
+            "name": "seller_key",
+            "required": true,
+            "type": "long"
+          },
+          {
+            "id": 2,
+            "name": "seller_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "id": 3,
+            "name": "zip_code_prefix",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "id": 4,
+            "name": "city",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "id": 5,
+            "name": "state_code",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "id": 6,
+            "name": "latitude",
+            "required": false,
+            "type": "double"
+          },
+          {
+            "id": 7,
+            "name": "longitude",
+            "required": false,
+            "type": "double"
+          }
+        ],
+        "currentSnapshot": -1,
+        "snapshots": [],
+        "sync": "{\"lastInstantSynced\":\"2026-09-14T15:16:04Z\",\"instantsToConsiderForNextSync\":[],\"version\":0,\"sourceTableFormat\":\"DELTA\",\"sourceIdentifier\":\"0\",\"targetConversionEpoch\":0}"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "schema": "dbo",
+        "table": "FactOrders",
+        "status": 200,
+        "fields": [
+          {
+            "id": 1,
+            "name": "order_key",
+            "required": true,
+            "type": "long"
+          },
+          {
+            "id": 2,
+            "name": "order_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "id": 3,
+            "name": "purchase_date_key",
+            "required": true,
+            "type": "int"
+          },
+          {
+            "id": 4,
+            "name": "delivered_date_key",
+            "required": false,
+            "type": "int"
+          },
+          {
+            "id": 5,
+            "name": "estimated_date_key",
+            "required": false,
+            "type": "int"
+          },
+          {
+            "id": 6,
+            "name": "customer_key",
+            "required": true,
+            "type": "long"
+          },
+          {
+            "id": 7,
+            "name": "order_status",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "id": 8,
+            "name": "delivery_days",
+            "required": false,
+            "type": "int"
+          },
+          {
+            "id": 9,
+            "name": "delay_days",
+            "required": false,
+            "type": "int"
+          },
+          {
+            "id": 10,
+            "name": "is_late",
+            "required": false,
+            "type": "int"
+          },
+          {
+            "id": 11,
+            "name": "review_score",
+            "required": false,
+            "type": "int"
+          }
+        ],
+        "currentSnapshot": -1,
+        "snapshots": [],
+        "sync": "{\"lastInstantSynced\":\"2026-09-14T15:16:04Z\",\"instantsToConsiderForNextSync\":[],\"version\":0,\"sourceTableFormat\":\"DELTA\",\"sourceIdentifier\":\"0\",\"targetConversionEpoch\":0}"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "schema": "dbo",
+        "table": "FactOrderItem",
+        "status": 200,
+        "fields": [
+          {
+            "id": 1,
+            "name": "sales_key",
+            "required": true,
+            "type": "long"
+          },
+          {
+            "id": 2,
+            "name": "order_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "id": 3,
+            "name": "order_item_id",
+            "required": true,
+            "type": "int"
+          },
+          {
+            "id": 4,
+            "name": "purchase_date_key",
+            "required": true,
+            "type": "int"
+          },
+          {
+            "id": 5,
+            "name": "customer_key",
+            "required": true,
+            "type": "long"
+          },
+          {
+            "id": 6,
+            "name": "product_key",
+            "required": true,
+            "type": "long"
+          },
+          {
+            "id": 7,
+            "name": "seller_key",
+            "required": true,
+            "type": "long"
+          },
+          {
+            "id": 8,
+            "name": "price",
+            "required": true,
+            "type": "decimal(18, 2)"
+          },
+          {
+            "id": 9,
+            "name": "freight_value",
+            "required": true,
+            "type": "decimal(18, 2)"
+          },
+          {
+            "id": 10,
+            "name": "item_gmv",
+            "required": true,
+            "type": "decimal(19, 2)"
+          }
+        ],
+        "currentSnapshot": -1,
+        "snapshots": [],
+        "sync": "{\"lastInstantSynced\":\"2026-09-14T15:16:04Z\",\"instantsToConsiderForNextSync\":[],\"version\":0,\"sourceTableFormat\":\"DELTA\",\"sourceIdentifier\":\"0\",\"targetConversionEpoch\":0}"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "schema": "dbo",
+        "table": "FactPayments",
+        "status": 200,
+        "fields": [
+          {
+            "id": 1,
+            "name": "payment_key",
+            "required": true,
+            "type": "long"
+          },
+          {
+            "id": 2,
+            "name": "order_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "id": 3,
+            "name": "purchase_date_key",
+            "required": true,
+            "type": "int"
+          },
+          {
+            "id": 4,
+            "name": "customer_key",
+            "required": true,
+            "type": "long"
+          },
+          {
+            "id": 5,
+            "name": "payment_sequential",
+            "required": true,
+            "type": "int"
+          },
+          {
+            "id": 6,
+            "name": "payment_type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "id": 7,
+            "name": "payment_installments",
+            "required": false,
+            "type": "int"
+          },
+          {
+            "id": 8,
+            "name": "payment_value",
+            "required": true,
+            "type": "decimal(18, 2)"
+          }
+        ],
+        "currentSnapshot": -1,
+        "snapshots": [],
+        "sync": "{\"lastInstantSynced\":\"2026-09-14T15:16:04Z\",\"instantsToConsiderForNextSync\":[],\"version\":0,\"sourceTableFormat\":\"DELTA\",\"sourceIdentifier\":\"0\",\"targetConversionEpoch\":0}"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "schema": "dbo",
+        "table": "GoldLoadAudit",
+        "status": 200,
+        "fields": [
+          {
+            "id": 1,
+            "name": "gold_run_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "id": 2,
+            "name": "silver_run_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "id": 3,
+            "name": "completed_at",
+            "required": true,
+            "type": "timestamptz"
+          },
+          {
+            "id": 4,
+            "name": "order_rows",
+            "required": true,
+            "type": "long"
+          },
+          {
+            "id": 5,
+            "name": "item_rows",
+            "required": true,
+            "type": "long"
+          },
+          {
+            "id": 6,
+            "name": "payment_rows",
+            "required": true,
+            "type": "long"
+          }
+        ],
+        "currentSnapshot": -1,
+        "snapshots": [],
+        "sync": "{\"lastInstantSynced\":\"2026-09-14T15:16:04Z\",\"instantsToConsiderForNextSync\":[],\"version\":0,\"sourceTableFormat\":\"DELTA\",\"sourceIdentifier\":\"0\",\"targetConversionEpoch\":0}"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "schema": "staging",
+        "table": "orders",
+        "status": 200,
+        "fields": [
+          {
+            "id": 1,
+            "name": "order_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "id": 2,
+            "name": "customer_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "id": 3,
+            "name": "order_status",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "id": 4,
+            "name": "order_purchase_timestamp",
+            "required": true,
+            "type": "timestamptz"
+          },
+          {
+            "id": 5,
+            "name": "purchase_date_key",
+            "required": true,
+            "type": "int"
+          },
+          {
+            "id": 6,
+            "name": "delivered_date_key",
+            "required": false,
+            "type": "int"
+          },
+          {
+            "id": 7,
+            "name": "estimated_date_key",
+            "required": false,
+            "type": "int"
+          },
+          {
+            "id": 8,
+            "name": "delivery_days",
+            "required": false,
+            "type": "int"
+          },
+          {
+            "id": 9,
+            "name": "delay_days",
+            "required": false,
+            "type": "int"
+          },
+          {
+            "id": 10,
+            "name": "is_late",
+            "required": false,
+            "type": "int"
+          }
+        ],
+        "currentSnapshot": -1,
+        "snapshots": [],
+        "sync": "{\"lastInstantSynced\":\"2026-09-14T15:13:04Z\",\"instantsToConsiderForNextSync\":[],\"version\":0,\"sourceTableFormat\":\"DELTA\",\"sourceIdentifier\":\"0\",\"targetConversionEpoch\":0}"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "schema": "staging",
+        "table": "order_items",
+        "status": 200,
+        "fields": [
+          {
+            "id": 1,
+            "name": "order_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "id": 2,
+            "name": "order_item_id",
+            "required": true,
+            "type": "int"
+          },
+          {
+            "id": 3,
+            "name": "product_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "id": 4,
+            "name": "seller_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "id": 5,
+            "name": "price",
+            "required": true,
+            "type": "decimal(18, 2)"
+          },
+          {
+            "id": 6,
+            "name": "freight_value",
+            "required": true,
+            "type": "decimal(18, 2)"
+          },
+          {
+            "id": 7,
+            "name": "item_gmv",
+            "required": true,
+            "type": "decimal(19, 2)"
+          }
+        ],
+        "currentSnapshot": -1,
+        "snapshots": [],
+        "sync": "{\"lastInstantSynced\":\"2026-09-14T15:13:04Z\",\"instantsToConsiderForNextSync\":[],\"version\":0,\"sourceTableFormat\":\"DELTA\",\"sourceIdentifier\":\"0\",\"targetConversionEpoch\":0}"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "schema": "staging",
+        "table": "customers",
+        "status": 200,
+        "fields": [
+          {
+            "id": 1,
+            "name": "customer_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "id": 2,
+            "name": "customer_unique_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "currentSnapshot": -1,
+        "snapshots": [],
+        "sync": "{\"lastInstantSynced\":\"2026-09-14T15:13:04Z\",\"instantsToConsiderForNextSync\":[],\"version\":0,\"sourceTableFormat\":\"DELTA\",\"sourceIdentifier\":\"0\",\"targetConversionEpoch\":0}"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "schema": "staging",
+        "table": "customer_current",
+        "status": 200,
+        "fields": [
+          {
+            "id": 1,
+            "name": "customer_unique_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "id": 2,
+            "name": "customer_zip_code_prefix",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "id": 3,
+            "name": "customer_city",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "id": 4,
+            "name": "customer_state",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "id": 5,
+            "name": "latitude",
+            "required": false,
+            "type": "double"
+          },
+          {
+            "id": 6,
+            "name": "longitude",
+            "required": false,
+            "type": "double"
+          }
+        ],
+        "currentSnapshot": -1,
+        "snapshots": [],
+        "sync": "{\"lastInstantSynced\":\"2026-09-14T15:13:04Z\",\"instantsToConsiderForNextSync\":[],\"version\":0,\"sourceTableFormat\":\"DELTA\",\"sourceIdentifier\":\"0\",\"targetConversionEpoch\":0}"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "schema": "staging",
+        "table": "products",
+        "status": 200,
+        "fields": [
+          {
+            "id": 1,
+            "name": "product_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "id": 2,
+            "name": "product_category_name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "id": 3,
+            "name": "product_category_name_english",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "id": 4,
+            "name": "product_weight_g",
+            "required": false,
+            "type": "int"
+          },
+          {
+            "id": 5,
+            "name": "product_length_cm",
+            "required": false,
+            "type": "int"
+          },
+          {
+            "id": 6,
+            "name": "product_height_cm",
+            "required": false,
+            "type": "int"
+          },
+          {
+            "id": 7,
+            "name": "product_width_cm",
+            "required": false,
+            "type": "int"
+          }
+        ],
+        "currentSnapshot": -1,
+        "snapshots": [],
+        "sync": "{\"lastInstantSynced\":\"2026-09-14T15:13:04Z\",\"instantsToConsiderForNextSync\":[],\"version\":0,\"sourceTableFormat\":\"DELTA\",\"sourceIdentifier\":\"0\",\"targetConversionEpoch\":0}"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "schema": "staging",
+        "table": "sellers",
+        "status": 200,
+        "fields": [
+          {
+            "id": 1,
+            "name": "seller_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "id": 2,
+            "name": "seller_zip_code_prefix",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "id": 3,
+            "name": "seller_city",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "id": 4,
+            "name": "seller_state",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "id": 5,
+            "name": "latitude",
+            "required": false,
+            "type": "double"
+          },
+          {
+            "id": 6,
+            "name": "longitude",
+            "required": false,
+            "type": "double"
+          }
+        ],
+        "currentSnapshot": -1,
+        "snapshots": [],
+        "sync": "{\"lastInstantSynced\":\"2026-09-14T15:13:04Z\",\"instantsToConsiderForNextSync\":[],\"version\":0,\"sourceTableFormat\":\"DELTA\",\"sourceIdentifier\":\"0\",\"targetConversionEpoch\":0}"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "schema": "staging",
+        "table": "payments",
+        "status": 200,
+        "fields": [
+          {
+            "id": 1,
+            "name": "order_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "id": 2,
+            "name": "payment_sequential",
+            "required": true,
+            "type": "int"
+          },
+          {
+            "id": 3,
+            "name": "payment_type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "id": 4,
+            "name": "payment_installments",
+            "required": false,
+            "type": "int"
+          },
+          {
+            "id": 5,
+            "name": "payment_value",
+            "required": true,
+            "type": "decimal(18, 2)"
+          }
+        ],
+        "currentSnapshot": -1,
+        "snapshots": [],
+        "sync": "{\"lastInstantSynced\":\"2026-09-14T15:13:04Z\",\"instantsToConsiderForNextSync\":[],\"version\":0,\"sourceTableFormat\":\"DELTA\",\"sourceIdentifier\":\"0\",\"targetConversionEpoch\":0}"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "schema": "staging",
+        "table": "reviews_order",
+        "status": 200,
+        "fields": [
+          {
+            "id": 1,
+            "name": "order_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "id": 2,
+            "name": "review_score",
+            "required": false,
+            "type": "int"
+          }
+        ],
+        "currentSnapshot": -1,
+        "snapshots": [],
+        "sync": "{\"lastInstantSynced\":\"2026-09-14T15:13:04Z\",\"instantsToConsiderForNextSync\":[],\"version\":0,\"sourceTableFormat\":\"DELTA\",\"sourceIdentifier\":\"0\",\"targetConversionEpoch\":0}"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "schema": "staging",
+        "table": "date",
+        "status": 200,
+        "fields": [
+          {
+            "id": 1,
+            "name": "date_key",
+            "required": true,
+            "type": "int"
+          },
+          {
+            "id": 2,
+            "name": "full_date",
+            "required": true,
+            "type": "date"
+          },
+          {
+            "id": 3,
+            "name": "year",
+            "required": false,
+            "type": "int"
+          },
+          {
+            "id": 4,
+            "name": "quarter",
+            "required": false,
+            "type": "int"
+          },
+          {
+            "id": 5,
+            "name": "month_number",
+            "required": false,
+            "type": "int"
+          },
+          {
+            "id": 6,
+            "name": "month_name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "id": 7,
+            "name": "year_month",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "id": 8,
+            "name": "week_number",
+            "required": false,
+            "type": "int"
+          },
+          {
+            "id": 9,
+            "name": "day_of_week",
+            "required": false,
+            "type": "int"
+          },
+          {
+            "id": 10,
+            "name": "day_name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "id": 11,
+            "name": "is_weekend",
+            "required": false,
+            "type": "int"
+          }
+        ],
+        "currentSnapshot": -1,
+        "snapshots": [],
+        "sync": "{\"lastInstantSynced\":\"2026-09-14T15:13:04Z\",\"instantsToConsiderForNextSync\":[],\"version\":0,\"sourceTableFormat\":\"DELTA\",\"sourceIdentifier\":\"0\",\"targetConversionEpoch\":0}"
+      }
+    }
+  ],
+  "files": [
+    {
+      "status": "fulfilled",
+      "value": {
+        "table": "dbo.DimDate",
+        "status": 200,
+        "files": [
+          {
+            "name": "00000000000000000000.json",
+            "size": 2587,
+            "path": "16e8686d-40c4-5372-bde4-0b5af8d807f8/Tables/dbo/DimDate/_delta_log/00000000000000000000.json"
+          }
+        ]
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "table": "dbo.DimCustomer",
+        "status": 200,
+        "files": [
+          {
+            "name": "00000000000000000000.json",
+            "size": 1837,
+            "path": "16e8686d-40c4-5372-bde4-0b5af8d807f8/Tables/dbo/DimCustomer/_delta_log/00000000000000000000.json"
+          }
+        ]
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "table": "dbo.DimProduct",
+        "status": 200,
+        "files": [
+          {
+            "name": "00000000000000000000.json",
+            "size": 2021,
+            "path": "16e8686d-40c4-5372-bde4-0b5af8d807f8/Tables/dbo/DimProduct/_delta_log/00000000000000000000.json"
+          }
+        ]
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "table": "dbo.DimSeller",
+        "status": 200,
+        "files": [
+          {
+            "name": "00000000000000000000.json",
+            "size": 1824,
+            "path": "16e8686d-40c4-5372-bde4-0b5af8d807f8/Tables/dbo/DimSeller/_delta_log/00000000000000000000.json"
+          }
+        ]
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "table": "dbo.FactOrders",
+        "status": 200,
+        "files": [
+          {
+            "name": "00000000000000000000.json",
+            "size": 2626,
+            "path": "16e8686d-40c4-5372-bde4-0b5af8d807f8/Tables/dbo/FactOrders/_delta_log/00000000000000000000.json"
+          }
+        ]
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "table": "dbo.FactOrderItem",
+        "status": 200,
+        "files": [
+          {
+            "name": "00000000000000000000.json",
+            "size": 2436,
+            "path": "16e8686d-40c4-5372-bde4-0b5af8d807f8/Tables/dbo/FactOrderItem/_delta_log/00000000000000000000.json"
+          }
+        ]
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "table": "dbo.FactPayments",
+        "status": 200,
+        "files": [
+          {
+            "name": "00000000000000000000.json",
+            "size": 2065,
+            "path": "16e8686d-40c4-5372-bde4-0b5af8d807f8/Tables/dbo/FactPayments/_delta_log/00000000000000000000.json"
+          }
+        ]
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "table": "dbo.GoldLoadAudit",
+        "status": 200,
+        "files": [
+          {
+            "name": "00000000000000000000.json",
+            "size": 1653,
+            "path": "16e8686d-40c4-5372-bde4-0b5af8d807f8/Tables/dbo/GoldLoadAudit/_delta_log/00000000000000000000.json"
+          }
+        ]
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "table": "staging.orders",
+        "status": 200,
+        "files": [
+          {
+            "name": "00000000000000000000.json",
+            "size": 2449,
+            "path": "16e8686d-40c4-5372-bde4-0b5af8d807f8/Tables/staging/orders/_delta_log/00000000000000000000.json"
+          }
+        ]
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "table": "staging.order_items",
+        "status": 200,
+        "files": [
+          {
+            "name": "00000000000000000000.json",
+            "size": 1856,
+            "path": "16e8686d-40c4-5372-bde4-0b5af8d807f8/Tables/staging/order_items/_delta_log/00000000000000000000.json"
+          }
+        ]
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "table": "staging.customers",
+        "status": 200,
+        "files": [
+          {
+            "name": "00000000000000000000.json",
+            "size": 890,
+            "path": "16e8686d-40c4-5372-bde4-0b5af8d807f8/Tables/staging/customers/_delta_log/00000000000000000000.json"
+          }
+        ]
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "table": "staging.customer_current",
+        "status": 200,
+        "files": [
+          {
+            "name": "00000000000000000000.json",
+            "size": 1673,
+            "path": "16e8686d-40c4-5372-bde4-0b5af8d807f8/Tables/staging/customer_current/_delta_log/00000000000000000000.json"
+          }
+        ]
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "table": "staging.products",
+        "status": 200,
+        "files": [
+          {
+            "name": "00000000000000000000.json",
+            "size": 1889,
+            "path": "16e8686d-40c4-5372-bde4-0b5af8d807f8/Tables/staging/products/_delta_log/00000000000000000000.json"
+          }
+        ]
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "table": "staging.sellers",
+        "status": 200,
+        "files": [
+          {
+            "name": "00000000000000000000.json",
+            "size": 1649,
+            "path": "16e8686d-40c4-5372-bde4-0b5af8d807f8/Tables/staging/sellers/_delta_log/00000000000000000000.json"
+          }
+        ]
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "table": "staging.payments",
+        "status": 200,
+        "files": [
+          {
+            "name": "00000000000000000000.json",
+            "size": 1481,
+            "path": "16e8686d-40c4-5372-bde4-0b5af8d807f8/Tables/staging/payments/_delta_log/00000000000000000000.json"
+          }
+        ]
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "table": "staging.reviews_order",
+        "status": 200,
+        "files": [
+          {
+            "name": "00000000000000000000.json",
+            "size": 885,
+            "path": "16e8686d-40c4-5372-bde4-0b5af8d807f8/Tables/staging/reviews_order/_delta_log/00000000000000000000.json"
+          }
+        ]
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "table": "staging.date",
+        "status": 200,
+        "files": [
+          {
+            "name": "00000000000000000000.json",
+            "size": 2584,
+            "path": "16e8686d-40c4-5372-bde4-0b5af8d807f8/Tables/staging/date/_delta_log/00000000000000000000.json"
+          }
+        ]
+      }
+    }
+  ],
+  "deltaInitialLogs": [
+    {
+      "status": "fulfilled",
+      "value": {
+        "table": "dbo.DimDate",
+        "actions": [
+          "txn",
+          "protocol",
+          "metaData"
+        ],
+        "addActions": 0,
+        "lastModified": "2026-09-14T15:16:04+00:00"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "table": "dbo.DimCustomer",
+        "actions": [
+          "txn",
+          "protocol",
+          "metaData"
+        ],
+        "addActions": 0,
+        "lastModified": "2026-09-14T15:16:04+00:00"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "table": "dbo.DimProduct",
+        "actions": [
+          "txn",
+          "protocol",
+          "metaData"
+        ],
+        "addActions": 0,
+        "lastModified": "2026-09-14T15:16:04+00:00"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "table": "dbo.DimSeller",
+        "actions": [
+          "txn",
+          "protocol",
+          "metaData"
+        ],
+        "addActions": 0,
+        "lastModified": "2026-09-14T15:16:04+00:00"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "table": "dbo.FactOrders",
+        "actions": [
+          "txn",
+          "protocol",
+          "metaData"
+        ],
+        "addActions": 0,
+        "lastModified": "2026-09-14T15:16:04+00:00"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "table": "dbo.FactOrderItem",
+        "actions": [
+          "txn",
+          "protocol",
+          "metaData"
+        ],
+        "addActions": 0,
+        "lastModified": "2026-09-14T15:16:04+00:00"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "table": "dbo.FactPayments",
+        "actions": [
+          "txn",
+          "protocol",
+          "metaData"
+        ],
+        "addActions": 0,
+        "lastModified": "2026-09-14T15:16:04+00:00"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "table": "dbo.GoldLoadAudit",
+        "actions": [
+          "txn",
+          "protocol",
+          "metaData"
+        ],
+        "addActions": 0,
+        "lastModified": "2026-09-14T15:16:04+00:00"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "table": "staging.orders",
+        "actions": [
+          "txn",
+          "protocol",
+          "metaData"
+        ],
+        "addActions": 0,
+        "lastModified": "2026-09-14T15:13:04+00:00"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "table": "staging.order_items",
+        "actions": [
+          "txn",
+          "protocol",
+          "metaData"
+        ],
+        "addActions": 0,
+        "lastModified": "2026-09-14T15:13:04+00:00"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "table": "staging.customers",
+        "actions": [
+          "txn",
+          "protocol",
+          "metaData"
+        ],
+        "addActions": 0,
+        "lastModified": "2026-09-14T15:13:04+00:00"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "table": "staging.customer_current",
+        "actions": [
+          "txn",
+          "protocol",
+          "metaData"
+        ],
+        "addActions": 0,
+        "lastModified": "2026-09-14T15:13:04+00:00"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "table": "staging.products",
+        "actions": [
+          "txn",
+          "protocol",
+          "metaData"
+        ],
+        "addActions": 0,
+        "lastModified": "2026-09-14T15:13:04+00:00"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "table": "staging.sellers",
+        "actions": [
+          "txn",
+          "protocol",
+          "metaData"
+        ],
+        "addActions": 0,
+        "lastModified": "2026-09-14T15:13:04+00:00"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "table": "staging.payments",
+        "actions": [
+          "txn",
+          "protocol",
+          "metaData"
+        ],
+        "addActions": 0,
+        "lastModified": "2026-09-14T15:13:04+00:00"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "table": "staging.reviews_order",
+        "actions": [
+          "txn",
+          "protocol",
+          "metaData"
+        ],
+        "addActions": 0,
+        "lastModified": "2026-09-14T15:13:04+00:00"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "table": "staging.date",
+        "actions": [
+          "txn",
+          "protocol",
+          "metaData"
+        ],
+        "addActions": 0,
+        "lastModified": "2026-09-14T15:13:04+00:00"
+      }
+    }
+  ],
+  "pipelines": [
+    "PL_Olist_E2E"
+  ],
+  "sqlVerification": "Not performed: no SQL execution tool in Fabric MCP; Playwright browser is at Fabric sign-in."
+}

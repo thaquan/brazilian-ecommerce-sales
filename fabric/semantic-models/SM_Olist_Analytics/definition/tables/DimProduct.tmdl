@@ -1,0 +1,88 @@
+﻿table DimProduct
+	lineageTag: 1b8e971f-acf8-5eed-9121-2f2955190472
+	sourceLineageTag: [dbo].[DimProduct]
+
+	column product_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 7272284a-a5b2-5cc4-ac3f-17952b7e6714
+		sourceLineageTag: product_key
+		summarizeBy: none
+		sourceColumn: product_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_id
+		dataType: string
+		lineageTag: 9808108d-65e0-52e2-8f37-a638f2a32f83
+		sourceLineageTag: product_id
+		summarizeBy: none
+		sourceColumn: product_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column category_pt
+		dataType: string
+		lineageTag: 5bf54326-99a9-5179-a2df-f0ddd1466f17
+		sourceLineageTag: category_pt
+		summarizeBy: none
+		sourceColumn: category_pt
+
+		annotation SummarizationSetBy = Automatic
+
+	column category_en
+		dataType: string
+		lineageTag: cd057684-a2e2-58bb-b900-3ec9f563060f
+		sourceLineageTag: category_en
+		summarizeBy: none
+		sourceColumn: category_en
+
+		annotation SummarizationSetBy = Automatic
+
+	column weight_g
+		dataType: int64
+		formatString: 0
+		lineageTag: c2bf11c9-a3d3-5d9d-be3b-e6fa16880637
+		sourceLineageTag: weight_g
+		summarizeBy: none
+		sourceColumn: weight_g
+
+		annotation SummarizationSetBy = Automatic
+
+	column length_cm
+		dataType: int64
+		formatString: 0
+		lineageTag: 988412ff-3aba-51d4-9dc0-1e7d2bf234ab
+		sourceLineageTag: length_cm
+		summarizeBy: none
+		sourceColumn: length_cm
+
+		annotation SummarizationSetBy = Automatic
+
+	column height_cm
+		dataType: int64
+		formatString: 0
+		lineageTag: 6541b2af-dfca-5c58-aaf4-e54c6f820df8
+		sourceLineageTag: height_cm
+		summarizeBy: none
+		sourceColumn: height_cm
+
+		annotation SummarizationSetBy = Automatic
+
+	column width_cm
+		dataType: int64
+		formatString: 0
+		lineageTag: a77d6a16-ee60-5553-8efa-209d7c55e11f
+		sourceLineageTag: width_cm
+		summarizeBy: none
+		sourceColumn: width_cm
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimProduct = entity
+		mode: directLake
+		source
+			entityName: DimProduct
+			schemaName: dbo
+			expressionSource: 'DirectLake - WH_Olist_Gold'
+

@@ -1,0 +1,175 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/reportExtension/1.0.0/schema.json",
+  "name": "extension",
+  "entities": [
+    {
+      "name": "FactOrderItem",
+      "measures": [
+        {
+          "name": "KPI Order Value Including Freight",
+          "dataType": "Text",
+          "expression": "VAR v = SUM(FactOrderItem[item_gmv]) RETURN IF ( ISBLANK(v), BLANK(), \"R$ \" & SWITCH ( TRUE(), ABS(v) >= 1000000, FORMAT(v/1000000,\"0.00\") & \"M\", ABS(v) >= 1000, FORMAT(v/1000,\"0.00\") & \"K\", FORMAT(v,\"0.00\") ) )",
+          "description": "Display-only compact BRL value; charts use the numeric model measure.",
+          "displayFolder": "Report metrics"
+        },
+        {
+          "name": "KPI Merchandise Value",
+          "dataType": "Text",
+          "expression": "VAR v = SUM(FactOrderItem[price]) RETURN IF ( ISBLANK(v), BLANK(), \"R$ \" & SWITCH ( TRUE(), ABS(v) >= 1000000, FORMAT(v/1000000,\"0.00\") & \"M\", ABS(v) >= 1000, FORMAT(v/1000,\"0.00\") & \"K\", FORMAT(v,\"0.00\") ) )",
+          "description": "Display-only compact BRL value; charts use the numeric model measure.",
+          "displayFolder": "Report metrics"
+        },
+        {
+          "name": "KPI Freight Value",
+          "dataType": "Text",
+          "expression": "VAR v = SUM(FactOrderItem[freight_value]) RETURN IF ( ISBLANK(v), BLANK(), \"R$ \" & SWITCH ( TRUE(), ABS(v) >= 1000000, FORMAT(v/1000000,\"0.00\") & \"M\", ABS(v) >= 1000, FORMAT(v/1000,\"0.00\") & \"K\", FORMAT(v,\"0.00\") ) )",
+          "description": "Display-only compact BRL value; charts use the numeric model measure.",
+          "displayFolder": "Report metrics"
+        },
+        {
+          "name": "KPI Average Order Value",
+          "dataType": "Text",
+          "expression": "VAR v = DIVIDE(SUM(FactOrderItem[item_gmv]),DISTINCTCOUNT(FactOrderItem[order_id])) RETURN IF ( ISBLANK(v), BLANK(), \"R$ \" & SWITCH ( TRUE(), ABS(v) >= 1000000, FORMAT(v/1000000,\"0.00\") & \"M\", ABS(v) >= 1000, FORMAT(v/1000,\"0.00\") & \"K\", FORMAT(v,\"0.00\") ) )",
+          "description": "Display-only compact BRL value; charts use the numeric model measure.",
+          "displayFolder": "Report metrics"
+        }
+      ]
+    },
+    {
+      "name": "FactPayments",
+      "measures": [
+        {
+          "name": "KPI Payment Value",
+          "dataType": "Text",
+          "expression": "VAR v = SUM(FactPayments[payment_value]) RETURN IF ( ISBLANK(v), BLANK(), \"R$ \" & SWITCH ( TRUE(), ABS(v) >= 1000000, FORMAT(v/1000000,\"0.00\") & \"M\", ABS(v) >= 1000, FORMAT(v/1000,\"0.00\") & \"K\", FORMAT(v,\"0.00\") ) )",
+          "description": "Display-only compact BRL value; charts use the numeric model measure.",
+          "displayFolder": "Report metrics"
+        },
+        {
+          "name": "Paying Orders",
+          "dataType": "Integer",
+          "expression": "DISTINCTCOUNT ( FactPayments[order_id] )",
+          "formatString": "#,0",
+          "displayFolder": "Report metrics"
+        },
+        {
+          "name": "Payment Records",
+          "dataType": "Integer",
+          "expression": "COUNTROWS ( FactPayments )",
+          "formatString": "#,0",
+          "displayFolder": "Report metrics"
+        },
+        {
+          "name": "Average Installments",
+          "dataType": "Double",
+          "expression": "AVERAGE ( FactPayments[payment_installments] )",
+          "formatString": "0.00",
+          "description": "Average per payment record, not per order.",
+          "displayFolder": "Report metrics"
+        }
+      ]
+    },
+    {
+      "name": "FactOrders",
+      "measures": [
+        {
+          "name": "Repeat Customers (Period)",
+          "dataType": "Integer",
+          "expression": "COUNTROWS ( FILTER ( VALUES ( FactOrders[customer_key] ), NOT ISBLANK ( FactOrders[customer_key] ) && CALCULATE ( COUNTROWS ( FactOrders ) ) > 1 ) )",
+          "formatString": "#,0",
+          "description": "Customers with more than one order within current filters, including all statuses.",
+          "displayFolder": "Report metrics"
+        },
+        {
+          "name": "Repeat Rate (Period)",
+          "dataType": "Double",
+          "expression": "DIVIDE ( COUNTROWS ( FILTER ( VALUES ( FactOrders[customer_key] ), NOT ISBLANK ( FactOrders[customer_key] ) && CALCULATE ( COUNTROWS ( FactOrders ) ) > 1 ) ), DISTINCTCOUNT ( FactOrders[customer_key] ) )",
+          "formatString": "0.0%",
+          "displayFolder": "Report metrics"
+        },
+        {
+          "name": "Orders per Customer",
+          "dataType": "Double",
+          "expression": "DIVIDE ( COUNTROWS ( FactOrders ), DISTINCTCOUNT ( FactOrders[customer_key] ) )",
+          "formatString": "0.00",
+          "displayFolder": "Report metrics"
+        },
+        {
+          "name": "On-Time Review",
+          "dataType": "Double",
+          "expression": "CALCULATE ( AVERAGE ( FactOrders[review_score] ), KEEPFILTERS ( FactOrders[order_status] = \"delivered\" ), KEEPFILTERS ( NOT ISBLANK ( FactOrders[is_late] ) ), KEEPFILTERS ( FactOrders[is_late] = 0 ) )",
+          "formatString": "0.00",
+          "displayFolder": "Report metrics"
+        },
+        {
+          "name": "Late Review",
+          "dataType": "Double",
+          "expression": "CALCULATE ( AVERAGE ( FactOrders[review_score] ), KEEPFILTERS ( FactOrders[order_status] = \"delivered\" ), KEEPFILTERS ( FactOrders[is_late] = 1 ) )",
+          "formatString": "0.00",
+          "displayFolder": "Report metrics"
+        }
+      ]
+    },
+    {
+      "name": "GoldLoadAudit",
+      "measures": [
+        {
+          "name": "Last Gold Load",
+          "dataType": "DateTime",
+          "expression": "MAXX ( ALL ( GoldLoadAudit ), GoldLoadAudit[completed_at] )",
+          "formatString": "dd \\M\\M\\M yyyy \\H\\H:mm",
+          "displayFolder": "Report metrics"
+        },
+        {
+          "name": "Latest Gold Orders",
+          "dataType": "Integer",
+          "expression": "MAXX ( TOPN ( 1, ALL ( GoldLoadAudit ), GoldLoadAudit[completed_at], DESC, GoldLoadAudit[gold_run_id], DESC ), GoldLoadAudit[order_rows] )",
+          "formatString": "#,0",
+          "displayFolder": "Report metrics"
+        },
+        {
+          "name": "Latest Gold Items",
+          "dataType": "Integer",
+          "expression": "MAXX ( TOPN ( 1, ALL ( GoldLoadAudit ), GoldLoadAudit[completed_at], DESC, GoldLoadAudit[gold_run_id], DESC ), GoldLoadAudit[item_rows] )",
+          "formatString": "#,0",
+          "displayFolder": "Report metrics"
+        },
+        {
+          "name": "Latest Gold Payments",
+          "dataType": "Integer",
+          "expression": "MAXX ( TOPN ( 1, ALL ( GoldLoadAudit ), GoldLoadAudit[completed_at], DESC, GoldLoadAudit[gold_run_id], DESC ), GoldLoadAudit[payment_rows] )",
+          "formatString": "#,0",
+          "displayFolder": "Report metrics"
+        },
+        {
+          "name": "Successful Gold Loads",
+          "dataType": "Integer",
+          "expression": "COUNTROWS ( ALL ( GoldLoadAudit ) )",
+          "formatString": "#,0",
+          "displayFolder": "Report metrics"
+        },
+        {
+          "name": "Current Order Rows",
+          "dataType": "Integer",
+          "expression": "COUNTROWS ( FactOrders )",
+          "formatString": "#,0",
+          "displayFolder": "Report metrics"
+        },
+        {
+          "name": "Current Item Rows",
+          "dataType": "Integer",
+          "expression": "COUNTROWS ( FactOrderItem )",
+          "formatString": "#,0",
+          "displayFolder": "Report metrics"
+        },
+        {
+          "name": "Current Payment Rows",
+          "dataType": "Integer",
+          "expression": "COUNTROWS ( FactPayments )",
+          "formatString": "#,0",
+          "displayFolder": "Report metrics"
+        }
+      ]
+    }
+  ]
+}

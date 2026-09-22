@@ -1,0 +1,107 @@
+﻿table FactPayments
+	lineageTag: d5d4b5b7-ce25-5223-a674-be64de74f37d
+	sourceLineageTag: [dbo].[FactPayments]
+
+	/// BRL â€” real Brazil currency
+	measure 'Payment Value' =
+
+			SUM ( FactPayments[payment_value] )
+		formatString: #,0.00
+		lineageTag: aebc780b-1cbf-5af5-8356-ef0446f1ad58
+
+		changedProperty = Name
+
+		changedProperty = Description
+
+		changedProperty = FormatString
+
+	column payment_key
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 270e1087-b63d-5c1a-a1d5-9deb34509fd6
+		sourceLineageTag: payment_key
+		summarizeBy: sum
+		sourceColumn: payment_key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_id
+		dataType: string
+		lineageTag: b576a1e7-dfa6-5c7a-9214-5259b11b204c
+		sourceLineageTag: order_id
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column purchase_date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: f4696b35-3aee-52fe-92c2-0b05ef6731bd
+		sourceLineageTag: purchase_date_key
+		summarizeBy: none
+		sourceColumn: purchase_date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_key
+		dataType: int64
+		formatString: 0
+		lineageTag: cad97318-a268-5202-9c66-b67a62fdfe86
+		sourceLineageTag: customer_key
+		summarizeBy: none
+		sourceColumn: customer_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_sequential
+		dataType: int64
+		formatString: 0
+		lineageTag: 0cac6136-620f-51d9-8e7c-3b042bcd4f9b
+		sourceLineageTag: payment_sequential
+		summarizeBy: sum
+		sourceColumn: payment_sequential
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_type
+		dataType: string
+		lineageTag: dbc315c7-c445-50fc-b2cf-3c55a32ec66f
+		sourceLineageTag: payment_type
+		summarizeBy: none
+		sourceColumn: payment_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_installments
+		dataType: int64
+		formatString: 0
+		lineageTag: 777945c1-fae4-5018-828f-3b80619f25a4
+		sourceLineageTag: payment_installments
+		summarizeBy: sum
+		sourceColumn: payment_installments
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_value
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 27d2999e-8880-515a-8089-60164764f767
+		sourceLineageTag: payment_value
+		summarizeBy: sum
+		sourceColumn: payment_value
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactPayments = entity
+		mode: directLake
+		source
+			entityName: FactPayments
+			schemaName: dbo
+			expressionSource: 'DirectLake - WH_Olist_Gold'
+

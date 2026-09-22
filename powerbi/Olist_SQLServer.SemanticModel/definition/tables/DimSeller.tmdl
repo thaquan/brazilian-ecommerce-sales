@@ -1,0 +1,75 @@
+table DimSeller
+	lineageTag: c1cbe127-a14f-514d-8609-3718cc06960b
+
+	column seller_key
+		dataType: int64
+		formatString: 0
+		lineageTag: fd5b2a52-5ff8-5ae2-a2be-12fba17d8937
+		summarizeBy: none
+		sourceColumn: seller_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column seller_id
+		dataType: string
+		lineageTag: d257e203-2ac1-58b3-9a23-0b465e33081b
+		summarizeBy: none
+		sourceColumn: seller_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column zip_code_prefix
+		dataType: string
+		lineageTag: 9d7b1180-2438-5b4f-adbb-63c4d6300af1
+		summarizeBy: none
+		sourceColumn: zip_code_prefix
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: cbc095c4-cfd2-5d9f-a6d8-d51d01ae79d2
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column state_code
+		dataType: string
+		lineageTag: 842c650f-0219-5c25-8364-3bec33e79165
+		summarizeBy: none
+		sourceColumn: state_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column latitude
+		dataType: double
+		lineageTag: 863b1497-36d4-50e8-a2c8-c3b45928d955
+		summarizeBy: none
+		sourceColumn: latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column longitude
+		dataType: double
+		lineageTag: b6a31ad8-27d2-5d50-a5c8-bef3b5f9ddf7
+		summarizeBy: none
+		sourceColumn: longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition DimSeller = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("SQLSERVER-DEMO\SQLEXPRESS"),
+				    OlistDW = Source{[Name="OlistDW"]}[Data],
+				    dbo_DimSeller = OlistDW{[Schema="dbo",Item="DimSeller"]}[Data]
+				in
+				    dbo_DimSeller
+
+	annotation PBI_ResultType = Table

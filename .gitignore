@@ -1,0 +1,22 @@
+# Local data, credentials, dependencies and caches
+data/
+.env
+.env.*
+!.env.example
+*.pem
+*.pfx
+*.key
+*token-cache*
+**/node_modules/
+**/__pycache__/
+**/.pbi/
+*.abf
+*.pbix
+*.zip
+*.log
+**/_before_*/
+.DS_Store
+Thumbs.db
+
+# Preserve original Fabric pipeline templates
+!fabric/pipelines/templates/*.zip

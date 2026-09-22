@@ -1,0 +1,221 @@
+{
+  "checkedAt": "2026-09-20T11:19:24.5470528+07:00",
+  "server": "SQLSERVER-DEMO\\SQLEXPRESS",
+  "database": "OlistDW",
+  "results": [
+    {
+      "resultSet": 0,
+      "rows": [
+        {
+          "table_name": "DimDate",
+          "row_count": 1096
+        },
+        {
+          "table_name": "DimCustomer",
+          "row_count": 96096
+        },
+        {
+          "table_name": "DimProduct",
+          "row_count": 32951
+        },
+        {
+          "table_name": "DimSeller",
+          "row_count": 3095
+        },
+        {
+          "table_name": "FactOrders",
+          "row_count": 99441
+        },
+        {
+          "table_name": "FactOrderItem",
+          "row_count": 112650
+        },
+        {
+          "table_name": "FactPayments",
+          "row_count": 103886
+        }
+      ]
+    },
+    {
+      "resultSet": 1,
+      "rows": [
+        {
+          "orders": 99441,
+          "ordering_customers": 96096
+        }
+      ]
+    },
+    {
+      "resultSet": 2,
+      "rows": [
+        {
+          "items": 112650,
+          "orders_with_items": 98666,
+          "merchandise_value": 13591643.7,
+          "freight_value": 2251909.54,
+          "order_value_including_freight": 15843553.24
+        }
+      ]
+    },
+    {
+      "resultSet": 3,
+      "rows": [
+        {
+          "payment_records": 103886,
+          "payment_value": 16008872.12
+        }
+      ]
+    },
+    {
+      "resultSet": 4,
+      "rows": [
+        {
+          "check_name": "Orders_Customer",
+          "orphan_count": 0
+        },
+        {
+          "check_name": "Items_Customer",
+          "orphan_count": 0
+        },
+        {
+          "check_name": "Payments_Customer",
+          "orphan_count": 0
+        },
+        {
+          "check_name": "Items_Product",
+          "orphan_count": 0
+        },
+        {
+          "check_name": "Items_Seller",
+          "orphan_count": 0
+        }
+      ]
+    },
+    {
+      "resultSet": 5,
+      "rows": [
+        {
+          "table_name": "DimCustomer",
+          "duplicate_or_null_keys": 0
+        }
+      ]
+    },
+    {
+      "resultSet": 6,
+      "rows": [
+        {
+          "table_name": "DimDate",
+          "duplicate_or_null_keys": 0
+        }
+      ]
+    },
+    {
+      "resultSet": 7,
+      "rows": [
+        {
+          "table_name": "DimProduct",
+          "duplicate_or_null_keys": 0
+        }
+      ]
+    },
+    {
+      "resultSet": 8,
+      "rows": [
+        {
+          "table_name": "DimSeller",
+          "duplicate_or_null_keys": 0
+        }
+      ]
+    },
+    {
+      "resultSet": 9,
+      "rows": [
+        {
+          "table_name": "FactOrderItem",
+          "duplicate_or_null_keys": 0
+        }
+      ]
+    },
+    {
+      "resultSet": 10,
+      "rows": [
+        {
+          "table_name": "FactOrders",
+          "duplicate_or_null_keys": 0
+        }
+      ]
+    },
+    {
+      "resultSet": 11,
+      "rows": [
+        {
+          "table_name": "FactPayments",
+          "duplicate_or_null_keys": 0
+        }
+      ]
+    },
+    {
+      "resultSet": 12,
+      "rows": [
+        {
+          "check_name": "FactOrders_PurchaseDate",
+          "orphan_count": 0
+        }
+      ]
+    },
+    {
+      "resultSet": 13,
+      "rows": [
+        {
+          "check_name": "FactOrderItem_PurchaseDate",
+          "orphan_count": 0
+        }
+      ]
+    },
+    {
+      "resultSet": 14,
+      "rows": [
+        {
+          "check_name": "FactPayments_PurchaseDate",
+          "orphan_count": 0
+        }
+      ]
+    },
+    {
+      "resultSet": 15,
+      "rows": [
+        {
+          "check_name": "FactOrders_delivered_date_key",
+          "orphan_count": 0
+        }
+      ]
+    },
+    {
+      "resultSet": 16,
+      "rows": [
+        {
+          "check_name": "FactOrders_estimated_date_key",
+          "orphan_count": 0
+        }
+      ]
+    },
+    {
+      "resultSet": 17,
+      "rows": [
+        {
+          "check_name": "OrderItemGrain",
+          "duplicate_groups": 0
+        }
+      ]
+    },
+    {
+      "resultSet": 18,
+      "rows": [
+        {
+          "check_name": "PaymentGrain",
+          "duplicate_groups": 0
+        }
+      ]
+    }
+  ]
+}

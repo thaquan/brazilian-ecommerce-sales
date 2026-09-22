@@ -1,0 +1,69 @@
+﻿table GoldLoadAudit
+	lineageTag: 68bbbaba-e501-53e0-8580-7e7ecb686127
+	sourceLineageTag: [dbo].[GoldLoadAudit]
+
+	column gold_run_id
+		dataType: string
+		lineageTag: be05fb2b-bb1f-5454-8bd1-81d413988e49
+		sourceLineageTag: gold_run_id
+		summarizeBy: none
+		sourceColumn: gold_run_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column silver_run_id
+		dataType: string
+		lineageTag: 39b7273a-c5b1-5293-b84a-916447f9297c
+		sourceLineageTag: silver_run_id
+		summarizeBy: none
+		sourceColumn: silver_run_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column completed_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 77b090d2-576b-5f12-99f8-ed887d6cf67f
+		sourceLineageTag: completed_at
+		summarizeBy: none
+		sourceColumn: completed_at
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_rows
+		dataType: int64
+		formatString: 0
+		lineageTag: 03411449-6078-5c43-a0d4-ec75847d1ea8
+		sourceLineageTag: order_rows
+		summarizeBy: sum
+		sourceColumn: order_rows
+
+		annotation SummarizationSetBy = Automatic
+
+	column item_rows
+		dataType: int64
+		formatString: 0
+		lineageTag: d29e8e15-f8fa-56d4-b618-c881616a0d34
+		sourceLineageTag: item_rows
+		summarizeBy: sum
+		sourceColumn: item_rows
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_rows
+		dataType: int64
+		formatString: 0
+		lineageTag: 6631dd69-e632-5f26-93c6-01cd8d9d5728
+		sourceLineageTag: payment_rows
+		summarizeBy: sum
+		sourceColumn: payment_rows
+
+		annotation SummarizationSetBy = Automatic
+
+	partition GoldLoadAudit = entity
+		mode: directLake
+		source
+			entityName: GoldLoadAudit
+			schemaName: dbo
+			expressionSource: 'DirectLake - WH_Olist_Gold'
+

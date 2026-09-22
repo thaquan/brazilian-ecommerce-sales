@@ -1,0 +1,7 @@
+# SM_Olist_Analytics ? Direct Lake metadata
+
+Xu?t tr?c ti?p t? Fabric qua Power BI Modeling MCP ng?y 21/09/2026, thao t?c ch? ??c. TMDL ?? ???c n?p offline th?nh c?ng: 8 b?ng (7 nghi?p v? + GoldLoadAudit), 20 base measures, 9 quan h?; k?m role CustomerStateAccess.
+
+Report Fabric c?n c? report-local measures trong powerbi/RPT_Olist_Analytics.Report/definition/reportExtensions.json; 20 base measures kh?ng ph?i to?n b? measures hi?n th? c?a report. Nh?nh SQL ?? ??a measures nghi?p v?/report c?n thi?t v?o model ri?ng v?i t?ng 33 measures.
+
+??y l? metadata TMDL, kh?ng ph?i file ch?a d? li?u ho?c credentials. Ch?a tri?n khai l?i l?n workspace m?i. Khi tri?n khai l?i c?n Warehouse/OneLake t??ng ?ng, remap expression ngu?n, c?u h?nh identity/permissions, ch?n ??ng UPN RLS v? g?n membership tr?n Service. C?c GUID v? role pilot gi? nguy?n ?? th? hi?n m?i tr??ng ngu?n. Kh?ng deploy ?? model ?ang ch?y n?u ch? mu?n xem b?n export.

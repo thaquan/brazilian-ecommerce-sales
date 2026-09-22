@@ -1,0 +1,83 @@
+﻿table DimCustomer
+	lineageTag: c5feb776-0f82-5b0f-ac56-1c9480447212
+	sourceLineageTag: [dbo].[DimCustomer]
+
+	column customer_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 3de76928-0fd5-52dc-8e2d-73abef9fbf61
+		sourceLineageTag: customer_key
+		summarizeBy: none
+		sourceColumn: customer_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_unique_id
+		dataType: string
+		lineageTag: 7af04df7-9012-53c8-8ce1-c95b8bb5586b
+		sourceLineageTag: customer_unique_id
+		summarizeBy: none
+		sourceColumn: customer_unique_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column zip_code_prefix
+		dataType: string
+		lineageTag: 2c1e24fd-b3c3-5087-82ec-420caceb7beb
+		sourceLineageTag: zip_code_prefix
+		summarizeBy: none
+		sourceColumn: zip_code_prefix
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: 759c5b17-c71d-5d56-912f-a36c25a256b5
+		sourceLineageTag: city
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column state_code
+		dataType: string
+		lineageTag: 91769631-0e67-50ca-91bf-be8cd893e494
+		sourceLineageTag: state_code
+		summarizeBy: none
+		sourceColumn: state_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column latitude
+		dataType: double
+		lineageTag: 0e5c7a59-1f6e-5fb8-95f4-f0bc94fd3faa
+		sourceLineageTag: latitude
+		summarizeBy: none
+		sourceColumn: latitude
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column longitude
+		dataType: double
+		lineageTag: 31085e03-b144-5c82-8c16-6e6e997c62fe
+		sourceLineageTag: longitude
+		summarizeBy: none
+		sourceColumn: longitude
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition DimCustomer = entity
+		mode: directLake
+		source
+			entityName: DimCustomer
+			schemaName: dbo
+			expressionSource: 'DirectLake - WH_Olist_Gold'
+

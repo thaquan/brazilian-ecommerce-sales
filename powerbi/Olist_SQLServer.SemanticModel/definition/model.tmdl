@@ -1,0 +1,24 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["DimCustomer","DimDate","DimProduct","DimSeller","FactOrderItem","FactOrders","FactPayments"]
+
+annotation PBI_ProTooling = ["DevMode","MCP-PBIModeling"]
+
+ref table DimCustomer
+ref table DimDate
+ref table DimProduct
+ref table DimSeller
+ref table FactOrderItem
+ref table FactOrders
+ref table FactPayments
+
+ref cultureInfo en-US

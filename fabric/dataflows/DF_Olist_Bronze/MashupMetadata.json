@@ -1,0 +1,151 @@
+{
+  "DocumentLocale": "en-US",
+  "EngineVersion": "2.158.928.0",
+  "QueriesMetadata": [
+    {
+      "QueryName": "brz_category_translation",
+      "QueryGroupId": null,
+      "LastKnownIsParameter": false,
+      "LastKnownResultTypeName": "Table",
+      "LoadEnabled": false,
+      "IsHidden": false
+    },
+    {
+      "QueryName": "brz_category_translation_DataDestination",
+      "QueryGroupId": null,
+      "LastKnownIsParameter": false,
+      "LastKnownResultTypeName": "Table",
+      "LoadEnabled": false,
+      "IsHidden": true
+    },
+    {
+      "QueryName": "brz_customers",
+      "QueryGroupId": null,
+      "LastKnownIsParameter": false,
+      "LastKnownResultTypeName": "Table",
+      "LoadEnabled": false,
+      "IsHidden": false
+    },
+    {
+      "QueryName": "brz_customers_DataDestination",
+      "QueryGroupId": null,
+      "LastKnownIsParameter": false,
+      "LastKnownResultTypeName": "Table",
+      "LoadEnabled": false,
+      "IsHidden": true
+    },
+    {
+      "QueryName": "brz_geolocation",
+      "QueryGroupId": null,
+      "LastKnownIsParameter": false,
+      "LastKnownResultTypeName": "Table",
+      "LoadEnabled": false,
+      "IsHidden": false
+    },
+    {
+      "QueryName": "brz_geolocation_DataDestination",
+      "QueryGroupId": null,
+      "LastKnownIsParameter": false,
+      "LastKnownResultTypeName": "Table",
+      "LoadEnabled": false,
+      "IsHidden": true
+    },
+    {
+      "QueryName": "brz_order_items",
+      "QueryGroupId": null,
+      "LastKnownIsParameter": false,
+      "LastKnownResultTypeName": "Table",
+      "LoadEnabled": false,
+      "IsHidden": false
+    },
+    {
+      "QueryName": "brz_order_items_DataDestination",
+      "QueryGroupId": null,
+      "LastKnownIsParameter": false,
+      "LastKnownResultTypeName": "Table",
+      "LoadEnabled": false,
+      "IsHidden": true
+    },
+    {
+      "QueryName": "brz_orders",
+      "QueryGroupId": null,
+      "LastKnownIsParameter": false,
+      "LastKnownResultTypeName": "Table",
+      "LoadEnabled": false,
+      "IsHidden": false
+    },
+    {
+      "QueryName": "brz_orders_DataDestination",
+      "QueryGroupId": null,
+      "LastKnownIsParameter": false,
+      "LastKnownResultTypeName": "Table",
+      "LoadEnabled": false,
+      "IsHidden": true
+    },
+    {
+      "QueryName": "brz_payments",
+      "QueryGroupId": null,
+      "LastKnownIsParameter": false,
+      "LastKnownResultTypeName": "Table",
+      "LoadEnabled": false,
+      "IsHidden": false
+    },
+    {
+      "QueryName": "brz_payments_DataDestination",
+      "QueryGroupId": null,
+      "LastKnownIsParameter": false,
+      "LastKnownResultTypeName": "Table",
+      "LoadEnabled": false,
+      "IsHidden": true
+    },
+    {
+      "QueryName": "brz_products",
+      "QueryGroupId": null,
+      "LastKnownIsParameter": false,
+      "LastKnownResultTypeName": "Table",
+      "LoadEnabled": false,
+      "IsHidden": false
+    },
+    {
+      "QueryName": "brz_products_DataDestination",
+      "QueryGroupId": null,
+      "LastKnownIsParameter": false,
+      "LastKnownResultTypeName": "Table",
+      "LoadEnabled": false,
+      "IsHidden": true
+    },
+    {
+      "QueryName": "brz_reviews",
+      "QueryGroupId": null,
+      "LastKnownIsParameter": false,
+      "LastKnownResultTypeName": "Table",
+      "LoadEnabled": false,
+      "IsHidden": false
+    },
+    {
+      "QueryName": "brz_reviews_DataDestination",
+      "QueryGroupId": null,
+      "LastKnownIsParameter": false,
+      "LastKnownResultTypeName": "Table",
+      "LoadEnabled": false,
+      "IsHidden": true
+    },
+    {
+      "QueryName": "brz_sellers",
+      "QueryGroupId": null,
+      "LastKnownIsParameter": false,
+      "LastKnownResultTypeName": "Table",
+      "LoadEnabled": false,
+      "IsHidden": false
+    },
+    {
+      "QueryName": "brz_sellers_DataDestination",
+      "QueryGroupId": null,
+      "LastKnownIsParameter": false,
+      "LastKnownResultTypeName": "Table",
+      "LoadEnabled": false,
+      "IsHidden": true
+    }
+  ],
+  "QueryGroups": []
+}

@@ -1,0 +1,138 @@
+{
+  "pages": [
+    {
+      "name": "Overview",
+      "id": "9b2921901624d7ca2562"
+    },
+    {
+      "name": "Sales & Sellers",
+      "id": "247e6483e409ca56d561"
+    },
+    {
+      "name": "Customers",
+      "id": "b07721708771ee06148a"
+    },
+    {
+      "name": "Delivery & Reviews",
+      "id": "31cf8fe944c083ef9102"
+    },
+    {
+      "name": "Payments",
+      "id": "b5bc6a16b35baeeed57f"
+    },
+    {
+      "name": "Data Health",
+      "id": "6a6d7961023ac0b2d37b"
+    }
+  ],
+  "reportLocalMeasures": [
+    {
+      "table": "FactOrderItem",
+      "name": "KPI Order Value Including Freight",
+      "expression": "VAR v = SUM(FactOrderItem[item_gmv]) RETURN IF ( ISBLANK(v), BLANK(), \"R$ \" & SWITCH ( TRUE(), ABS(v) >= 1000000, FORMAT(v/1000000,\"0.00\") & \"M\", ABS(v) >= 1000, FORMAT(v/1000,\"0.00\") & \"K\", FORMAT(v,\"0.00\") ) )"
+    },
+    {
+      "table": "FactOrderItem",
+      "name": "KPI Merchandise Value",
+      "expression": "VAR v = SUM(FactOrderItem[price]) RETURN IF ( ISBLANK(v), BLANK(), \"R$ \" & SWITCH ( TRUE(), ABS(v) >= 1000000, FORMAT(v/1000000,\"0.00\") & \"M\", ABS(v) >= 1000, FORMAT(v/1000,\"0.00\") & \"K\", FORMAT(v,\"0.00\") ) )"
+    },
+    {
+      "table": "FactOrderItem",
+      "name": "KPI Freight Value",
+      "expression": "VAR v = SUM(FactOrderItem[freight_value]) RETURN IF ( ISBLANK(v), BLANK(), \"R$ \" & SWITCH ( TRUE(), ABS(v) >= 1000000, FORMAT(v/1000000,\"0.00\") & \"M\", ABS(v) >= 1000, FORMAT(v/1000,\"0.00\") & \"K\", FORMAT(v,\"0.00\") ) )"
+    },
+    {
+      "table": "FactOrderItem",
+      "name": "KPI Average Order Value",
+      "expression": "VAR v = DIVIDE(SUM(FactOrderItem[item_gmv]),DISTINCTCOUNT(FactOrderItem[order_id])) RETURN IF ( ISBLANK(v), BLANK(), \"R$ \" & SWITCH ( TRUE(), ABS(v) >= 1000000, FORMAT(v/1000000,\"0.00\") & \"M\", ABS(v) >= 1000, FORMAT(v/1000,\"0.00\") & \"K\", FORMAT(v,\"0.00\") ) )"
+    },
+    {
+      "table": "FactPayments",
+      "name": "KPI Payment Value",
+      "expression": "VAR v = SUM(FactPayments[payment_value]) RETURN IF ( ISBLANK(v), BLANK(), \"R$ \" & SWITCH ( TRUE(), ABS(v) >= 1000000, FORMAT(v/1000000,\"0.00\") & \"M\", ABS(v) >= 1000, FORMAT(v/1000,\"0.00\") & \"K\", FORMAT(v,\"0.00\") ) )"
+    },
+    {
+      "table": "FactOrders",
+      "name": "Repeat Customers (Period)",
+      "expression": "COUNTROWS ( FILTER ( VALUES ( FactOrders[customer_key] ), NOT ISBLANK ( FactOrders[customer_key] ) && CALCULATE ( COUNTROWS ( FactOrders ) ) > 1 ) )"
+    },
+    {
+      "table": "FactOrders",
+      "name": "Repeat Rate (Period)",
+      "expression": "DIVIDE ( COUNTROWS ( FILTER ( VALUES ( FactOrders[customer_key] ), NOT ISBLANK ( FactOrders[customer_key] ) && CALCULATE ( COUNTROWS ( FactOrders ) ) > 1 ) ), DISTINCTCOUNT ( FactOrders[customer_key] ) )"
+    },
+    {
+      "table": "FactOrders",
+      "name": "Orders per Customer",
+      "expression": "DIVIDE ( COUNTROWS ( FactOrders ), DISTINCTCOUNT ( FactOrders[customer_key] ) )"
+    },
+    {
+      "table": "FactOrders",
+      "name": "On-Time Review",
+      "expression": "CALCULATE ( AVERAGE ( FactOrders[review_score] ), KEEPFILTERS ( FactOrders[order_status] = \"delivered\" ), KEEPFILTERS ( NOT ISBLANK ( FactOrders[is_late] ) ), KEEPFILTERS ( FactOrders[is_late] = 0 ) )"
+    },
+    {
+      "table": "FactOrders",
+      "name": "Late Review",
+      "expression": "CALCULATE ( AVERAGE ( FactOrders[review_score] ), KEEPFILTERS ( FactOrders[order_status] = \"delivered\" ), KEEPFILTERS ( FactOrders[is_late] = 1 ) )"
+    },
+    {
+      "table": "FactPayments",
+      "name": "Paying Orders",
+      "expression": "DISTINCTCOUNT ( FactPayments[order_id] )"
+    },
+    {
+      "table": "FactPayments",
+      "name": "Payment Records",
+      "expression": "COUNTROWS ( FactPayments )"
+    },
+    {
+      "table": "FactPayments",
+      "name": "Average Installments",
+      "expression": "AVERAGE ( FactPayments[payment_installments] )"
+    },
+    {
+      "table": "GoldLoadAudit",
+      "name": "Last Gold Load",
+      "expression": "MAXX ( ALL ( GoldLoadAudit ), GoldLoadAudit[completed_at] )"
+    },
+    {
+      "table": "GoldLoadAudit",
+      "name": "Latest Gold Orders",
+      "expression": "MAXX ( TOPN ( 1, ALL ( GoldLoadAudit ), GoldLoadAudit[completed_at], DESC, GoldLoadAudit[gold_run_id], DESC ), GoldLoadAudit[order_rows] )"
+    },
+    {
+      "table": "GoldLoadAudit",
+      "name": "Latest Gold Items",
+      "expression": "MAXX ( TOPN ( 1, ALL ( GoldLoadAudit ), GoldLoadAudit[completed_at], DESC, GoldLoadAudit[gold_run_id], DESC ), GoldLoadAudit[item_rows] )"
+    },
+    {
+      "table": "GoldLoadAudit",
+      "name": "Latest Gold Payments",
+      "expression": "MAXX ( TOPN ( 1, ALL ( GoldLoadAudit ), GoldLoadAudit[completed_at], DESC, GoldLoadAudit[gold_run_id], DESC ), GoldLoadAudit[payment_rows] )"
+    },
+    {
+      "table": "GoldLoadAudit",
+      "name": "Successful Gold Loads",
+      "expression": "COUNTROWS ( ALL ( GoldLoadAudit ) )"
+    },
+    {
+      "table": "GoldLoadAudit",
+      "name": "Current Order Rows",
+      "expression": "COUNTROWS ( FactOrders )"
+    },
+    {
+      "table": "GoldLoadAudit",
+      "name": "Current Item Rows",
+      "expression": "COUNTROWS ( FactOrderItem )"
+    },
+    {
+      "table": "GoldLoadAudit",
+      "name": "Current Payment Rows",
+      "expression": "COUNTROWS ( FactPayments )"
+    }
+  ],
+  "sourceModel": "SM_Olist_Analytics",
+  "reference": "AdminLTE v4 Dashboard v2",
+  "generatedAt": "2026-09-18T15:24:19.049Z"
+}
