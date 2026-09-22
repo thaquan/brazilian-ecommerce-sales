@@ -91,6 +91,7 @@ PBIP does not contain an Import cache for a new machine. The SQL Server database
 - [Demo script](docs/demo-script.md)
 - [Fabric export review](docs/fabric-export-review.md)
 - [Public release notes](docs/public-release.md)
+- [Backup strategy](docs/backup-strategy.md)
 - [MIT License](LICENSE)
 
 ## Portfolio status
